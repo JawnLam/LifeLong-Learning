@@ -6,11 +6,14 @@
 **Canonical license text:** [https://creativecommons.org/licenses/by/4.0/legalcode.txt](https://creativecommons.org/licenses/by/4.0/legalcode.txt)
 **Human-readable summary:** [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/) *(not a substitute for the license)*
 
+**Original work by Jawn Lam** ([https://github.com/JawnLam/LifeLong-Learning](https://github.com/JawnLam/LifeLong-Learning))
+
 ## Attribution requirement
 
 When sharing or adapting this material, reference:
 
-> Built on **LifeLong Learning v1.0** — Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+> Built on **LifeLong Learning v1.0** by Jawn Lam — [https://github.com/JawnLam/LifeLong-Learning](https://github.com/JawnLam/LifeLong-Learning)
+> Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ---
 

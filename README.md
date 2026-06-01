@@ -127,7 +127,10 @@ Each cartridge contains: `_subject.md`, `_schema.md`, `_curriculum.md`, `_state.
 
 LifeLong Learning is released under the **Creative Commons Attribution 4.0 International License (CC-BY 4.0)**. You are free to share, adapt, and build upon this material for any purpose — including commercially — provided you give appropriate attribution.
 
-See [`LICENSE.md`](LICENSE.md) for the full license text.
+See [`LICENSE.md`](LICENSE.md) for the full license text. Attribution format:
+
+> Built on **LifeLong Learning v1.0** by Jawn Lam — https://github.com/JawnLam/LifeLong-Learning
+> Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## Version
 
