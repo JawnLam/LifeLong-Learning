@@ -1,0 +1,76 @@
+# Mac filesystem metadata
+.DS_Store
+**/.DS_Store
+
+# Editor / IDE artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Obsidian workspace state (personal UI state, not study content)
+.obsidian/workspace*
+.obsidian/cache
+.obsidian/graph.json
+
+# OS / network artifacts
+Thumbs.db
+.directory
+
+# ----------------------------------------------------------------------
+# Personal study work — excluded by default so this folder can be shared
+# without leaking your private session history. If you want to keep your
+# OWN study work in version control (recommended for personal use), edit
+# this section: remove the exclusions you want tracked, or maintain a
+# private fork with your study work checked in.
+# ----------------------------------------------------------------------
+
+# State files: live record of where you are in each subject
+**/_state.md
+
+# User profile (optional, may contain personal preferences)
+_USER.md
+
+# Personal cartridges — anything NOT prefixed `Example-Subject-` is treated
+# as a personal study cartridge by default and excluded.
+# To track your own cartridge, either:
+#   1. Remove the broad rule below and add specific exclusions for
+#      Sessions/, Quizzes/, etc. that you want kept private, OR
+#   2. Use `git add -f` on the specific cartridge folder.
+
+# Session logs and quiz history (personal record of study)
+**/Sessions/*.md
+!**/Sessions/.gitkeep
+
+**/Quizzes/Socratic-Conceptual/*.md
+!**/Quizzes/Socratic-Conceptual/.gitkeep
+
+**/Quizzes/SR-Performance-Log/*.md
+!**/Quizzes/SR-Performance-Log/Phase-1-SR-Log.md
+!**/Quizzes/SR-Performance-Log/.gitkeep
+
+# Synthesis drafts (personal writing)
+**/Synthesis/Weekly-Journals/*.md
+!**/Synthesis/Weekly-Journals/.gitkeep
+
+**/Synthesis/Monthly-Essays/*.md
+!**/Synthesis/Monthly-Essays/.gitkeep
+
+**/Synthesis/Phase-End-Translations/*.md
+!**/Synthesis/Phase-End-Translations/.gitkeep
+
+**/Synthesis/Quarterly-Drafts/*.md
+!**/Synthesis/Quarterly-Drafts/.gitkeep
+
+# SR card files (if user stores cards in dedicated files vs embedded in atoms)
+**/SR-Cards/*.md
+!**/SR-Cards/.gitkeep
+
+# ----------------------------------------------------------------------
+# Always tracked (overrides the above for the example cartridge):
+# The shipped example cartridge demonstrates the system; its bootstrap
+# session log and seed atoms are part of the release.
+# ----------------------------------------------------------------------
+!Example-Subject-*/Sessions/*BOOTSTRAP*.md
+!Example-Subject-*/_state.md

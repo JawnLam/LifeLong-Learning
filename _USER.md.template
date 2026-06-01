@@ -1,0 +1,40 @@
+---
+Item_Prototype: LLL_User_Profile
+lll_User_Profile_Version: 1.0
+Date_Modified:
+---
+
+# User Profile
+
+> **Optional.** Copy this file to `_USER.md` (drop the `.template` suffix) and fill it in if you want global personalization the AI applies across every subject you study. Without it, the system uses sensible defaults: peer register, direct, substantive critique, minimal hedging.
+
+## Identity
+
+- **Name:** *(how the AI should address you)*
+- **Background:** *(one or two sentences — your professional or intellectual context. Optional but useful for the AI to know what analogies will land.)*
+
+## Communication preferences
+
+Modify any of these from the defaults if you want different treatment.
+
+- **Register:** peer / formal / casual *(default: peer)*
+- **Critique style:** substantive / encouraging-then-substantive / encouraging-only *(default: substantive)*
+- **Hedging:** minimal / moderate / cushioned *(default: minimal)*
+- **Filler tolerance:** none / some / fine *(default: none — no "great question," "interesting," etc.)*
+- **Correction style:** direct / soft / collaborative *(default: direct)*
+
+## Learning preferences
+
+- **Default pace:** *(e.g., "2–4 hours per week per subject")*
+- **Default depth:** rigorous / conceptual / applied *(no default; per-subject override in `<Subject>/_subject.md`)*
+- **Synthesis output goals:** *(e.g., "I write a public Substack — synthesis should aim at publishable drafts" or "synthesis is for me, no external audience")*
+
+## Active subjects
+
+*Updated as you add cartridges.*
+
+- *(none yet)*
+
+## Notes for any AI session
+
+*Anything else a fresh AI session should know about you that doesn't fit above.*
