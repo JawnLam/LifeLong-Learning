@@ -14,6 +14,7 @@ This is LifeLong Learning **v1.0.0** — initial public release.
 
 | Identifier              | Value         | Notes                                                                  |
 |-------------------------|---------------|------------------------------------------------------------------------|
+| **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
 | **Software**            | v1.0.0        | Initial public release                                                 |
 | **Schema**              | v1.0          | STABLE — universal `LLL_*` prototypes are locked at this version       |
 | **Teaching engine**     | v1.0          | Subject-agnostic operating manual                                      |

@@ -11,7 +11,7 @@ last_updated: 2026-05-31
 
 > **If you're an AI assistant (Claude, Gemini, ChatGPT, or other capable model):** the user has pointed you at a LifeLong Learning folder. Read this file in full, then complete the bootstrap below, then respond to the user.
 
-You are inside a LifeLong Learning folder. The user has likely said something like *"help me set up a new topic to learn"* or *"let's continue my [subject] study."*
+You are inside LifeLong Learning, an **operating volume** for self-directed deep study. (An operating volume is a self-contained markdown corpus an AI loads to orchestrate a kind of long-running, stateful work — substrate-agnostic, file-backed. See `https://github.com/JawnLam/Operating-Volume-Engineering` for the category definition.) The user has likely said something like *"help me set up a new topic to learn"* or *"let's continue my [subject] study."*
 
 Your job is to either:
 

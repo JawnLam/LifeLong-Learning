@@ -3,7 +3,9 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](VERSION.md)
 
-A subject-agnostic, AI-orchestrated framework for self-directed deep study. Pick a topic you've always wanted to learn. Point any capable AI at this folder, tell it to read `AI-BOOTSTRAP.md`, and it will set up the topic, design a curriculum, and run sessions with you over weeks, months, or years — keeping all state in plain markdown files so you own your work and never depend on a service that can disappear.
+LifeLong Learning is an **[operating volume](https://github.com/JawnLam/Operating-Volume-Engineering)** for AI-orchestrated self-directed deep study. Pick a topic you've always wanted to learn. Point any capable AI at this folder, tell it to read `AI-BOOTSTRAP.md`, and it will set up the topic, design a curriculum, and run sessions with you over weeks, months, or years — keeping all state in plain markdown files so you own your work and never depend on a service that can disappear.
+
+> **What's an operating volume?** A self-contained markdown corpus an AI loads to orchestrate a particular kind of long-running, stateful work — the slot in the AI lexicon between a Custom GPT / Project and an AI harness. Substrate-agnostic (Claude, GPT, Gemini, etc.), stateful (files on disk are the memory), forkable. See **[Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering)** for the discipline and a worked-example design walkthrough. LifeLong Learning is one of three operating volumes by the same author, alongside **[SOLVE-eX](https://github.com/JawnLam/SOLVE-eX)** and **Operating-Volume-Engineering** itself.
 
 ---
 
