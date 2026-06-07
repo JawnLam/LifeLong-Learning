@@ -1,9 +1,9 @@
 ---
-lll_version: "1.3.0"
+lll_version: "1.3.1"
 schema_version: "1.3"
 schema_status: "STABLE"
-release_date: 2026-06-06
-release_phase: "Minor release — OVE Conventions 7 (install-and-update pattern) and 8 (engine vs operator-content boundary); INSTALL/OPERATOR-GUIDE/CONTRIBUTING all updated for Convention 7+8 conformance"
+release_date: 2026-06-07
+release_phase: "Patch release — adds UPDATE-PROMPT.md (OVE Convention 7's fourth required artifact); copy-pasteable AI prompt that walks the operator through routine updates"
 ---
 
 # LifeLong Learning — Version

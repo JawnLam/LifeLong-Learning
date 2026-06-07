@@ -2,6 +2,37 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] — 2026-06-07
+
+Patch release adding `UPDATE-PROMPT.md` at the LLL root — the fourth required artifact under OVE Convention 7 (added in OVE v1.2.1).
+
+### Added — `UPDATE-PROMPT.md`
+
+Copy-pasteable AI prompt that asks any AI assistant (Claude, ChatGPT, Gemini, Cursor, Claude Code) to walk the operator through updating LLL to the latest release. The prompt instructs the AI to:
+
+1. Read `INSTALL.md § "Updating"` and `OPERATOR-GUIDE.md § "Updates and troubleshooting"` so it knows LLL's update protocol.
+2. Run `git fetch origin` and report incoming commits + the new CHANGELOG entry.
+3. Check `git status` and propose a stash strategy if local engine modifications exist.
+4. Walk through `git pull --ff-only origin main` step by step, stopping to confirm before running.
+5. Surface migration recipes, major.minor folder renames, breaking-change notes from the new CHANGELOG entry.
+6. Verify the operator's subject cartridges (Operator-Extension Zone) and operator-private files (`_USER.md`, per-subject `_state.md`/`_subject.md`, session logs, Socratic-conceptual quizzes, SR performance logs, synthesis drafts) are intact and untouched after the pull.
+
+The prompt enforces discipline:
+
+- Do not modify Operator-Extension or Operator-Private Zone content.
+- Do not run destructive commands without explicit operator confirmation.
+- Stop and ask if anything is unclear or unexpected.
+
+### Why two update paths
+
+OVE Convention 7 supports both a **manual path** (operator reads `INSTALL.md § Updating` and `OPERATOR-GUIDE.md § Updates`, runs git commands themselves) and an **AI-assisted path** (operator opens `UPDATE-PROMPT.md`, copies the prompt, pastes to an AI, approves each step). Manual path is recommended for major-version transitions and any release with a non-trivial migration recipe; AI-assisted path is recommended for routine releases (patches and small minors).
+
+### Notes
+
+Patch release — purely additive. No engine prose modified; no schema change; no Prototype content moved.
+
+Coordinated multi-OV release with OVE v1.2.1 (codifies the artifact + adds validator C10), LFW v1.7.2, SOLVE-eX v2.1.3.
+
 ## [1.3.0] — 2026-06-06
 
 Adopts OVE Conventions 7 (install-and-update pattern) and 8 (engine vs operator-content boundary). Documents the install/update workflow and the four-zone content boundary in front-door docs.
