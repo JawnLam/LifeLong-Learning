@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "expulsion-of-tarquins"
 Title: "Expulsion of the Tarquins"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: event
+lll_Unit_Type: event
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -52,7 +52,7 @@ A real question: was the transition as clean and as early as the tradition makes
 - The shape of the magistracy that becomes the [[Cursus-Honorum]]
 - A reframing of [[Mos-Maiorum]] — the ancestors are now Republican ancestors, not regal ones
 
-## Related Atoms
+## Related Units
 
 - [[Regal-Period]] (this event ends it)
 - [[Early-Republic]] (this event begins it)

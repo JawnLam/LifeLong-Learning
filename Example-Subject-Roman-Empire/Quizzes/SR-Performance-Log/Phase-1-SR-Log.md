@@ -11,14 +11,14 @@ Needs_Processing: false
 
 # Phase 1 SR Performance Log
 
-*Append-only. Every SR quizzing session adds rows. No cards yet — atoms must reach mastery 2 before SR cards are generated.*
+*Append-only. Every SR quizzing session adds rows. No cards yet — Units must reach mastery 2 before SR cards are generated.*
 
-| Date | Atom | Card | Result | Streak | Session |
+| Date | Unit | Card | Result | Streak | Session |
 |------|------|------|--------|--------|---------|
 
 ## Rules
 
 - Result values: `again` | `hard` | `good` | `easy`
 - Streak counts consecutive non-`again` results
-- Any atom with two or more `again` results in its last three reviews gets flagged `lll_Status: weak` in `_state.md`
-- No SR quizzing for atoms below mastery level 2
+- Any Unit with two or more `again` results in its last three reviews gets flagged `lll_Status: weak` in `_state.md`
+- No SR quizzing for Units below mastery level 2

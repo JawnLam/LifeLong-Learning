@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "mixed-constitution"
 Title: "Mixed Constitution (Polybian Thesis)"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: concept
+lll_Unit_Type: concept
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -69,7 +69,7 @@ The thesis is descriptive (this is how Rome works) and normative (this is why Ro
 - Cicero's *De Re Publica* (Late Republic) reformulates Polybius for a Roman audience
 - The Augustan Settlement preserves the *form* of the mixed constitution (consuls, Senate, assemblies all still exist) while emptying it of substance — institutional theater
 
-## Related Atoms
+## Related Units
 
 - [[Polybius]] (the originator of the thesis)
 - [[Cursus-Honorum]] (a structural feature that makes the mixed system work)

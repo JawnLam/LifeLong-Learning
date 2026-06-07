@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "early-republic"
 Title: "Early Republic"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: period
+lll_Unit_Type: period
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0

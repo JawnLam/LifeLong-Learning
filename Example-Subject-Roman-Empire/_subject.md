@@ -14,7 +14,7 @@ lll_Domain_Shape:
 lll_User_Goals: "Generalist mastery — understand the structural arc of how Rome rose, sustained itself, and fell, with enough mechanism to explain the 'why' to a friend over dinner. Not pursuing scholarly historiographical mastery; pursuing a coherent, defensible narrative that holds up to follow-up questions."
 lll_User_Prior_Knowledge: "Educated general reader. Basic Western history at the high-school level (Caesar, Augustus, fall of Rome as cultural reference points but no detail). No Latin. Has read a small number of popular history books on other periods (e.g., one or two on WWII)."
 lll_Math_Stance: minimize
-lll_Primary_Atom_Types:
+lll_Primary_Unit_Types:
   - concept
   - thinker
   - period

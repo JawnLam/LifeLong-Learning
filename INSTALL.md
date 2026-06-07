@@ -28,7 +28,7 @@ Open `_USER.md` and fill in your name, your default communication preferences, a
 If you're using Obsidian as your editor, two plugins make the experience richer:
 
 - **Spaced Repetition** (community plugin) — picks up `:: ` and `:::` syntax in any note to drive spaced-repetition review.
-- **Bases** (core plugin, v1.9+) — database-like views of notes via YAML frontmatter properties; useful for atom dashboards.
+- **Bases** (core plugin, v1.9+) — database-like views of notes via YAML frontmatter properties; useful for Unit dashboards.
 
 Neither is required. The system works without them — Bases just gives you nicer browsing, and SR can be replaced with Anki, Mochi, RemNote, or skipped entirely (the AI falls back to Socratic quizzing).
 
@@ -78,7 +78,7 @@ A LifeLong Learning vault is just markdown files. To move it:
 | AI never produces a readiness statement                | It probably didn't read `AI-BOOTSTRAP.md`. Re-send the bootstrap message explicitly: *"Read `AI-BOOTSTRAP.md` in full before responding."*           |
 | AI starts a session but doesn't write anything to disk | It may be in a sandbox / read-only environment. Tell it to write to the folder, or accept sandbox mode (state lives inline in the conversation).    |
 | `_state.md` is missing or corrupted for a subject      | See `OPERATOR-GUIDE.md` — "Recovering a corrupted state file."                                                                                       |
-| AI invents books or thinkers that don't exist          | Stop the session, correct the AI, regenerate the affected atoms. See `OPERATOR-GUIDE.md` — "Detecting and removing fabrications."                  |
+| AI invents books or thinkers that don't exist          | Stop the session, correct the AI, regenerate the affected Units. See `OPERATOR-GUIDE.md` — "Detecting and removing fabrications."                  |
 | Obsidian SR plugin not detecting cards                 | Confirm card syntax is `::` (one-line) or `?` on its own line (multi-line). See `_teaching-engine/_meta/SR-CONVENTIONS.md`.                          |
 | Want to share a cartridge with someone                 | Zip the `<Subject>/` folder; recipient drops it into their own LifeLong Learning vault.                                                              |
 

@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "imperium"
 Title: "Imperium"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: concept
+lll_Unit_Type: concept
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -63,7 +63,7 @@ Why it matters: *imperium* is the technical answer to "what makes a Roman genera
 - The Late Republic is partly a story of imperium accumulating in individual hands (Marius, Sulla, Pompey, Caesar) beyond what the Republican design intended
 - The Augustan Settlement reorganizes imperium so that the emperor holds the load-bearing portion in perpetuity, leaving the residual to ordinary magistrates as constitutional theater
 
-## Related Atoms
+## Related Units
 
 - [[Cursus-Honorum]] (offices that confer imperium: praetor, consul)
 - [[Mixed-Constitution]] (the monarchical element of the Polybian schema corresponds to the imperium-holding magistrates)

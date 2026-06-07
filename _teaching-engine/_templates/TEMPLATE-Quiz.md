@@ -4,7 +4,7 @@ Item_Prototype: LLL_Quiz
 Title: ""
 lll_Subject: ""
 lll_Quiz_Kind: socratic
-lll_Atoms_Engaged: []
+lll_Units_Engaged: []
 lll_Questions_Count: 0
 lll_Correct_Full: 0
 lll_Correct_Partial: 0
@@ -17,13 +17,13 @@ Needs_Processing: false
 
 # Quiz <Session>.<N> — <Date> — <Quiz Kind>
 
-## Atoms Tested
+## Units Tested
 
-- [[Atom-Name]]
+- [[Unit-Name]]
 
 ## Questions & Responses
 
-### Q1 — <atom> — <question kind>
+### Q1 — <Unit> — <question kind>
 
 **Question:** 
 
@@ -39,6 +39,6 @@ Needs_Processing: false
 
 ## Overall Assessment
 
-## Atoms Flagged for Review
+## Units Flagged for Review
 
-- [[Atom-Name]] — reason
+- [[Unit-Name]] — reason

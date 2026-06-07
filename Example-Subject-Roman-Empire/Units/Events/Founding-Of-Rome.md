@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "founding-of-rome"
 Title: "Founding of Rome"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: event
+lll_Unit_Type: event
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -51,7 +51,7 @@ The disagreement between literary tradition and archaeology is a useful first le
 - [[Mos-Maiorum]] (the Romulean origin is the deepest root of "what the ancestors did")
 - The Roman habit of dating from the city's founding (*ab urbe condita*) — a civic-religious chronological frame
 
-## Related Atoms
+## Related Units
 
 - [[Regal-Period]] (the period this event begins)
 - [[Livy]] (canonical narrative source)

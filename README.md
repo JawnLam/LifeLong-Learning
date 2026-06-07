@@ -104,7 +104,7 @@ Optional: copy `_USER.md.template` to `_USER.md` and fill it in if you want glob
 | `<Subject>/`                        | A cartridge — one folder per topic you're studying                        |
 | `Example-Subject-Roman-Empire/`     | A worked example cartridge for "The Rise and Fall of the Roman Empire"    |
 
-Each cartridge contains: `_subject.md`, `_schema.md`, `_curriculum.md`, `_state.md`, `Atoms/`, `Sources/`, `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`.
+Each cartridge contains: `_subject.md`, `_schema.md`, `_curriculum.md`, `_state.md`, `Units/`, `Sources/`, `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`.
 
 ## Where to go for what
 

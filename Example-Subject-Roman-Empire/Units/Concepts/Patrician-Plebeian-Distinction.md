@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "patrician-plebeian-distinction"
 Title: "Patrician–Plebeian Distinction"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: concept
+lll_Unit_Type: concept
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -63,7 +63,7 @@ By the late 3rd century BC, the patrician–plebeian distinction is largely form
 - The tribune of the plebs becomes one of the great destabilizing offices of the Late Republic (Tiberius Gracchus uses it to legislate around the Senate in 133 BC — directly invoking the original plebeian protective function for radical purposes)
 - Polybius's mixed-constitution analysis is partly possible only because the Conflict had resolved into a stable mixed system
 
-## Related Atoms
+## Related Units
 
 - [[Mos-Maiorum]] (the unwritten norms within which the Conflict played out)
 - [[Cursus-Honorum]] (which offices were open to which order, and when)

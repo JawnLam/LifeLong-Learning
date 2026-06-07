@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "livy"
 Title: "Livy (Titus Livius)"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: thinker
+lll_Unit_Type: thinker
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -57,7 +57,7 @@ Livy is the primary or load-bearing source/interpreter for:
 - [[Middle-Republic]] (especially Hannibalic war)
 - [[Second-Punic-War]] (one of the two great narrative sources, the other being Polybius)
 
-## Related Atoms
+## Related Units
 
 - [[Polybius]] (a near-contemporary, with a sharply different method — useful contrast)
 - All the early-period concepts and events listed above

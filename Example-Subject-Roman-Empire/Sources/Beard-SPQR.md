@@ -34,7 +34,7 @@ Limit: Beard mostly stops in 212 AD, which means Phases 5 and 6 need different s
 ## Approach notes
 
 - **Pace:** Read chapter by chapter, taking notes on institutional/structural points (not on chronology — that comes from Livy and Polybius)
-- **Depth:** First read is for orientation; expect to return to specific chapters when working on related atoms
+- **Depth:** First read is for orientation; expect to return to specific chapters when working on related Units
 - **Pairing:** Beard pairs well with the ancient sources — read Beard first on a period to get the framing, then read the ancient source with her interpretive caveats in mind
 - **What to watch for:** Beard is skeptical of romanticization. She is good at puncturing comfortable narratives. If you find yourself disagreeing with her, mark it — the disagreement is the learning.
 
@@ -50,7 +50,7 @@ Source seeded. Not yet started.
 
 *To be populated.*
 
-## Atoms Introduced or Deepened
+## Units Introduced or Deepened
 
 - [[Mos-Maiorum]]
 - [[Cursus-Honorum]]

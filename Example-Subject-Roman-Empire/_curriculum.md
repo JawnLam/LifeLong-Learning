@@ -59,7 +59,7 @@ Phase 6 is heavier because it includes the major synthesis work — Gibbon, mode
 - [ ] Narrate the three Punic Wars at a high level — who fought, what changed, why the third was different from the first two
 - [ ] Place ten Phase 1 events on a timeline without notes
 
-### Phase 1 atoms
+### Phase 1 Units
 
 - **Concepts:** Mos-Maiorum, Cursus-Honorum, Mixed-Constitution, Imperium, Patrician-Plebeian-Distinction
 - **Thinkers:** Polybius, Livy
@@ -92,7 +92,7 @@ Phase 6 is heavier because it includes the major synthesis work — Gibbon, mode
 - [ ] Explain what Augustus actually changed institutionally — and what he preserved as legal fiction
 - [ ] Articulate the Principate as a constitutional innovation: explain why historians call it a "veiled monarchy"
 
-### Phase 2 atoms
+### Phase 2 Units
 
 - **Concepts:** Patron-Client-System, Tribune-Of-The-Plebs, Proscription, Triumvirate, Principate, Imperator
 - **Thinkers:** Cicero, Sallust, Suetonius, Augustus (as primary source)
@@ -126,7 +126,7 @@ Phase 6 is heavier because it includes the major synthesis work — Gibbon, mode
 - [ ] Articulate the "Five Good Emperors" thesis and assess what was actually good about it (the adoption succession) and what was contingent
 - [ ] Read Tacitus on Tiberius or Nero and place his rhetorical posture (hostile, retrospective, senatorial)
 
-### Phase 3 atoms
+### Phase 3 Units
 
 - **Concepts:** Julio-Claudian-Dynasty, Adoption-Succession, Limes (frontiers), Damnatio-Memoriae, Imperial-Cult, Praetorian-Guard
 - **Thinkers:** Tacitus, Marcus Aurelius (as primary source)
@@ -159,7 +159,7 @@ Phase 6 is heavier because it includes the major synthesis work — Gibbon, mode
 - [ ] Explain the Tetrarchy and why it failed even though Diocletian designed it
 - [ ] Articulate the significance of Constantine's conversion (313 Edict of Milan, 325 Council of Nicaea) for both Rome and Christianity
 
-### Phase 4 atoms
+### Phase 4 Units
 
 - **Concepts:** Severan-Dynasty, Soldier-Emperors, Tetrarchy, Dominate, Edict-Of-Milan, Council-Of-Nicaea, Solidus (new gold coinage)
 - **Thinkers:** Cassius-Dio, Eusebius (Christian historiography enters)
@@ -193,7 +193,7 @@ Phase 6 is heavier because it includes the major synthesis work — Gibbon, mode
 - [ ] Articulate Heather's, Ward-Perkins's, and Brown's interpretations of "the fall" — what each emphasizes, what each downplays
 - [ ] Read a passage of Augustine's *City of God* and place his theological response to 410 in its political context
 
-### Phase 5 atoms
+### Phase 5 Units
 
 - **Concepts:** Foederati (federated barbarians), Theodosian-Division, Sack-Of-Rome-Trope, Barbarian-Kingdoms, Roman-Christian-Synthesis
 - **Thinkers:** Ammianus-Marcellinus, Augustine, Peter-Heather, Bryan-Ward-Perkins, Peter-Brown
@@ -234,7 +234,7 @@ The weight of this phase is producing the user's own structural arc essay (10,00
 - [ ] Produce a finished long-form synthesis on the structural arc of Rome, stand-alone, defensible to a follow-up reader who pushes back
 - [ ] Be able to deliver the 30-minute "structural arc of Rome" conversation that was the original goal in `_subject.md`
 
-### Phase 6 atoms
+### Phase 6 Units
 
 - **Concepts:** Decline-Thesis, Late-Antique-Transformation-Thesis, Roman-Legacy, Byzantine-Continuation
 - **Thinkers:** Edward-Gibbon, Henri-Pirenne, Walter-Goffart (additions to the modern-historian roster begun in Phase 5)
@@ -243,7 +243,7 @@ The weight of this phase is producing the user's own structural arc essay (10,00
 
 ---
 
-## Atom count projection
+## Unit count projection
 
 | Phase | Concepts | Thinkers | Periods | Events | Total |
 |-------|---------:|---------:|--------:|-------:|------:|
@@ -253,6 +253,6 @@ The weight of this phase is producing the user's own structural arc essay (10,00
 | 4     | ~7       | ~2       | ~4      | ~6     | ~19   |
 | 5     | ~5       | ~5       | ~3      | ~5     | ~18   |
 | 6     | ~4       | ~3       | ~2      | ~3     | ~12   |
-| **Total** | **~33** | **~18** | **~18** | **~30** | **~100 core atoms** |
+| **Total** | **~33** | **~18** | **~18** | **~30** | **~100 core Units** |
 
-Additional atoms will emerge from deep-dive reading and cross-linking. Expect the final atom count to land between 120 and 160.
+Additional Units will emerge from deep-dive reading and cross-linking. Expect the final Unit count to land between 120 and 160.

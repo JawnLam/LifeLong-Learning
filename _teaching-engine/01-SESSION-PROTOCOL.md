@@ -17,7 +17,7 @@ updated: 2026-05-31
 3. PROPOSE a session activity with rationale
 4. WAIT for user confirmation or override
 5. EXECUTE the activity
-6. CAPTURE results (atom updates, quiz logs, SR cards, synthesis artifacts)
+6. CAPTURE results (Unit updates, quiz logs, SR cards, synthesis artifacts)
 7. WRITE the session log
 8. UPDATE _state.md
 9. END with one explicit "next-session seed" in Open Threads
@@ -31,12 +31,12 @@ These apply to all subjects. Individual cartridges may define their own subject-
 
 | Code | Activity | When it's the right default |
 |------|----------|------------------------------|
-| **TEACH** | Introduce new material via Socratic dialogue; user engages with source material before or during | Active source material in progress and no major weak atoms pending; user has momentum |
+| **TEACH** | Introduce new material via Socratic dialogue; user engages with source material before or during | Active source material in progress and no major weak Units pending; user has momentum |
 | **QUIZ-SR** | Drive SR card recall and log performance | Cards are due AND ≥ 72 hours since last session of this type |
-| **QUIZ-SOCRATIC** | Conceptual/application questions — probe explanation and transfer, not pure recall | ≥ 2 atoms at mastery level 2 and user hasn't been Socratically quizzed in ≥ 7 days |
-| **REVIEW-WEAK** | Revisit atoms flagged `weak` in state with targeted re-teaching | Any atom is flagged weak OR SR performance on an atom is failing |
+| **QUIZ-SOCRATIC** | Conceptual/application questions — probe explanation and transfer, not pure recall | ≥ 2 Units at mastery level 2 and user hasn't been Socratically quizzed in ≥ 7 days |
+| **REVIEW-WEAK** | Revisit Units flagged `weak` in state with targeted re-teaching | Any Unit is flagged weak OR SR performance on an Unit is failing |
 | **SYNTHESIZE** | Produce a synthesis artifact (weekly journal, monthly essay, phase-end piece, quarterly draft) | Synthesis cadence due OR user explicitly wants to write |
-| **INTEGRATE** | Cross-atom connection-mapping session; end-of-phase checks also live here | ≥ 5 atoms introduced since last INTEGRATE, OR at phase boundary |
+| **INTEGRATE** | Cross-Unit connection-mapping session; end-of-phase checks also live here | ≥ 5 Units introduced since last INTEGRATE, OR at phase boundary |
 
 ## Decision algorithm
 
@@ -48,19 +48,19 @@ Evaluate in order. First condition that fires determines the default proposal.
 - **If** a phase exit checklist has ≥ 80% items checked but not 100% → propose **INTEGRATE** as a phase-exit check
 - **If** ≥ 3 sessions have passed since any SYNTHESIZE → propose **SYNTHESIZE** (weekly journal at minimum)
 
-### Step 2 — Weak-atom priority
+### Step 2 — Weak-Unit priority
 
-- **If** `_state.md` lists any atom under "Weak Atoms" → propose **REVIEW-WEAK** on the most recently flagged
-- **If** SR performance log shows any atom failing its most recent review → add to Weak Atoms and propose **REVIEW-WEAK**
+- **If** `_state.md` lists any Unit under "Weak Units" → propose **REVIEW-WEAK** on the most recently flagged
+- **If** SR performance log shows any Unit failing its most recent review → add to Weak Units and propose **REVIEW-WEAK**
 
 ### Step 3 — Cadence rhythms
 
-- **If** ≥ 7 days since last QUIZ-SOCRATIC AND ≥ 2 atoms at mastery level 2 → propose **QUIZ-SOCRATIC**
+- **If** ≥ 7 days since last QUIZ-SOCRATIC AND ≥ 2 Units at mastery level 2 → propose **QUIZ-SOCRATIC**
 - **If** SR cards are due AND last QUIZ-SR was ≥ 72 hours ago → propose **QUIZ-SR**
 
 ### Step 4 — Default forward motion
 
-- **If** none of the above fires → propose **TEACH** on the next atom in the phase's curriculum order at mastery level 0
+- **If** none of the above fires → propose **TEACH** on the next Unit in the phase's curriculum order at mastery level 0
 
 ### Step 5 — Subject-specific activities
 
@@ -97,9 +97,9 @@ After every session, update:
 - `lll_Last_Session_Date`
 - `lll_Total_Study_Hours` (add the session duration)
 - Phase hours logged
-- Atom mastery table (any atoms touched this session)
+- Unit mastery table (any Units touched this session)
 - Recent Sessions (prepend new session)
-- Weak Atoms (add or remove as appropriate)
+- Weak Units (add or remove as appropriate)
 - Open Threads (close any addressed, add new ones for next session)
 - `lll_Next_Session_Default_Activity` (your prediction — a hint, not a commitment)
 
@@ -109,7 +109,7 @@ When the user approaches phase exit (≥ 80% checklist complete):
 
 1. Propose **INTEGRATE** as the next session's activity
 2. Ask the user to demonstrate each unchecked exit criterion **in their own words with their own examples**
-3. Identify any thin spots. Add to Weak Atoms with specific remediation.
+3. Identify any thin spots. Add to Weak Units with specific remediation.
 4. When all demonstrated, update `_state.md`:
    - Mark the phase complete
    - Increment `lll_Current_Phase`
@@ -122,7 +122,7 @@ When the user approaches phase exit (≥ 80% checklist complete):
 Before ending any session, confirm:
 
 - [ ] At least one concrete learning moment captured
-- [ ] Mastery levels updated for any atoms engaged
+- [ ] Mastery levels updated for any Units engaged
 - [ ] Session log written
 - [ ] `_state.md` updated
 - [ ] Explicit Open Thread left for next session

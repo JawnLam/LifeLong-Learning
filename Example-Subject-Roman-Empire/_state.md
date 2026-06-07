@@ -35,19 +35,19 @@ lll_Next_Session_Default_Activity: orientation
 | Livy, *Ab Urbe Condita* (Books 1–5) | not-started | 0% | [[Livy-Ab-Urbe-Condita]] |
 | Polybius, *Histories* (Book 6) | not-started | 0% | [[Polybius-Histories]] |
 
-## Atom Mastery Snapshot
+## Unit Mastery Snapshot
 
 Mastery on 5-level scale:
-- **0 — not-introduced:** atom does not yet have a note
-- **1 — introduced:** atom note exists, user has been exposed
-- **2 — recognized:** user can identify the atom when prompted
-- **3 — explained:** user can explain the atom in their own words
-- **4 — applied:** user has applied the atom in synthesis or cross-atom comparison
+- **0 — not-introduced:** Unit does not yet have a note
+- **1 — introduced:** Unit note exists, user has been exposed
+- **2 — recognized:** user can identify the Unit when prompted
+- **3 — explained:** user can explain the Unit in their own words
+- **4 — applied:** user has applied the Unit in synthesis or cross-Unit comparison
 - **5 — taught:** user can teach it to someone else without notes
 
-### Phase 1 Atoms
+### Phase 1 Units
 
-| Atom | Type | Mastery | Last practiced | Flags |
+| Unit | Type | Mastery | Last practiced | Flags |
 |------|------|---------|----------------|-------|
 | [[Mos-Maiorum]] | concept | 0 | — | seed |
 | [[Cursus-Honorum]] | concept | 0 | — | seed |
@@ -63,7 +63,7 @@ Mastery on 5-level scale:
 | [[Expulsion-Of-Tarquins]] | event | 0 | — | seed |
 | [[Second-Punic-War]] | event | 0 | — | seed |
 
-## Weak Atoms (needs-reinforcement)
+## Weak Units (needs-reinforcement)
 
 *(none yet — no sessions completed)*
 
@@ -105,7 +105,7 @@ User must demonstrate each in their own words, with their own examples, without 
 ## Overall Progress
 
 - **Phases complete:** 0 / 6
-- **Atoms introduced:** 13 (all at mastery 0 — seeds only)
-- **Atoms at mastery ≥ 3:** 0
-- **Atoms at mastery ≥ 4:** 0
-- **Atoms at mastery 5:** 0
+- **Units introduced:** 13 (all at mastery 0 — seeds only)
+- **Units at mastery ≥ 3:** 0
+- **Units at mastery ≥ 4:** 0
+- **Units at mastery 5:** 0

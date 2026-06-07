@@ -21,7 +21,7 @@ The teaching engine (`_teaching-engine/`) defines all universal prototypes (`LLL
 
 Defined by `<Subject>/_schema.md`. Applies only to that cartridge. Designed during bootstrapping.
 
-- Subject-specific atom types (concept, technique, theorem, kanji, period, event, etc.)
+- Subject-specific Prototypes (concept, technique, theorem, kanji, period, event, etc.)
 - Relationship vocabulary
 - Mastery scale (default 0–5 or subject-custom)
 - Custom session activities (beyond universal six)
@@ -44,7 +44,7 @@ LLL_Synthesis        → weekly-journal | monthly-essay | phase-end | quarterly-
 LLL_Source           → any external material (book, paper, video, class, etc.)
 LLL_State            → single source of truth for subject
 LLL_Subject_Manifest → subject's identity document (_subject.md)
-LLL_Atom             → generic atom prototype; specialized per cartridge
+LLL_Unit             → generic Unit prototype; specialized per cartridge
 ```
 
 These are fully templated in `_teaching-engine/_templates/` and inherited by every cartridge.
@@ -53,8 +53,8 @@ These are fully templated in `_teaching-engine/_templates/` and inherited by eve
 
 Per `_teaching-engine/03-SCHEMA-DESIGN.md`, every `<Subject>/_schema.md` must answer:
 
-- Q1–Q8 analytical questions (knowledge shape, authorities, atomic unit, relationships, progression, mastery endpoint, custom activities, mastery scale)
-- Atom type definitions (one per subject-specific type)
+- Q1–Q8 analytical questions (knowledge shape, authorities, discrete unit, relationships, progression, mastery endpoint, custom activities, mastery scale)
+- Prototype definitions (one per subject-specific type)
 - Relationship vocabulary
 - Mastery scale
 - Custom activities (if any)
@@ -64,19 +64,19 @@ Per `_teaching-engine/03-SCHEMA-DESIGN.md`, every `<Subject>/_schema.md` must an
 
 1. **Layer 1 never mentions a specific subject.** If the teaching engine names a particular subject anywhere (other than illustrative examples in tables), it's a bug.
 2. **Layer 2 never redefines Layer 1 prototypes.** A cartridge cannot redefine what `LLL_Session` is. It can only add to what Layer 1 provides.
-3. **Layer 3 must conform to Layer 2 where Layer 2 applies, and Layer 1 where Layer 1 applies.** An atom note must match its `Item_Prototype` definition in Layer 2. A session note must match the Layer 1 `LLL_Session` definition.
-4. **Forward compatibility.** Adding a new subject-specific atom type does not break any other cartridge or the teaching engine. Adding a new Layer 1 prototype requires a teaching engine update and, by extension, a migration of existing cartridges.
+3. **Layer 3 must conform to Layer 2 where Layer 2 applies, and Layer 1 where Layer 1 applies.** An Unit note must match its `Item_Prototype` definition in Layer 2. A session note must match the Layer 1 `LLL_Session` definition.
+4. **Forward compatibility.** Adding a new subject-specific Prototype does not break any other cartridge or the teaching engine. Adding a new Layer 1 prototype requires a teaching engine update and, by extension, a migration of existing cartridges.
 
 ## Auditing a cartridge
 
 A well-formed cartridge satisfies:
 
 - [ ] Has all required Layer 1 files (`_state.md`, `_subject.md`, `_schema.md`, `_curriculum.md`)
-- [ ] `_schema.md` answers Q1–Q8 and defines all atom types used in the cartridge
-- [ ] Every atom note has valid frontmatter with correct `Item_Prototype:` and `lll_`-prefixed properties per its type's definition
+- [ ] `_schema.md` answers Q1–Q8 and defines all Prototypes used in the cartridge
+- [ ] Every Unit note has valid frontmatter with correct `Item_Prototype:` and `lll_`-prefixed properties per its type's definition
 - [ ] Every session log conforms to the Layer 1 `LLL_Session` prototype template
-- [ ] `_state.md` references atoms that actually exist
-- [ ] No dangling `[[wiki-links]]` in atoms introduced in this cartridge's phases
+- [ ] `_state.md` references Units that actually exist
+- [ ] No dangling `[[wiki-links]]` in Units introduced in this cartridge's phases
 - [ ] Phase exit criteria are demonstrable, not vague
 - [ ] SR log exists for the current phase
 
@@ -84,7 +84,7 @@ If a cartridge fails audit, it's not ready for study. Fix before continuing.
 
 ## Evolution of the teaching engine
 
-If the teaching engine itself needs to change — new universal atom type, revised session protocol, modified pedagogy — the change must be:
+If the teaching engine itself needs to change — new universal Prototype, revised session protocol, modified pedagogy — the change must be:
 
 1. Documented in the relevant `_teaching-engine/` file with a version note
 2. Audited against every existing cartridge for compatibility

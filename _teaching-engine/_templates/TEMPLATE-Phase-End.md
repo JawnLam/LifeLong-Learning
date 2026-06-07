@@ -5,7 +5,7 @@ Title: ""
 lll_Subject: ""
 lll_Synthesis_Kind: phase-end
 lll_Phase_Context: ""
-lll_Atoms_Referenced: []
+lll_Units_Referenced: []
 lll_Intended_Venue: ""
 Review_Type: ""
 WordCount: 0
@@ -16,7 +16,7 @@ Needs_Processing: true
 
 # Phase <N> Translation — <Title>
 
-*2,000–3,000 words. One major atom from the phase, translated into the user's own practice or worldview.*
+*2,000–3,000 words. One major Unit from the phase, translated into the user's own practice or worldview.*
 
 ---
 
@@ -26,7 +26,7 @@ Needs_Processing: true
 
 ---
 
-## Atoms Referenced
+## Units Referenced
 
 ## Connections to Prior Phases
 

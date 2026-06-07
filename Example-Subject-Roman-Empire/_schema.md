@@ -1,6 +1,6 @@
 ---
 # This is a cartridge reference document, not a learning note.
-# It defines atom types for the Roman-Empire cartridge.
+# It defines Prototypes for the Roman-Empire cartridge.
 # See _teaching-engine/03-SCHEMA-DESIGN.md for the protocol.
 lll_Subject: Roman-Empire
 updated: 2026-06-01
@@ -8,7 +8,7 @@ updated: 2026-06-01
 
 # _schema — The Rise and Fall of the Roman Empire
 
-> **Subject-specific atom definitions. Follows the protocol in `_teaching-engine/03-SCHEMA-DESIGN.md`.**
+> **Subject-specific Unit definitions. Follows the protocol in `_teaching-engine/03-SCHEMA-DESIGN.md`.**
 
 ## Subject identity
 
@@ -20,23 +20,23 @@ updated: 2026-06-01
 
 **Q1 — Kinds of knowledge.** Primarily conceptual (institutions, mechanisms: cursus honorum, imperium, Principate vs Dominate, variety of governance forms) and declarative (names, dates, sequences). Some interpretive (competing theses of decline). Minimally procedural — there is no skill to practice; this is comprehension and synthesis.
 
-**Q2 — Canonical authority.** Yes, on two levels. Primary sources (Polybius, Livy, Tacitus, Suetonius, Cassius Dio, Ammianus Marcellinus, Procopius, Augustine, etc.) and major modern historians (Gibbon as the canonical decline-thesis voice; Peter Brown for late antiquity; Mary Beard, Adrian Goldsworthy, Bryan Ward-Perkins, Peter Heather as contemporary interpreters). Both categories matter; the **thinker** atom type accommodates both.
+**Q2 — Canonical authority.** Yes, on two levels. Primary sources (Polybius, Livy, Tacitus, Suetonius, Cassius Dio, Ammianus Marcellinus, Procopius, Augustine, etc.) and major modern historians (Gibbon as the canonical decline-thesis voice; Peter Brown for late antiquity; Mary Beard, Adrian Goldsworthy, Bryan Ward-Perkins, Peter Heather as contemporary interpreters). Both categories matter; the **thinker** Prototype accommodates both.
 
-**Q3 — Smallest quizzable unit.** A concept (e.g., *cursus honorum*), a thinker (e.g., *Tacitus*), a period (e.g., *Severan dynasty*), or an event (e.g., *Battle of Adrianople, 378 AD*). These are the four atom types.
+**Q3 — Smallest quizzable unit.** A concept (e.g., *cursus honorum*), a thinker (e.g., *Tacitus*), a period (e.g., *Severan dynasty*), or an event (e.g., *Battle of Adrianople, 378 AD*). These are the four Prototypes.
 
-**Q4 — Relationships between atoms.**
+**Q4 — Relationships between Units.**
 - `precedes` / `follows` — period→period or event→event chronological
 - `contains` — period contains events
 - `caused-by` / `causes` — event→event causal
 - `prefigures` — event or period anticipates a later development
-- `parallels` — institutional or historical parallel between non-adjacent atoms
+- `parallels` — institutional or historical parallel between non-adjacent Units
 - `analyzed-by` — event or period analyzed by a particular thinker
 - `student-of` / `teacher-of` — thinker-to-thinker (less common in history, used for historiographical lineage)
 - `influenced-by` / `influences` — thinker-to-thinker, weaker form
 - `instantiates` — event instantiates a concept (e.g., *Battle of Cannae* instantiates *imperium delegated to a dictator*)
 - `contrasts-with` — for sharpening conceptual boundaries (e.g., *Principate* contrasts with *Dominate*)
 
-**Q5 — Natural progression.** Strong chronological progression. Phase 1 (early Rome, kings to mid-Republic) must precede Phase 2 (Late Republic to Augustus). Within phases, lateral movement between atoms is fine. The historiographical thread (Q2 thinkers and the "why did Rome fall?" debate) runs alongside the chronology and is mostly back-loaded to phases 5–6.
+**Q5 — Natural progression.** Strong chronological progression. Phase 1 (early Rome, kings to mid-Republic) must precede Phase 2 (Late Republic to Augustus). Within phases, lateral movement between Units is fine. The historiographical thread (Q2 thinkers and the "why did Rome fall?" debate) runs alongside the chronology and is mostly back-loaded to phases 5–6.
 
 **Q6 — Mastery endpoint.** The user can:
 1. Narrate the arc of Roman history from founding to fall in a single sitting, with the load-bearing inflection points and institutional shifts
@@ -48,21 +48,21 @@ updated: 2026-06-01
 
 **Q8 — Mastery scale.** Default 0–5.
 
-## Atom type definitions
+## Prototype definitions
 
 ### concept
 
-- **Description:** An institution, idea, distinction, or mechanism — abstract enough to apply across multiple periods. The atomic unit of *understanding* in this subject.
+- **Description:** An institution, idea, distinction, or mechanism — abstract enough to apply across multiple periods. The discrete unit of *understanding* in this subject.
 - **Required frontmatter:**
   ```yaml
-  Item_Prototype: LLL_Atom
+  Item_Prototype: LLL_Unit
   Item_ID: "<slug>"
   Title: "<Concept Name>"
   lll_Subject: Roman-Empire
   Date_Added: <YYYY-MM-DD>
   Date_Modified: <YYYY-MM-DD>
   Needs_Processing: false
-  lll_Atom_Type: concept
+  lll_Unit_Type: concept
   lll_Phase: <1-6>
   lll_Status: <seed | active | weak | mastered>
   lll_Mastery: <0-5>
@@ -83,26 +83,26 @@ updated: 2026-06-01
   5. `## Analogies`
   6. `## Counter-Examples / Boundaries`
   7. `## Applications` (cite events, periods, or thinkers where this concept does work)
-  8. `## Related Atoms`
+  8. `## Related Units`
   9. `## Sources`
   10. `## Quiz Bank`
   11. `## Open Questions`
 - **Naming:** `Concept-Name.md` in PascalCase-With-Hyphens (e.g., `Cursus-Honorum.md`, `Mos-Maiorum.md`)
-- **Location:** `Atoms/Concepts/`
+- **Location:** `Units/Concepts/`
 
 ### thinker
 
 - **Description:** A historian, statesman, or commentator whose work or example matters for understanding the period. Includes both ancient (Polybius, Tacitus) and modern (Gibbon, Beard) historians.
 - **Required frontmatter:**
   ```yaml
-  Item_Prototype: LLL_Atom
+  Item_Prototype: LLL_Unit
   Item_ID: "<slug>"
   Title: "<Full Name>"
   lll_Subject: Roman-Empire
   Date_Added: <YYYY-MM-DD>
   Date_Modified: <YYYY-MM-DD>
   Needs_Processing: false
-  lll_Atom_Type: thinker
+  lll_Unit_Type: thinker
   lll_Phase: <primary phase number>
   lll_Status: <seed | active | weak | mastered>
   lll_Mastery: <0-5>
@@ -118,26 +118,26 @@ updated: 2026-06-01
   3. `## Method / Stance` (how they approach the subject; their bias, their genre, their reliability)
   4. `## Key Works`
   5. `## Contributions` (which concepts or events they're the primary source/interpreter for)
-  6. `## Related Atoms`
+  6. `## Related Units`
   7. `## Quotes Worth Keeping`
   8. `## Quiz Bank`
   9. `## Open Questions`
 - **Naming:** `Last-Name.md` or `Last-Name-First.md` if disambiguation needed (e.g., `Polybius.md`, `Livy.md`, `Gibbon.md`)
-- **Location:** `Atoms/Thinkers/`
+- **Location:** `Units/Thinkers/`
 
 ### period
 
-- **Description:** A bounded span of Roman history with a coherent character — political, institutional, or cultural. Period atoms are containers for the events and concepts that belong to them.
+- **Description:** A bounded span of Roman history with a coherent character — political, institutional, or cultural. Period Units are containers for the events and concepts that belong to them.
 - **Required frontmatter:**
   ```yaml
-  Item_Prototype: LLL_Atom
+  Item_Prototype: LLL_Unit
   Item_ID: "<slug>"
   Title: "<Period Name>"
   lll_Subject: Roman-Empire
   Date_Added: <YYYY-MM-DD>
   Date_Modified: <YYYY-MM-DD>
   Needs_Processing: false
-  lll_Atom_Type: period
+  lll_Unit_Type: period
   lll_Phase: <1-6>
   lll_Status: <seed | active | weak | mastered>
   lll_Mastery: <0-5>
@@ -150,28 +150,28 @@ updated: 2026-06-01
   1. `# <Period Name> (<dates>)`
   2. `## Character` (what defines this period)
   3. `## Key Institutions in Force`
-  4. `## Major Events Within` (links to event atoms)
+  4. `## Major Events Within` (links to event Units)
   5. `## Inflection Out` (what ends this period and starts the next)
   6. `## Concepts Operative in This Period`
   7. `## Thinkers / Sources for This Period`
   8. `## Quiz Bank`
   9. `## Open Questions`
 - **Naming:** `Period-Name.md` (e.g., `Early-Republic.md`, `Crisis-of-the-Third-Century.md`)
-- **Location:** `Atoms/Periods/`
+- **Location:** `Units/Periods/`
 
 ### event
 
-- **Description:** A bounded, dated occurrence with consequences. Battles, deaths, accessions, reforms, treaties, edicts. Event atoms are the load-bearing inflection points the user needs to be able to place and explain.
+- **Description:** A bounded, dated occurrence with consequences. Battles, deaths, accessions, reforms, treaties, edicts. Event Units are the load-bearing inflection points the user needs to be able to place and explain.
 - **Required frontmatter:**
   ```yaml
-  Item_Prototype: LLL_Atom
+  Item_Prototype: LLL_Unit
   Item_ID: "<slug>"
   Title: "<Event Name>"
   lll_Subject: Roman-Empire
   Date_Added: <YYYY-MM-DD>
   Date_Modified: <YYYY-MM-DD>
   Needs_Processing: false
-  lll_Atom_Type: event
+  lll_Unit_Type: event
   lll_Phase: <1-6>
   lll_Status: <seed | active | weak | mastered>
   lll_Mastery: <0-5>
@@ -187,23 +187,23 @@ updated: 2026-06-01
   4. `## Causes`
   5. `## Sources / Disputes` (where the historical record is solid, where it's contested)
   6. `## Concepts This Instantiates`
-  7. `## Related Atoms`
+  7. `## Related Units`
   8. `## Quiz Bank`
   9. `## Open Questions`
 - **Naming:** `Event-Name.md` (e.g., `Founding-Of-Rome.md`, `Battle-Of-Adrianople.md`)
-- **Location:** `Atoms/Events/`
+- **Location:** `Units/Events/`
 
 ## Relationship vocabulary
 
-Used in atom frontmatter and body links:
+Used in Unit frontmatter and body links:
 
 | Relation | Used between | Where it appears |
 |----------|--------------|------------------|
 | precedes / follows | period↔period, event↔event | Body, chronology sections |
-| contains | period→event, period→concept-in-force | Body of period atom |
+| contains | period→event, period→concept-in-force | Body of period Unit |
 | caused-by / causes | event↔event | Body, "Causes" / "Why It Mattered" sections |
 | prefigures | event→event, period→period | Body |
-| parallels | any↔any | Body, "Related Atoms" |
+| parallels | any↔any | Body, "Related Units" |
 | analyzed-by | event→thinker, period→thinker | Body, "Sources / Disputes" |
 | influenced-by / influences | thinker↔thinker | Body |
 | instantiates | event→concept | Body, "Concepts This Instantiates" |
@@ -238,11 +238,11 @@ Example-Subject-Roman-Empire/
 ├── _schema.md                       ← this file
 ├── _curriculum.md
 ├── _state.md
-├── Atoms/
-│   ├── Concepts/                    ← concept atoms
-│   ├── Thinkers/                    ← thinker atoms (ancient + modern)
-│   ├── Periods/                     ← period atoms
-│   └── Events/                      ← event atoms
+├── Units/
+│   ├── Concepts/                    ← concept Units
+│   ├── Thinkers/                    ← thinker Units (ancient + modern)
+│   ├── Periods/                     ← period Units
+│   └── Events/                      ← event Units
 ├── Sources/                         ← books, papers, videos, podcasts
 ├── Sessions/
 ├── Quizzes/

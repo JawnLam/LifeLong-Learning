@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "mos-maiorum"
 Title: "Mos Maiorum"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: concept
+lll_Unit_Type: concept
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -63,7 +63,7 @@ The phrase *mos maiorum* literally means "the way of the ancestors" or "the cust
 - [[Cursus-Honorum]] is partly defined by custom, partly by law — both layers operate
 - Late Republic dysfunction can be read as the collapse of shared belief in *mos maiorum*
 
-## Related Atoms
+## Related Units
 
 - [[Cursus-Honorum]]
 - [[Mixed-Constitution]]

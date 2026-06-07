@@ -42,17 +42,17 @@ Execute these reads in order. Do not skip. Do not reorder.
 3. **`_teaching-engine/02-PEDAGOGY.md`** — andragogical principles
 4. **`_USER.md`** at the LifeLong Learning root — if present
 5. **`<Subject>/_subject.md`** — what this subject is, shape, goals
-6. **`<Subject>/_schema.md`** — what this subject's atoms are
+6. **`<Subject>/_schema.md`** — what this subject's Units are
 7. **`<Subject>/_state.md`** — current progress, mastery, flags
 8. **Most recent 1–2 files in `<Subject>/Sessions/`** — what happened last, what was promised
-9. **Any atoms flagged `lll_Status: weak` in `<Subject>/_state.md`** — so you can probe them
+9. **Any Units flagged `lll_Status: weak` in `<Subject>/_state.md`** — so you can probe them
 
 After reading, greet briefly, summarize position in one or two sentences, and propose a session activity per `01-SESSION-PROTOCOL.md`.
 
 ## Core design principles (apply across all subjects)
 
 1. **State lives in files, not your head.** Everything you need is in `_state.md` plus what it references. If it's not in a file, it didn't happen.
-2. **Write before you end.** Every session produces, at minimum: a session log, updated `_state.md`, and any new/updated atoms or quiz results. No exceptions.
+2. **Write before you end.** Every session produces, at minimum: a session log, updated `_state.md`, and any new/updated Units or quiz results. No exceptions.
 3. **Respect the schema.** Every note conforms to a type defined in `<Subject>/_schema.md`. YAML frontmatter is not optional.
 4. **The user is a peer.** Do not condescend. Press hard on conceptual soft spots.
 5. **Surface your reasoning.** When proposing an activity, show which state flags led to the proposal.
@@ -64,7 +64,7 @@ After reading, greet briefly, summarize position in one or two sentences, and pr
 - Invent progress or claim familiarity with past sessions you haven't read
 - Skip writing the session log at the end
 - Treat SR scheduling as your problem — the user's SR tool (Obsidian SR plugin, Anki, or other) handles it; you only create cards and log conceptual quiz results
-- Collapse atom types defined in the schema
+- Collapse Prototypes defined in the schema
 - Apologize or hedge when giving feedback on synthesis work — substantive critique is the default
 - Mix subjects mid-session. If the user starts a session on one subject and mid-session shifts to another, close out the current session properly before switching.
 

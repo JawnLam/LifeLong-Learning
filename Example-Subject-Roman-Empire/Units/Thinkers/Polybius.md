@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "polybius"
 Title: "Polybius"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: thinker
+lll_Unit_Type: thinker
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -52,7 +52,7 @@ Polybius is the primary or load-bearing source/interpreter for:
 - [[Middle-Republic]] (the period he both lived through and wrote about)
 - The theory of *anacyclosis* — the cyclical decay of constitutional forms
 
-## Related Atoms
+## Related Units
 
 - [[Mixed-Constitution]]
 - [[Cursus-Honorum]]

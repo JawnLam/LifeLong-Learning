@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "second-punic-war"
 Title: "Second Punic War"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: event
+lll_Unit_Type: event
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -53,7 +53,7 @@ The two main sources agree on the broad outline but differ in detail (e.g., the 
 - [[Mixed-Constitution]] — Polybius's argument that Rome's system worked partly *because* it could absorb a defeat like Cannae and continue fighting
 - The early shape of [[Provincial-Government]] as Rome learns how to administer territories that aren't allied Italian states but are subjects
 
-## Related Atoms
+## Related Units
 
 - [[Middle-Republic]] (the period in which this war sits)
 - [[Polybius]] (the principal interpreter; his patron's grandfather won the war)

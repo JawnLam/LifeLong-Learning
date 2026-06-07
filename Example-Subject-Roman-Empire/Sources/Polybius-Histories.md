@@ -39,10 +39,10 @@ The other surviving books of the *Histories* (1–5 in full, plus fragments of o
 
 ## Approach notes
 
-- **Pace:** Book 6 is short (a long evening's reading). Read once for the structure of the argument, then re-read specific sections when working on related atoms.
+- **Pace:** Book 6 is short (a long evening's reading). Read once for the structure of the argument, then re-read specific sections when working on related Units.
 - **Depth:** This is the densest piece of theory in the Phase 1 reading. Take notes on Polybius's specific claims about *which* institution corresponds to *which* constitutional element (monarchy/aristocracy/democracy) — these claims are the load-bearing content for [[Mixed-Constitution]].
 - **What to watch for:** Where does Polybius's Greek theoretical framework strain against the Roman reality? Where does his framework do real work that Roman self-description couldn't do?
-- **Pairing:** Read after Beard's relevant chapter (for context on Polybius's career and biases); pair with the [[Polybius]] thinker atom.
+- **Pairing:** Read after Beard's relevant chapter (for context on Polybius's career and biases); pair with the [[Polybius]] thinker Unit.
 
 ## Progress log
 
@@ -54,14 +54,14 @@ Source seeded. Not yet started.
 
 *To be populated.*
 
-## Atoms Introduced or Deepened
+## Units Introduced or Deepened
 
 - [[Mixed-Constitution]] (the core text for this concept)
-- [[Polybius]] (the author atom)
+- [[Polybius]] (the author Unit)
 - [[Cursus-Honorum]] (Polybius describes it institutionally)
 - [[Imperium]] (Polybius describes consular command authority)
 - [[Middle-Republic]] (the period Polybius is analyzing)
-- *Anacyclosis* (the constitutional-cycle theory — may become its own concept atom)
+- *Anacyclosis* (the constitutional-cycle theory — may become its own concept Unit)
 
 ## Questions for Assistant
 

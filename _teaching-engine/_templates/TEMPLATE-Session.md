@@ -7,7 +7,7 @@ lll_Session_Number:
 lll_Activity: ""
 lll_Phase: 
 lll_Duration_Minutes: 
-lll_Atoms_Engaged: []
+lll_Units_Engaged: []
 lll_Source_Active: ""
 lll_Quality_Gates_Passed: false
 Date_Added: 
@@ -29,9 +29,9 @@ Needs_Processing: false
 
 *Narrative of the session. Dialogue summary, key moves, moments where the user struggled or broke through. Substantive — this is a teaching record.*
 
-## Atoms Updated
+## Units Updated
 
-| Atom | Type | Mastery before | Mastery after | Note |
+| Unit | Type | Mastery before | Mastery after | Note |
 |------|------|:-:|:-:|------|
 |  |  | 0 | 1 |  |
 
@@ -53,7 +53,7 @@ Needs_Processing: false
 
 ## Assistant Observations
 
-*Patterns worth flagging. Soft spots. Cross-atom connections that landed or didn't.*
+*Patterns worth flagging. Soft spots. Cross-Unit connections that landed or didn't.*
 
 ## Open Threads for Next Session
 
@@ -63,7 +63,7 @@ Needs_Processing: false
 ## Quality Gates Checklist
 
 - [ ] At least one concrete learning moment captured
-- [ ] Mastery levels updated for engaged atoms
+- [ ] Mastery levels updated for engaged Units
 - [ ] Session log written (this file)
 - [ ] `_state.md` updated
 - [ ] Explicit Open Thread left for next session

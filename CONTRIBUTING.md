@@ -96,7 +96,7 @@ A cartridge is a complete `<Subject>/` folder. Sharing patterns:
 
 - **As an example in this repo:** rename to `Example-Subject-<Name>/`, scrub all personal references (user goals, prior knowledge), and submit as a PR. Useful for demonstrating the system's range.
 - **As a personal share:** zip and send. The recipient drops it into their own `LifeLong Learning/` folder and edits `_subject.md` to reflect their own goals and prior knowledge.
-- **As a curriculum reference:** strip the user-specific fields from `_subject.md` and ship just the `_schema.md` + `_curriculum.md` + seed atoms. Useful for teaching the system itself.
+- **As a curriculum reference:** strip the user-specific fields from `_subject.md` and ship just the `_schema.md` + `_curriculum.md` + seed Units. Useful for teaching the system itself.
 
 ---
 

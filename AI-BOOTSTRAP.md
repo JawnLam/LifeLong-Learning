@@ -42,7 +42,7 @@ Read each in full. "Skim" is not a valid mode for these core files.
 
 ### 2. Mandatory environment checks
 
-- **Folder writability.** Verify you can write to `{ROOT}/<Subject>/Sessions/`, `<Subject>/_state.md`, and the subject's atom folders for any active cartridge. If the environment is read-only (a sandbox chat, a restricted upload context), declare **sandbox mode** and keep session state inline in the conversation rather than writing files. Tell the user this.
+- **Folder writability.** Verify you can write to `{ROOT}/<Subject>/Sessions/`, `<Subject>/_state.md`, and the subject's Unit folders for any active cartridge. If the environment is read-only (a sandbox chat, a restricted upload context), declare **sandbox mode** and keep session state inline in the conversation rather than writing files. Tell the user this.
 - **Existing cartridges.** List the subfolders at `{ROOT}/` (excluding `_teaching-engine/` and files starting with a dot or underscore). Each is a candidate cartridge. Note them.
 - **Active subject hints.** If `{ROOT}/_USER.md` lists an active subject or the user's first message names one, that's the active subject. Otherwise ask.
 
@@ -65,7 +65,7 @@ Your first user-facing message should be short — two to four sentences — and
 
 Examples:
 
-> *"Pre-flight complete. I've read the teaching engine and your Roman-Empire cartridge. You're at Phase 1, Session 003, with one atom flagged weak (`Augustan-Settlement`). My proposal is a REVIEW-WEAK session on that atom. Alternative: TEACH on the next Phase 1 atom (`Crisis-of-Third-Century`). Your call."*
+> *"Pre-flight complete. I've read the teaching engine and your Roman-Empire cartridge. You're at Phase 1, Session 003, with one Unit flagged weak (`Augustan-Settlement`). My proposal is a REVIEW-WEAK session on that Unit. Alternative: TEACH on the next Phase 1 Unit (`Crisis-of-Third-Century`). Your call."*
 
 > *"Pre-flight complete. No cartridge exists yet for what you want to learn, so I'll walk you through setting one up. First question: what's the subject, stated precisely? 'World War II' is different from 'WWII Pacific theater command decisions' — the more specific you are, the better the curriculum I can design with you."*
 
@@ -91,7 +91,7 @@ If you cannot complete pre-flight (missing files, unreadable folder, ambiguous u
 │   └── _meta/                                                   ← schema-of-schemas + SR conventions
 └── <Subject>/                                                   ← zero or more cartridges
     ├── _subject.md, _schema.md, _curriculum.md, _state.md
-    ├── Atoms/, Sources/, Sessions/, Quizzes/, Synthesis/, SR-Cards/
+    ├── Units/, Sources/, Sessions/, Quizzes/, Synthesis/, SR-Cards/
 ```
 
 ## Core principles (apply to every session, regardless of subject)

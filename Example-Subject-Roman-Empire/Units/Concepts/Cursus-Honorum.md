@@ -1,12 +1,12 @@
 ---
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Item_ID: "cursus-honorum"
 Title: "Cursus Honorum"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
-lll_Atom_Type: concept
+lll_Unit_Type: concept
 lll_Phase: 1
 lll_Status: seed
 lll_Mastery: 0
@@ -73,7 +73,7 @@ The *cursus honorum* was the structure that made the Republic *the Republic*. Th
 - The breakdown of the *cursus* under [[Marius]] (multiple consulships), [[Sulla]], and especially [[Pompey]] is a structural cause of the Republic's collapse
 - The Augustan Settlement absorbs the *cursus* into the imperial system but hollows it out — emperors decide who holds the offices
 
-## Related Atoms
+## Related Units
 
 - [[Mos-Maiorum]] (the *cursus* was reinforced by custom as well as law)
 - [[Imperium]] (praetors and consuls held imperium; lower offices did not)

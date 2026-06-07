@@ -37,7 +37,7 @@
 
 ## Why it matters here
 
-*Where in the curriculum. What atoms it introduces or deepens.*
+*Where in the curriculum. What Units it introduces or deepens.*
 
 ## Approach notes
 
@@ -53,9 +53,9 @@
 
 *Paraphrased or cited excerpts, marginalia, section-level distillations.*
 
-## Atoms Introduced or Deepened
+## Units Introduced or Deepened
 
-- [[Atom-Name]] — how this source relates to it
+- [[Unit-Name]] — how this source relates to it
 
 ## Questions for Assistant
 

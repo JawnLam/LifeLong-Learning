@@ -1,9 +1,9 @@
 ---
 Item_ID: "UUID-OR-SLUG"
-Item_Prototype: LLL_Atom
+Item_Prototype: LLL_Unit
 Title: ""
 lll_Subject: ""
-lll_Atom_Type: ""
+lll_Unit_Type: ""
 lll_Phase: 
 lll_Status: seed
 lll_Mastery: 0
@@ -20,7 +20,7 @@ Date_Modified:
 Needs_Processing: false
 ---
 
-# <Atom Name>
+# <Unit Name>
 
 ## One-Sentence Statement
 
@@ -34,7 +34,7 @@ Needs_Processing: false
 
 ## Applications
 
-## Related Atoms
+## Related Units
 
 - [[...]]
 

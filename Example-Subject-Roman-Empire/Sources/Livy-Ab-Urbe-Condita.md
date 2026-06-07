@@ -37,7 +37,7 @@ For Phase 1, Livy provides:
 
 ## Approach notes
 
-- **Pace:** Read the five books as literature first, then return to specific episodes when working on related atoms
+- **Pace:** Read the five books as literature first, then return to specific episodes when working on related Units
 - **Depth:** Read with Beard's interpretive caveats in mind. The events as Livy tells them are not the events as they happened.
 - **What to watch for:** Note which episodes feel literarily over-shaped — these are usually the legendary ones. Cattle counts and military details tend to be more reliable than dramatic set-pieces.
 - **Pairing:** Read after Beard's relevant chapter (to have the analytical frame); pair with Polybius Book 6 (for the institutional frame Livy assumes).
@@ -52,7 +52,7 @@ Source seeded. Not yet started.
 
 *To be populated.*
 
-## Atoms Introduced or Deepened
+## Units Introduced or Deepened
 
 - [[Founding-Of-Rome]] (canonical narrative source)
 - [[Expulsion-Of-Tarquins]]

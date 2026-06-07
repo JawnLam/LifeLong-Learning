@@ -7,7 +7,7 @@ updated: 2026-05-31
 
 # SR Card Conventions
 
-Every cartridge can use spaced repetition. The assistant generates cards embedded in atom notes (or in dedicated SR-card files), the user's SR tool handles all scheduling, and the assistant logs performance in a per-phase SR log.
+Every cartridge can use spaced repetition. The assistant generates cards embedded in Unit notes (or in dedicated SR-card files), the user's SR tool handles all scheduling, and the assistant logs performance in a per-phase SR log.
 
 Supported SR tools include the Obsidian **Spaced Repetition** plugin, Anki (with `apkg` export or via plugins), Mochi, RemNote, or any other SR tool the user prefers. The card syntax below targets the Obsidian SR plugin; for other tools, adapt the syntax to match.
 
@@ -37,31 +37,31 @@ Three colons `:::` creates a bidirectional card.
 
 ## Where cards live
 
-Each atom note has a `## Quiz Bank` section. When the assistant promotes a quiz-bank question into an SR card, it moves the question into an embedded cards section at the bottom of the note. The plugin picks up all cards in any note in the vault.
+Each Unit note has a `## Quiz Bank` section. When the assistant promotes a quiz-bank question into an SR card, it moves the question into an embedded cards section at the bottom of the note. The plugin picks up all cards in any note in the vault.
 
-Optionally, all SR cards can live in a dedicated file per atom in `<Subject>/SR-Cards/`, but embedding in the atom is preferred — keeps context next to the card.
+Optionally, all SR cards can live in a dedicated file per Unit in `<Subject>/SR-Cards/`, but embedding in the Unit is preferred — keeps context next to the card.
 
 ## Card generation rules
 
-- **No cards for atoms at mastery 0 or 1.** Premature cards train recall of words, not understanding. Wait until mastery 2.
-- **Create 2–5 cards per atom**, varying in form:
+- **No cards for Units at mastery 0 or 1.** Premature cards train recall of words, not understanding. Wait until mastery 2.
+- **Create 2–5 cards per Unit**, varying in form:
   - One definitional (recall)
   - One application (transfer)
   - One counter-example / boundary (sharpen)
   - Optional: one connection
   - Metacognitive questions are poor SR cards — keep them for Socratic quizzes
-- **Update `lll_SR_Cards_Created` in atom frontmatter** whenever cards are added.
+- **Update `lll_SR_Cards_Created` in Unit frontmatter** whenever cards are added.
 
 ## Card quality standards
 
 - Answerable in one to three sentences
 - Answers unambiguous
 - Test understanding, not trivia (dates, page numbers, biographical minutiae)
-- If a card has failed (`again`) twice in its last three reviews, the atom gets flagged `lll_Status: weak` in `_state.md`
+- If a card has failed (`again`) twice in its last three reviews, the Unit gets flagged `lll_Status: weak` in `_state.md`
 
 ## Performance logging
 
-After SR quizzing, the assistant appends rows to `<Subject>/Quizzes/SR-Performance-Log/Phase-<N>-SR-Log.md`. Separate from the plugin's own records so performance can be queried across atoms and sessions without plugin-specific tooling.
+After SR quizzing, the assistant appends rows to `<Subject>/Quizzes/SR-Performance-Log/Phase-<N>-SR-Log.md`. Separate from the plugin's own records so performance can be queried across Units and sessions without plugin-specific tooling.
 
 ## Subject-specific card forms
 
