@@ -90,7 +90,57 @@ When authoring docs at the root (README, INSTALL, OPERATOR-GUIDE, this file):
 
 ---
 
-## 6. Sharing cartridges
+## 6. Content zones (OVE Convention 8)
+
+Every file in this repo belongs to one of four zones. Knowing which zone a file is in tells you whether the release owns it (the engine) or the operator owns it.
+
+### Engine Zone — release-owned; updated by `git pull`
+
+| Path pattern | Notes |
+|--------------|-------|
+| `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md`, `VERSION.md`, `CHANGELOG.md` | Front-door docs |
+| `_teaching-engine/**` | Engine chapters, templates, meta |
+| `_Prototypes/**` | OVE Convention 6 — LLL's own Prototype definitions |
+| `_USER.md.template` | Template only; the populated `_USER.md` is operator-private |
+| `.gitignore` | Engine-zone file; its patterns define the Operator-Private patterns below |
+
+**Engine Zone files do not get hand-edited by operators.** Customizations belong in the Operator-Extension Zone (your own subject cartridges) or in per-subject configuration (`_schema.md`, `_curriculum.md`, `_subject.md`).
+
+### Operator-Private Zone — gitignored; never tracked
+
+| Pattern | Why |
+|---------|-----|
+| `_USER.md` | Operator profile; identity, communication preferences, personal context (F3) |
+| `<Subject>/_state.md` | Per-subject state; operator's live working state |
+| `<Subject>/_subject.md` | Per-subject identity card (your goals, prior knowledge, cadence) |
+| `<Subject>/Sessions/*.md` | Per-subject session logs; verbatim AI/operator conversation |
+| `<Subject>/Quizzes/SR-Performance-Log/*.md` | Per-subject SR logs (your retention performance) |
+| `<Subject>/Synthesis/**/*.md` | Per-subject synthesis drafts (weekly/monthly/phase-end/quarterly) |
+| `.DS_Store`, `.obsidian/`, IDE caches | Filesystem-noise |
+
+These patterns are in `.gitignore`. The `!Example-Subject-*/**` override re-includes the worked-example subject so it remains tracked (Shipped Examples Zone).
+
+If you want to track your own subject despite the default ignore, edit `.gitignore` to remove the cartridge-content exclusions before your first commit on your own work.
+
+### Operator-Extension Zone — operator-created; survives `git pull`
+
+The OV is designed to be extended at the OV root by adding new subject cartridge folders parallel to the shipped example.
+
+| Pattern | Notes |
+|---------|-------|
+| `<Subject>/` at the LLL root (anything other than `Example-Subject-*`) | Your own subject cartridges; not in the release; untracked unless you `git add -f` (or remove the cartridge-content `.gitignore` exclusions before commit) |
+
+`git pull` never touches Operator-Extension folders because they aren't in the release tree.
+
+### Shipped Examples Zone — release-owned; updated by `git pull`
+
+| Path | Notes |
+|------|-------|
+| `Example-Subject-Roman-Empire/` | Worked example: "The Rise and Fall of the Roman Empire" |
+
+**Shipped Examples are reference implementations.** If you want to riff on the example, copy it into an Operator-Extension Zone cartridge (`cp -r Example-Subject-Roman-Empire My-Roman-Study`) and customize there.
+
+## 7. Sharing cartridges
 
 A cartridge is a complete `<Subject>/` folder. Sharing patterns:
 

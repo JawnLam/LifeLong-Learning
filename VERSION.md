@@ -1,9 +1,9 @@
 ---
-lll_version: "1.2.0"
-schema_version: "1.2"
+lll_version: "1.3.0"
+schema_version: "1.3"
 schema_status: "STABLE"
 release_date: 2026-06-06
-release_phase: "Convention 6 adoption: _Prototypes/ folder ships 10 LLL_*.md Prototype definitions"
+release_phase: "Minor release — OVE Conventions 7 (install-and-update pattern) and 8 (engine vs operator-content boundary); INSTALL/OPERATOR-GUIDE/CONTRIBUTING all updated for Convention 7+8 conformance"
 ---
 
 # LifeLong Learning — Version

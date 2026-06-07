@@ -2,6 +2,45 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] — 2026-06-06
+
+Adopts OVE Conventions 7 (install-and-update pattern) and 8 (engine vs operator-content boundary). Documents the install/update workflow and the four-zone content boundary in front-door docs.
+
+### Added — OVE Convention 7 (install-and-update pattern)
+
+`INSTALL.md` rewritten with:
+
+- **§ 1** — canonical git-clone-with-push-disabled install snippet. Concrete URL: `https://github.com/JawnLam/LifeLong-Learning.git`. Folder convention: `LifeLong-Learning-v<major>.<minor>`.
+- **§ 1a** — alternative no-git install (download ZIP, manual copy).
+- **§ 8 — Updating** — `git fetch` + `git log --oneline HEAD..origin/main` + `git pull --ff-only`, with stash-pop fallback for when local engine edits would conflict.
+- Major.minor folder transition snippet (`mv LifeLong-Learning-v1.3 LifeLong-Learning-v1.4`).
+
+`OPERATOR-GUIDE.md` gains:
+
+- **§ 10 — Updates and troubleshooting** — clean fast-forward, stash-pop conflict resolution (`git checkout --theirs`), recovery for lost files, major.minor folder transitions, contributing back upstream (re-enable push to your fork; never to upstream).
+
+### Added — OVE Convention 8 (engine vs operator-content boundary)
+
+`CONTRIBUTING.md` gains:
+
+- **§ 6 — Content zones** — declares the four zones with concrete path patterns:
+  - **Engine Zone** — front-door docs, `_teaching-engine/`, `_Prototypes/`, `_USER.md.template`, `.gitignore`
+  - **Operator-Private Zone** — `_USER.md`, per-subject `_state.md`/`_subject.md`, session logs, Socratic-conceptual quizzes, SR-performance logs, synthesis drafts (weekly/monthly/phase-end/quarterly), SR-card files
+  - **Operator-Extension Zone** — operator's own subject cartridges parallel to `Example-Subject-*`
+  - **Shipped Examples Zone** — `Example-Subject-Roman-Empire/`
+
+`OPERATOR-GUIDE.md` gains:
+
+- **§ 9 — Engine vs your work** — plain-English explanation of the four-zone boundary, with concrete file/folder examples per zone.
+
+### Notes
+
+This is a minor release. No engine prose changed beyond the documentation additions; no schema change; no Prototype changes. The `.gitignore` already had the right Operator-Private patterns from v1.0; v1.3.0 just documents them in CONTRIBUTING.
+
+The minor bump (rather than patch) reflects that the install/update story now has first-class documentation and the four-zone boundary is now a documented contract operators can rely on.
+
+This release is part of an OVE-coordinated multi-OV cycle: OVE v1.2.0 codifies Conventions 7 and 8; LFW v1.7.1, SOLVE-eX v2.1.2, and this release retrofit them across the OV ecosystem.
+
 ## [1.2.0] — 2026-06-06
 
 Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_Prototypes/` folder for portability). Anyone cloning this repo without the operator's vault Infrastructure now gets the full LLL Prototype definitions out of the box.

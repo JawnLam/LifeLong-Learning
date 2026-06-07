@@ -122,10 +122,124 @@ If you're studying multiple related subjects (e.g., Roman Empire + Late Antiquit
 
 Decisions to make at install time:
 
-- **Version control?** `git init` inside your `LifeLong Learning/` folder is a good idea. The shipped `.gitignore` excludes session/quiz/state files by default (so you can share the engine without leaking personal study). If you want to track your own study history privately, edit `.gitignore` to remove those exclusions before your first commit.
+- **Version control?** The canonical install pattern is a `git clone` with push disabled (see `INSTALL.md § 1`). The shipped `.gitignore` excludes session/quiz/state files by default (so you can share the engine without leaking personal study). If you want to track your own study history privately, edit `.gitignore` to remove those exclusions before your first commit.
 - **Cloud sync?** Dropbox / iCloud / OneDrive / Google Drive all work. Sync gives you cross-device continuity at the cost of some conflict risk if you start the same session on two machines.
 - **Backups?** Treat your `LifeLong Learning/` folder as you'd treat any irreplaceable personal work. Years of study history live in those markdown files.
 
+## 9. Engine vs your work — the four content zones (OVE Convention 8)
+
+Your installed LLL folder has four content zones. Knowing which is which prevents the operator-pulls-and-loses-work failure mode.
+
+### Engine Zone — release-owned; updated by `git pull`
+
+The files that LLL's release ships:
+
+- Front-door docs: `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md`, `VERSION.md`, `CHANGELOG.md`
+- `_teaching-engine/` — engine chapters, templates, meta
+- `_Prototypes/` — LLL's own Prototype definitions
+- `_USER.md.template` — the template, not the populated `_USER.md`
+- `.gitignore` — engine-zone file
+
+**Do not edit Engine Zone files directly.** Updates from `git pull` overwrite them. Customizations belong in Operator-Extension Zone cartridges or in per-subject configuration (`_schema.md`, `_curriculum.md`, `_subject.md`).
+
+### Operator-Private Zone — gitignored; never tracked
+
+The `.gitignore` excludes:
+
+- Your operator profile (`_USER.md`)
+- Per-subject state (`<Subject>/_state.md`), identity (`<Subject>/_subject.md`)
+- Session logs (`<Subject>/Sessions/*.md`), Socratic-conceptual quizzes
+- SR performance logs (`<Subject>/Quizzes/SR-Performance-Log/*.md`)
+- Synthesis drafts (weekly journals, monthly essays, phase-end translations, quarterly drafts)
+- SR-card files
+
+These never get pushed and never get touched by `git pull`. The `!Example-Subject-*/...` overrides re-include the worked example's bootstrap session log and `_state.md` (Shipped Examples Zone).
+
+### Operator-Extension Zone — your subject cartridges; survives `git pull`
+
+This is where your work lives. Every subject you bootstrap through LLL becomes a folder at the LLL root.
+
+`<Subject>/` folders that aren't named `Example-Subject-*` are not in LLL's release, so `git pull` never touches them. They're yours.
+
+### Shipped Examples Zone — release-owned; updated by `git pull`
+
+The one worked-example subject that demonstrates LLL:
+
+- `Example-Subject-Roman-Empire/` — "The Rise and Fall of the Roman Empire"
+
+**Do not edit Shipped Examples directly.** If you want to riff on the example, copy it into an Extension Zone cartridge (`cp -r Example-Subject-Roman-Empire My-Roman-Study`) and customize there.
+
+## 10. Updates and troubleshooting
+
+The canonical update workflow lives in `INSTALL.md § 8`. Common scenarios:
+
+### Clean fast-forward (no local engine modifications)
+
+```bash
+cd ~/Operating-Volumes/LifeLong-Learning-v<your-major>.<minor>
+git fetch origin
+git log --oneline HEAD..origin/main          # what's incoming
+git pull --ff-only origin main
+```
+
+### Fast-forward fails because you have local engine modifications
+
+```bash
+git status                                    # see what's modified
+git stash push --include-untracked -m "pre-update state"
+git pull --ff-only origin main
+git stash pop                                 # may produce conflicts on engine files you edited
+```
+
+If `git stash pop` reports conflicts, the conflict is between *your local edit* of an engine file and *the upstream release's version*. You almost always want the upstream version (engine evolution generally improves what's there):
+
+```bash
+git checkout --theirs <conflicting-file>
+git add <conflicting-file>
+# OR — abandon your local edits entirely:
+git checkout origin/main -- <conflicting-file>
+```
+
+If your local edit was load-bearing, copy it to a side file before checkout, then reconcile.
+
+### Update lost a file you cared about
+
+`git pull` only updates tracked paths. If a file disappeared, either: (a) the release explicitly removed it (the `CHANGELOG.md` will say so), or (b) it was a gitignored file you forgot was ignored. For (a), the file is recoverable via `git log --all --oneline -- <path>`. For (b), check whether the file matched a `.gitignore` pattern.
+
+### Major.minor folder transition
+
+When the release notes say to rename your folder:
+
+```bash
+cd ~/Operating-Volumes/
+mv LifeLong-Learning-v<old> LifeLong-Learning-v<new>
+cd LifeLong-Learning-v<new>
+git status   # should show clean
+```
+
+The folder rename doesn't affect git; the rename is for your filesystem clarity.
+
+### Contributing back upstream
+
+To contribute back (open a PR against the upstream LLL), re-enable push to *your own fork* (never to upstream):
+
+```bash
+# Replace with your fork's URL
+git remote set-url --push origin https://github.com/<your-username>/LifeLong-Learning.git
+
+# Make a branch, commit, push to your fork, open a PR on GitHub
+git checkout -b my-contribution
+# ... your changes ...
+git commit -m "..."
+git push origin my-contribution
+```
+
+When you're done contributing, re-disable push to protect your private study work going forward:
+
+```bash
+git remote set-url --push origin DISABLED_TO_PREVENT_ACCIDENTAL_PUSH_OF_PERSONAL_WORK
+```
+
 ## Version
 
-This operator guide ships with LifeLong Learning v1.0.0. See `VERSION.md`.
+This operator guide ships with LifeLong Learning v1.3.0. See `VERSION.md`.

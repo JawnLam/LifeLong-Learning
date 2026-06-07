@@ -2,16 +2,43 @@
 
 This is the step-by-step setup for a fresh installation. Once setup is complete, you only ever need `README.md` + `AI-BOOTSTRAP.md` — the AI handles everything else at runtime.
 
-## 1. Get the folder
+## 1. Install (recommended: git clone with push disabled)
 
-Copy the entire `LifeLong Learning/` folder to local disk in a location your AI assistant can read. Common choices:
+This is the **canonical install pattern per OVE Convention 7** — git-tracked so you can `git pull` future releases; push disabled so you can't accidentally upload your private study work.
 
+```bash
+# Choose a parent folder. Anything works — Dropbox-synced, iCloud-synced, Obsidian vault, etc.
+mkdir -p ~/Operating-Volumes
+cd ~/Operating-Volumes
+
+# Clone into a folder named with the current major.minor.
+# (Check VERSION.md or the GitHub releases page for the current version.)
+git clone https://github.com/JawnLam/LifeLong-Learning.git \
+  LifeLong-Learning-v1.3
+
+# Disable push remote — protects your study work against accidental upload.
+cd LifeLong-Learning-v1.3
+git remote set-url --push origin DISABLED_TO_PREVENT_ACCIDENTAL_PUSH_OF_PERSONAL_WORK
+
+# Verify
+git remote -v
+# Expect: origin fetch URL real; origin push URL = DISABLED_TO_PREVENT_ACCIDENTAL_PUSH_OF_PERSONAL_WORK
+```
+
+**Why the folder name has a version suffix.** The convention is `LifeLong-Learning-v<major>.<minor>`. When a new major.minor ships (e.g., v1.4), `OPERATOR-GUIDE.md § Updates` walks you through renaming the folder so old and new can briefly coexist during the transition.
+
+**Why push is disabled.** Almost everything you do in this folder beyond reading the engine is private study work — your Units, your Quizzes, your Synthesis pieces, your SR Logs, your session histories. The push-disabled default prevents the worst-case operator-error: `git push` accidentally uploading your in-progress study to the public LLL repo. You can re-enable push to your own fork if you want to contribute back upstream (see `OPERATOR-GUIDE.md § Contributing back`).
+
+## 1a. Alternative install (no git tracking)
+
+If you don't want git tracking — you'd rather treat this as a snapshot reference, no updates — you can also just download the folder:
+
+- **Plain copy:** Download a release ZIP from the GitHub releases page; unzip anywhere your AI assistant can read.
 - **Cloud-synced folder** (Dropbox, iCloud, OneDrive, Google Drive) — convenient if you want the same vault available across devices.
-- **Project folder inside a code editor** (VS Code, Cursor, Windsurf, JetBrains) — convenient if you plan to run sessions via an in-editor AI agent or Claude Code.
-- **Obsidian vault** — open the folder as a vault. Recommended if you want the full experience with Spaced Repetition cards and Bases queries.
-- **Plain local folder** — works for any AI environment that supports file-attachment uploads (ChatGPT Projects, Claude.ai Projects, Gemini, etc.).
+- **Obsidian vault** — recommended for the full experience with Spaced Repetition cards and Bases queries.
+- **Plain local folder** — works for any AI environment that supports file-attachment uploads.
 
-The folder is fully self-contained. No `git clone` is required, no network fetch happens at runtime, no path is hard-coded into the contents. Move it anywhere readable.
+The folder is fully self-contained. No network fetch happens at runtime; no paths are hard-coded. The trade-off versus the git-tracked install: you don't get `git pull` updates — you have to re-download each release.
 
 ## 2. (Optional) Configure your user profile
 
@@ -84,6 +111,36 @@ A LifeLong Learning vault is just markdown files. To move it:
 
 For deeper operational guidance, see `OPERATOR-GUIDE.md`. To extend the system, see `CONTRIBUTING.md`.
 
+## 8. Updating (when a new release ships)
+
+When LLL ships a new release on GitHub (announced in `CHANGELOG.md`):
+
+```bash
+cd ~/Operating-Volumes/LifeLong-Learning-v<your-current-major>.<minor>
+
+git fetch origin
+git log --oneline HEAD..origin/main           # preview what's incoming
+
+# If you have no local engine modifications: clean fast-forward
+git pull --ff-only origin main
+
+# If you have local engine modifications: stash → pull → pop
+git stash push --include-untracked -m "pre-update state"
+git pull --ff-only origin main
+git stash pop                                  # resolve any conflicts
+```
+
+**When major.minor changes (e.g., v1.3 → v1.4 ships):**
+
+```bash
+cd ~/Operating-Volumes/
+mv LifeLong-Learning-v1.3 LifeLong-Learning-v1.4
+```
+
+The CHANGELOG entry for the new major.minor will tell you whether folder rename is recommended or required. For pure-patch releases (e.g., v1.3.0 → v1.3.1), no folder rename is needed.
+
+For troubleshooting common update issues (fast-forward conflicts, stash-pop merge conflicts, dirty working tree blocking pull), see `OPERATOR-GUIDE.md § Updates and troubleshooting`.
+
 ## Version
 
-This install guide ships with LifeLong Learning v1.0.0. See `VERSION.md` for full release metadata.
+This install guide ships with LifeLong Learning v1.3.0. See `VERSION.md` for full release metadata.
