@@ -1,14 +1,14 @@
 ---
-lll_version: "1.1.0"
-schema_version: "1.1"
+lll_version: "1.2.0"
+schema_version: "1.2"
 schema_status: "STABLE"
 release_date: 2026-06-06
-release_phase: "Vocabulary clean-up: atom → Unit"
+release_phase: "Convention 6 adoption: _Prototypes/ folder ships 10 LLL_*.md Prototype definitions"
 ---
 
 # LifeLong Learning — Version
 
-This is LifeLong Learning **v1.1.0** — vocabulary clean-up release.
+This is LifeLong Learning **v1.2.0** — Convention 6 (portability) adoption release.
 
 ## Version identifiers
 

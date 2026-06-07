@@ -2,6 +2,25 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-06-06
+
+Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_Prototypes/` folder for portability). Anyone cloning this repo without the operator's vault Infrastructure now gets the full LLL Prototype definitions out of the box.
+
+### Added — `_Prototypes/` folder with 10 LLL Prototype definitions
+
+A new top-level folder, `_Prototypes/`, contains one Markdown file per LLL Prototype. Each file is structured per OVE's `TEMPLATE-Prototype.md` (Purpose, Required frontmatter, Body structure, Naming, Example Item, Relationships, Notes). The 10 files:
+
+- **Mirrored from operator vault** (8, verbatim mirrors of `~/Obsidian/.../_Infrastructure For All Vaults/_Prototypes/LLL_*.md`): `LLL_Curriculum`, `LLL_Quiz`, `LLL_Session`, `LLL_SR_Log`, `LLL_State`, `LLL_Subject_Manifest`, `LLL_Synthesis`, `LLL_Thinker`. Plus `LLL_Unit` (the polymorphic study-unit placeholder renamed from `LLL_Atom` in v1.1.0).
+- **Authored new** (1): `LLL_Source` — used by Source Items in subject cartridges but never previously written as a standalone Prototype definition. Drawn from the existing `_teaching-engine/_templates/TEMPLATE-Source.md` for frontmatter and body structure; from chapter 04 (Synthesis Cadence) for purpose; from the `Example-Subject-Roman-Empire/Sources/` files for concrete Example Items.
+
+### Vault-Infrastructure dependency
+
+The operator-side `Master_Schema.yaml` v1.20.0 (shipping in parallel with this release) adds the `LLL_Source` declaration to the central prototypes block. Operators with the vault Infrastructure get the centralized declaration automatically; operators without it use this repo's local `_Prototypes/` folder as the canonical source per OVE Convention 6.
+
+### Notes
+
+Additive minor release. No backbone fields added; no engine chapter removed; the schema contract is unchanged. The `_Prototypes/` adoption is OVE Convention 6 conformance work; existing private subject cartridges continue to work with no operator action required.
+
 ## [1.1.0] — 2026-06-06
 
 Vocabulary clean-up release. The word "atom" had been doing two jobs in v1.0.0: naming the *type definition* (the schema for a study item) and the *polymorphic placeholder* the subject cartridge overrides (kanji, piece, theorem, concept). The new vocabulary cleanly separates these and aligns with the broader Operating-Volume-Engineering ecosystem's Convention 2 (`_meta/CONVENTIONS.md` in OVE v1.1.0).
