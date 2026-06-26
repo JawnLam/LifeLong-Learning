@@ -1,7 +1,8 @@
 ---
 Item_ID: "polybius-histories"
-Item_Prototype: LLL_Source
-Title: "Histories — Book 6 (the constitutional analysis)"
+type: LLL_Source
+timestamp: "2026-06-01T00:00:00Z"
+title: "Histories — Book 6 (the constitutional analysis)"
 Author:
   - "Polybius"
 Year: "c. 150 BC"

@@ -1,7 +1,8 @@
 ---
 Item_ID: "roman-empire-phase-1-sr-log"
-Item_Prototype: LLL_SR_Log
-Title: "Roman Empire — Phase 1 SR Performance Log"
+type: LLL_SR_Log
+timestamp: "2026-06-01T00:00:00Z"
+title: "Roman Empire — Phase 1 SR Performance Log"
 lll_Subject: Roman-Empire
 lll_Phase: 1
 Date_Added: 2026-06-01

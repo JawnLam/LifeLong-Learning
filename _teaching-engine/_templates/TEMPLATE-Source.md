@@ -8,7 +8,7 @@
 # Frontmatter convention — required fields:
 #
 #   Item_ID: "<slug>"
-#   Item_Prototype: LLL_Source
+#   type: LLL_Source
 #   Title: ""
 #   lll_Subject: ""
 #   lll_Phase:

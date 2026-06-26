@@ -1,7 +1,8 @@
 ---
 Item_ID: "livy-ab-urbe-condita"
-Item_Prototype: LLL_Source
-Title: "Ab Urbe Condita (From the Founding of the City) — Books 1–5"
+type: LLL_Source
+timestamp: "2026-06-01T00:00:00Z"
+title: "Ab Urbe Condita (From the Founding of the City) — Books 1–5"
 Author:
   - "Titus Livius (Livy)"
 Year: "c. 27 BC – 9 BC"

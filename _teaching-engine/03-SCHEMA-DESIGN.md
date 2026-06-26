@@ -93,7 +93,7 @@ All cartridges inherit these without needing to redefine them:
 ### `_state.md` frontmatter (required fields)
 
 ```yaml
-Item_Prototype: LLL_State
+type: LLL_State
 lll_Subject: <subject-name>
 lll_Current_Phase: <int>
 lll_Current_Phase_Name: <string>
@@ -107,7 +107,7 @@ lll_Next_Session_Default_Activity: <activity-code>
 ### `_subject.md` frontmatter (required fields)
 
 ```yaml
-Item_Prototype: LLL_Subject_Manifest
+type: LLL_Subject_Manifest
 lll_Subject: <subject-name>
 lll_Subject_Slug: <lowercase-hyphenated>
 lll_Domain_Shape: <list of Q1 categories>

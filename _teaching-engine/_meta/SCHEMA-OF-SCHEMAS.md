@@ -29,7 +29,7 @@ Defined by `<Subject>/_schema.md`. Applies only to that cartridge. Designed duri
 
 ### Layer 3 — Instance (per note)
 
-Defined by each note's YAML frontmatter. Applies to that single note. Every instance declares its prototype via `Item_Prototype:` and uses `lll_`-prefixed keys for all LLL-specific properties.
+Defined by each note's YAML frontmatter. Applies to that single note. Every instance declares its prototype via `type:` and uses `lll_`-prefixed keys for all LLL-specific properties.
 
 - Values for required fields (using `lll_` prefixed property names)
 - Optional fields the note chooses to populate
@@ -64,7 +64,7 @@ Per `_teaching-engine/03-SCHEMA-DESIGN.md`, every `<Subject>/_schema.md` must an
 
 1. **Layer 1 never mentions a specific subject.** If the teaching engine names a particular subject anywhere (other than illustrative examples in tables), it's a bug.
 2. **Layer 2 never redefines Layer 1 prototypes.** A cartridge cannot redefine what `LLL_Session` is. It can only add to what Layer 1 provides.
-3. **Layer 3 must conform to Layer 2 where Layer 2 applies, and Layer 1 where Layer 1 applies.** An Unit note must match its `Item_Prototype` definition in Layer 2. A session note must match the Layer 1 `LLL_Session` definition.
+3. **Layer 3 must conform to Layer 2 where Layer 2 applies, and Layer 1 where Layer 1 applies.** An Unit note must match its `type` definition in Layer 2. A session note must match the Layer 1 `LLL_Session` definition.
 4. **Forward compatibility.** Adding a new subject-specific Prototype does not break any other cartridge or the teaching engine. Adding a new Layer 1 prototype requires a teaching engine update and, by extension, a migration of existing cartridges.
 
 ## Auditing a cartridge
@@ -73,7 +73,7 @@ A well-formed cartridge satisfies:
 
 - [ ] Has all required Layer 1 files (`_state.md`, `_subject.md`, `_schema.md`, `_curriculum.md`)
 - [ ] `_schema.md` answers Q1–Q8 and defines all Prototypes used in the cartridge
-- [ ] Every Unit note has valid frontmatter with correct `Item_Prototype:` and `lll_`-prefixed properties per its type's definition
+- [ ] Every Unit note has valid frontmatter with correct `type:` and `lll_`-prefixed properties per its type's definition
 - [ ] Every session log conforms to the Layer 1 `LLL_Session` prototype template
 - [ ] `_state.md` references Units that actually exist
 - [ ] No dangling `[[wiki-links]]` in Units introduced in this cartridge's phases

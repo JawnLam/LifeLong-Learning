@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LLL_Subject_Manifest
+type: LLL_Subject_Manifest
+timestamp: "2026-06-01T00:00:00Z"
 Item_ID: "roman-empire-manifest"
-Title: "The Rise and Fall of the Roman Empire"
+title: "The Rise and Fall of the Roman Empire"
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false

@@ -1,7 +1,7 @@
 ---
 Item_ID: "UUID-OR-SLUG"
-Item_Prototype: LLL_SR_Log
-Title: ""
+type: LLL_SR_Log
+title: ""
 lll_Subject: ""
 lll_Phase: 
 Date_Added: 

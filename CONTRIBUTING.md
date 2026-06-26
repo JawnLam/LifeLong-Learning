@@ -100,7 +100,7 @@ Every file in this repo belongs to one of four zones. Knowing which zone a file 
 |--------------|-------|
 | `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md`, `VERSION.md`, `CHANGELOG.md` | Front-door docs |
 | `_teaching-engine/**` | Engine chapters, templates, meta |
-| `_Prototypes/**` | OVE Convention 6 — LLL's own Prototype definitions |
+| `_types/**` | OVE Convention 6 — LLL's own Prototype definitions |
 | `_USER.md.template` | Template only; the populated `_USER.md` is operator-private |
 | `.gitignore` | Engine-zone file; its patterns define the Operator-Private patterns below |
 

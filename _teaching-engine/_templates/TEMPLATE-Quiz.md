@@ -1,7 +1,7 @@
 ---
 Item_ID: "UUID-OR-SLUG"
-Item_Prototype: LLL_Quiz
-Title: ""
+type: LLL_Quiz
+title: ""
 lll_Subject: ""
 lll_Quiz_Kind: socratic
 lll_Units_Engaged: []

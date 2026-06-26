@@ -1,7 +1,7 @@
 ---
 Item_ID: "UUID-OR-SLUG"
-Item_Prototype: LLL_Synthesis
-Title: ""
+type: LLL_Synthesis
+title: ""
 lll_Subject: ""
 lll_Synthesis_Kind: quarterly-draft
 lll_Phase_Context: ""

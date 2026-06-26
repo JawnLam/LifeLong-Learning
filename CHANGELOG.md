@@ -2,6 +2,10 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] — 2026-06-26
+
+Google OKF v0.1 conformance (coordinated with vault Master_Schema v1.23.0 + OVE v2.4.0). Universal Core renamed to OKF field names (Item_Prototype→type, Title→title, Tags→tags; added timestamp from Date_Modified, optional description/resource). Convention-6 folder _Prototypes/ → _types/. Date_Modified kept, time-synced with timestamp. Hugo excluded.
+
 ## [1.3.1] — 2026-06-07
 
 Patch release adding `UPDATE-PROMPT.md` at the LLL root — the fourth required artifact under OVE Convention 7 (added in OVE v1.2.1).
@@ -55,7 +59,7 @@ Adopts OVE Conventions 7 (install-and-update pattern) and 8 (engine vs operator-
 `CONTRIBUTING.md` gains:
 
 - **§ 6 — Content zones** — declares the four zones with concrete path patterns:
-  - **Engine Zone** — front-door docs, `_teaching-engine/`, `_Prototypes/`, `_USER.md.template`, `.gitignore`
+  - **Engine Zone** — front-door docs, `_teaching-engine/`, `_types/`, `_USER.md.template`, `.gitignore`
   - **Operator-Private Zone** — `_USER.md`, per-subject `_state.md`/`_subject.md`, session logs, Socratic-conceptual quizzes, SR-performance logs, synthesis drafts (weekly/monthly/phase-end/quarterly), SR-card files
   - **Operator-Extension Zone** — operator's own subject cartridges parallel to `Example-Subject-*`
   - **Shipped Examples Zone** — `Example-Subject-Roman-Empire/`
@@ -74,22 +78,22 @@ This release is part of an OVE-coordinated multi-OV cycle: OVE v1.2.0 codifies C
 
 ## [1.2.0] — 2026-06-06
 
-Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_Prototypes/` folder for portability). Anyone cloning this repo without the operator's vault Infrastructure now gets the full LLL Prototype definitions out of the box.
+Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_types/` folder for portability). Anyone cloning this repo without the operator's vault Infrastructure now gets the full LLL Prototype definitions out of the box.
 
-### Added — `_Prototypes/` folder with 10 LLL Prototype definitions
+### Added — `_types/` folder with 10 LLL Prototype definitions
 
-A new top-level folder, `_Prototypes/`, contains one Markdown file per LLL Prototype. Each file is structured per OVE's `TEMPLATE-Prototype.md` (Purpose, Required frontmatter, Body structure, Naming, Example Item, Relationships, Notes). The 10 files:
+A new top-level folder, `_types/`, contains one Markdown file per LLL Prototype. Each file is structured per OVE's `TEMPLATE-Prototype.md` (Purpose, Required frontmatter, Body structure, Naming, Example Item, Relationships, Notes). The 10 files:
 
-- **Mirrored from operator vault** (8, verbatim mirrors of `~/Obsidian/.../_Infrastructure For All Vaults/_Prototypes/LLL_*.md`): `LLL_Curriculum`, `LLL_Quiz`, `LLL_Session`, `LLL_SR_Log`, `LLL_State`, `LLL_Subject_Manifest`, `LLL_Synthesis`, `LLL_Thinker`. Plus `LLL_Unit` (the polymorphic study-unit placeholder renamed from `LLL_Atom` in v1.1.0).
+- **Mirrored from operator vault** (8, verbatim mirrors of `~/Obsidian/.../_Infrastructure For All Vaults/_types/LLL_*.md`): `LLL_Curriculum`, `LLL_Quiz`, `LLL_Session`, `LLL_SR_Log`, `LLL_State`, `LLL_Subject_Manifest`, `LLL_Synthesis`, `LLL_Thinker`. Plus `LLL_Unit` (the polymorphic study-unit placeholder renamed from `LLL_Atom` in v1.1.0).
 - **Authored new** (1): `LLL_Source` — used by Source Items in subject cartridges but never previously written as a standalone Prototype definition. Drawn from the existing `_teaching-engine/_templates/TEMPLATE-Source.md` for frontmatter and body structure; from chapter 04 (Synthesis Cadence) for purpose; from the `Example-Subject-Roman-Empire/Sources/` files for concrete Example Items.
 
 ### Vault-Infrastructure dependency
 
-The operator-side `Master_Schema.yaml` v1.20.0 (shipping in parallel with this release) adds the `LLL_Source` declaration to the central prototypes block. Operators with the vault Infrastructure get the centralized declaration automatically; operators without it use this repo's local `_Prototypes/` folder as the canonical source per OVE Convention 6.
+The operator-side `Master_Schema.yaml` v1.20.0 (shipping in parallel with this release) adds the `LLL_Source` declaration to the central prototypes block. Operators with the vault Infrastructure get the centralized declaration automatically; operators without it use this repo's local `_types/` folder as the canonical source per OVE Convention 6.
 
 ### Notes
 
-Additive minor release. No backbone fields added; no engine chapter removed; the schema contract is unchanged. The `_Prototypes/` adoption is OVE Convention 6 conformance work; existing private subject cartridges continue to work with no operator action required.
+Additive minor release. No backbone fields added; no engine chapter removed; the schema contract is unchanged. The `_types/` adoption is OVE Convention 6 conformance work; existing private subject cartridges continue to work with no operator action required.
 
 ## [1.1.0] — 2026-06-06
 

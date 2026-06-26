@@ -1,7 +1,8 @@
 ---
 Item_ID: "beard-spqr"
-Item_Prototype: LLL_Source
-Title: "SPQR: A History of Ancient Rome"
+type: LLL_Source
+timestamp: "2026-06-01T00:00:00Z"
+title: "SPQR: A History of Ancient Rome"
 Author:
   - "Mary Beard"
 Year: 2015

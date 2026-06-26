@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LLL_Curriculum
+type: LLL_Curriculum
+timestamp: "2026-06-01T00:00:00Z"
 Item_ID: "roman-empire-curriculum"
-Title: "Roman Empire Curriculum"
+title: "Roman Empire Curriculum"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01

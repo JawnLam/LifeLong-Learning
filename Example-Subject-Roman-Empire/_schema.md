@@ -55,7 +55,7 @@ updated: 2026-06-01
 - **Description:** An institution, idea, distinction, or mechanism — abstract enough to apply across multiple periods. The discrete unit of *understanding* in this subject.
 - **Required frontmatter:**
   ```yaml
-  Item_Prototype: LLL_Unit
+  type: LLL_Unit
   Item_ID: "<slug>"
   Title: "<Concept Name>"
   lll_Subject: Roman-Empire
@@ -95,7 +95,7 @@ updated: 2026-06-01
 - **Description:** A historian, statesman, or commentator whose work or example matters for understanding the period. Includes both ancient (Polybius, Tacitus) and modern (Gibbon, Beard) historians.
 - **Required frontmatter:**
   ```yaml
-  Item_Prototype: LLL_Unit
+  type: LLL_Unit
   Item_ID: "<slug>"
   Title: "<Full Name>"
   lll_Subject: Roman-Empire
@@ -130,7 +130,7 @@ updated: 2026-06-01
 - **Description:** A bounded span of Roman history with a coherent character — political, institutional, or cultural. Period Units are containers for the events and concepts that belong to them.
 - **Required frontmatter:**
   ```yaml
-  Item_Prototype: LLL_Unit
+  type: LLL_Unit
   Item_ID: "<slug>"
   Title: "<Period Name>"
   lll_Subject: Roman-Empire
@@ -164,7 +164,7 @@ updated: 2026-06-01
 - **Description:** A bounded, dated occurrence with consequences. Battles, deaths, accessions, reforms, treaties, edicts. Event Units are the load-bearing inflection points the user needs to be able to place and explain.
 - **Required frontmatter:**
   ```yaml
-  Item_Prototype: LLL_Unit
+  type: LLL_Unit
   Item_ID: "<slug>"
   Title: "<Event Name>"
   lll_Subject: Roman-Empire

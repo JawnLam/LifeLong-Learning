@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-06T00:00:00Z"
 Item_ID: prototype-lll-source
-Title: "LLL_Source Prototype"
+title: "LLL_Source Prototype"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
@@ -9,7 +10,7 @@ Needs_Processing: false
 
 # `LLL_Source` — Prototype Definition
 
-> **What this file is.** The canonical definition of the `LLL_Source` Prototype for the LifeLong-Learning Operating Volume. Items in any subject cartridge that declare `Item_Prototype: LLL_Source` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LLL_Source` Prototype for the LifeLong-Learning Operating Volume. Items in any subject cartridge that declare `type: LLL_Source` conform to the contract described below.
 
 ## Purpose
 
@@ -19,7 +20,7 @@ A Source is **any external material a learner engages with** in the course of st
 
 | Field | Type | Required? | Notes |
 |-------|------|-----------|-------|
-| `Item_Prototype` | string | yes | Must equal `LLL_Source` |
+| `type` | string | yes | Must equal `LLL_Source` |
 | `Item_ID` | string | yes | Lowercase kebab slug |
 | `Title` | string | yes | Source title |
 | `Date_Added` | date | yes | When the Source was added |
@@ -80,8 +81,9 @@ A Source is **any external material a learner engages with** in the course of st
 ```markdown
 ---
 Item_ID: beard-spqr
-Item_Prototype: LLL_Source
-Title: "SPQR: A History of Ancient Rome"
+type: LLL_Source
+timestamp: "2026-06-04T00:00:00Z"
+title: "SPQR: A History of Ancient Rome"
 lll_Subject: roman-empire
 lll_Phase: 1
 lll_Source_Role: primary

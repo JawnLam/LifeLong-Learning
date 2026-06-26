@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LLL_Unit
+type: LLL_Unit
+timestamp: "2026-06-01T00:00:00Z"
 Item_ID: "imperium"
-Title: "Imperium"
+title: "Imperium"
 lll_Subject: Roman-Empire
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01

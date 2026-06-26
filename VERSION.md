@@ -1,5 +1,5 @@
 ---
-lll_version: "1.3.1"
+lll_version: "1.4.0"
 schema_version: "1.3"
 schema_status: "STABLE"
 release_date: 2026-06-07

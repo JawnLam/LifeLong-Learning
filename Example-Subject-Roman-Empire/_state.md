@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LLL_State
+type: LLL_State
+timestamp: "2026-06-01T00:00:00Z"
 Item_ID: "roman-empire-state"
-Title: "Roman Empire State"
+title: "Roman Empire State"
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false
