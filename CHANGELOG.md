@@ -2,6 +2,10 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.1] — 2026-06-27
+
+Patch — **terminology retirement: "Prototype" → "Type".** The OVE engine concept formerly called a *Prototype* (the type-definition unit) is now uniformly called a **Type**, completing the OKF `type` vocabulary adopted in 1.4.0. Infrastructure surfaces only — `_teaching-engine/` docs, `SCHEMA-OF-SCHEMAS.md`, `03-SCHEMA-DESIGN.md`, `_types/LLL_Source.md`, and front-door docs. Domain/manuscript prose, historical CHANGELOG entries below, and Hugo are unchanged. No behavioral or content change.
+
 ## [1.4.0] — 2026-06-26
 
 Google OKF v0.1 conformance (coordinated with vault Master_Schema v1.23.0 + OVE v2.4.0). Universal Core renamed to OKF field names (Item_Prototype→type, Title→title, Tags→tags; added timestamp from Date_Modified, optional description/resource). Convention-6 folder _Prototypes/ → _types/. Date_Modified kept, time-synced with timestamp. Hugo excluded.

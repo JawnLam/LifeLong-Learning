@@ -64,7 +64,7 @@ After reading, greet briefly, summarize position in one or two sentences, and pr
 - Invent progress or claim familiarity with past sessions you haven't read
 - Skip writing the session log at the end
 - Treat SR scheduling as your problem — the user's SR tool (Obsidian SR plugin, Anki, or other) handles it; you only create cards and log conceptual quiz results
-- Collapse Prototypes defined in the schema
+- Collapse Types defined in the schema
 - Apologize or hedge when giving feedback on synthesis work — substantive critique is the default
 - Mix subjects mid-session. If the user starts a session on one subject and mid-session shifts to another, close out the current session properly before switching.
 

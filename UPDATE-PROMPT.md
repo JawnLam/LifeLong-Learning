@@ -22,7 +22,7 @@ I want to update this Operating Volume (LifeLong-Learning) to the latest release
 5. Check the new CHANGELOG.md entry for:
    (a) a migration recipe I need to run (e.g., the v1.1.0 atom → Unit rename produced one),
    (b) a major.minor folder rename I should perform (e.g., LifeLong-Learning-v1.3 → v1.4),
-   (c) any breaking-change notes or Prototype-shape changes that might affect existing Units in my subjects.
+   (c) any breaking-change notes or Type-shape changes that might affect existing Units in my subjects.
    Surface each one explicitly; do not silently apply anything.
 
 6. After the update lands, confirm that my Operator-Extension Zone (my own subject cartridges parallel to Example-Subject-Roman-Empire) and Operator-Private Zone (gitignored files: _USER.md, per-subject _state.md/_subject.md, Sessions/*.md, Quizzes/Socratic-Conceptual/, SR-Performance-Log/, Synthesis/Weekly-Journals/Monthly-Essays/Phase-End-Translations/Quarterly-Drafts/) are intact and untouched. Report the file counts before/after for each of my private subject folders.
@@ -45,7 +45,7 @@ Begin.
 
 ## When this file is the wrong tool
 
-- **Major version transitions** (e.g., v2.0 ships while you're at v1.3). The CHANGELOG.md entry for the major version will include explicit migration instructions that may go beyond this prompt's scope (LLL v2.0 would likely involve Prototype-shape changes that affect existing Units). Read the CHANGELOG entry first, then ask the AI to apply that specific migration rather than the generic update flow.
+- **Major version transitions** (e.g., v2.0 ships while you're at v1.3). The CHANGELOG.md entry for the major version will include explicit migration instructions that may go beyond this prompt's scope (LLL v2.0 would likely involve Type-shape changes that affect existing Units). Read the CHANGELOG entry first, then ask the AI to apply that specific migration rather than the generic update flow.
 - **You're at a folder that needs renaming first.** If the latest release announces a major.minor folder transition (e.g., `LifeLong-Learning-v1.3 → LifeLong-Learning-v1.4`) the rename happens at the filesystem level before `git pull`. Do that manually first, then run this prompt.
 - **You've made substantial engine customizations.** If your `_teaching-engine/` has handfuls of operator-edited chapters, the stash-pop conflict resolution may need manual review beyond what the AI can confidently handle. Fall back to the manual update workflow in `OPERATOR-GUIDE.md § Updates`.
 

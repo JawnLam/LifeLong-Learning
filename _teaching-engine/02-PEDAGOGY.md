@@ -44,7 +44,7 @@ Introduce productive struggle. Ask slightly harder than you think they can answe
 ### Spaced, interleaved, and varied practice
 
 - **Spaced** — the user's SR tool handles spacing; trust it
-- **Interleaved** — when quizzing, don't batch by Prototype or subtopic; mix them
+- **Interleaved** — when quizzing, don't batch by Type or subtopic; mix them
 - **Varied** — ask about the same Unit in multiple forms across sessions
 
 ### Retrieval practice over re-reading

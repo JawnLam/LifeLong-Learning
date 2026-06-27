@@ -122,7 +122,7 @@ Each cartridge contains: `_subject.md`, `_schema.md`, `_curriculum.md`, `_state.
 ## Versioning
 
 - **Software version** — see [`VERSION.md`](VERSION.md) and [`CHANGELOG.md`](CHANGELOG.md). Initial public release is v1.0.0.
-- **Schema** — the `LLL_*` prototypes defined in `_teaching-engine/_meta/SCHEMA-OF-SCHEMAS.md` are the contract every cartridge conforms to. Breaking changes require a major version bump.
+- **Schema** — the `LLL_*` types defined in `_teaching-engine/_meta/SCHEMA-OF-SCHEMAS.md` are the contract every cartridge conforms to. Breaking changes require a major version bump.
 - **Cartridges you create** are yours and travel with you across versions. Future versions will provide migration notes if cartridge format changes.
 
 ## License

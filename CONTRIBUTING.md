@@ -1,6 +1,6 @@
 # Contributing to LifeLong Learning
 
-LifeLong Learning ships at v1.0.0 with a stable schema (`LLL_*` prototypes locked) and a subject-agnostic teaching engine. This document describes when a contribution is in-scope at v1.x, when it requires a major version bump, and how to propose either kind.
+LifeLong Learning ships at v1.0.0 with a stable schema (`LLL_*` types locked) and a subject-agnostic teaching engine. This document describes when a contribution is in-scope at v1.x, when it requires a major version bump, and how to propose either kind.
 
 For day-to-day operation, see `OPERATOR-GUIDE.md`. For release history, see `CHANGELOG.md`.
 
@@ -13,10 +13,10 @@ The following kinds of contributions do **not** require a major version bump:
 | Contribution                                                                | Where it lives                                                                 |
 |-----------------------------------------------------------------------------|--------------------------------------------------------------------------------|
 | New example cartridge for a different subject                               | `Example-Subject-<Name>/` at the root                                          |
-| New template variant within an existing prototype                            | `_teaching-engine/_templates/TEMPLATE-<Name>.md`                                |
+| New template variant within an existing type                            | `_teaching-engine/_templates/TEMPLATE-<Name>.md`                                |
 | Clarification or correction in any teaching engine file                      | Edit in place; bump teaching-engine patch version                              |
 | Documentation fixes (README, INSTALL, OPERATOR-GUIDE, this file)             | Edit in place                                                                  |
-| New optional field on a `LLL_*` prototype, backward-compatible               | Update `_meta/SCHEMA-OF-SCHEMAS.md` + the relevant template + minor version bump |
+| New optional field on a `LLL_*` type, backward-compatible               | Update `_meta/SCHEMA-OF-SCHEMAS.md` + the relevant template + minor version bump |
 | New tip, failure-mode, or troubleshooting entry in `OPERATOR-GUIDE.md`       | Edit in place                                                                  |
 | SR adaptation notes for a new editor/tool                                    | `_teaching-engine/_meta/SR-CONVENTIONS.md`                                     |
 
@@ -26,7 +26,7 @@ The following kinds of contributions do **not** require a major version bump:
 
 Any change to the schema that breaks existing cartridges:
 
-- Adding a **required** field to a `LLL_*` prototype
+- Adding a **required** field to a `LLL_*` type
 - Renaming a field
 - Removing a field
 - Changing a field's type
@@ -49,7 +49,7 @@ Don't propose a major break unless the v1 schema demonstrably fails in real use.
 - **Hardcoded references to a specific subject in `_teaching-engine/`.** The engine is subject-agnostic. If you need a feature that only makes sense for one subject, it belongs in that cartridge's `_schema.md`, not in the engine.
 - **Personal data in shipped files.** No real names, emails, paths, or project references in anything that ships. Use placeholders.
 - **AI-tool-specific code.** The system is markdown only. If you want Claude Code slash commands or ChatGPT Custom GPT configs, ship them in a separate `integrations/` directory clearly marked as optional.
-- **Renaming `LLL_*` prototypes.** The prefix and names are stable. New prototypes can be added; existing ones cannot be renamed without a major version bump (§2).
+- **Renaming `LLL_*` types.** The prefix and names are stable. New types can be added; existing ones cannot be renamed without a major version bump (§2).
 
 ---
 
@@ -100,7 +100,7 @@ Every file in this repo belongs to one of four zones. Knowing which zone a file 
 |--------------|-------|
 | `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md`, `VERSION.md`, `CHANGELOG.md` | Front-door docs |
 | `_teaching-engine/**` | Engine chapters, templates, meta |
-| `_types/**` | OVE Convention 6 — LLL's own Prototype definitions |
+| `_types/**` | OVE Convention 6 — LLL's own Type definitions |
 | `_USER.md.template` | Template only; the populated `_USER.md` is operator-private |
 | `.gitignore` | Engine-zone file; its patterns define the Operator-Private patterns below |
 

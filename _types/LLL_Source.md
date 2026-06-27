@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lll-source
-title: "LLL_Source Prototype"
+Item_ID: type-lll-source
+title: "LLL_Source Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LLL_Source` — Prototype Definition
+# `LLL_Source` — Type Definition
 
-> **What this file is.** The canonical definition of the `LLL_Source` Prototype for the LifeLong-Learning Operating Volume. Items in any subject cartridge that declare `type: LLL_Source` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LLL_Source` Type for the LifeLong-Learning Operating Volume. Items in any subject cartridge that declare `type: LLL_Source` conform to the contract described below.
 
 ## Purpose
 

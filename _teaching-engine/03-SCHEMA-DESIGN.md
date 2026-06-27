@@ -15,7 +15,7 @@ An Unit is the smallest testable, quizzable, linkable unit of knowledge in a sub
 
 Examples across domains:
 
-| Subject | Prototypes |
+| Subject | Types |
 |---------|-----------|
 | History (e.g., Roman Empire) | Concept, Thinker, Period, Event |
 | Cybernetics | Concept, Thinker, Reading |
@@ -26,7 +26,7 @@ Examples across domains:
 | Macroeconomics | Concept, Model, School-of-Thought, Indicator, Historical-Episode |
 | Medicine | Condition, Mechanism, Drug-Class, Procedure, Case |
 
-## Universal (cross-subject) Prototypes
+## Universal (cross-subject) Types
 
 Every cartridge inherits these from the teaching engine, fully defined in `_teaching-engine/_templates/`:
 
@@ -38,9 +38,9 @@ Every cartridge inherits these from the teaching engine, fully defined in `_teac
 
 These universal types use `source` rather than `reading` because not every subject is book-based — a cuisine cartridge's sources might be YouTube cooking demonstrations, a chef's recipe book, a market visit, a class. A language cartridge might use podcasts, textbooks, apps. The source template accommodates all of these.
 
-## Subject-specific Prototypes
+## Subject-specific Types
 
-Each cartridge defines its own Prototypes in `<Subject>/_schema.md`, following the protocol below.
+Each cartridge defines its own Types in `<Subject>/_schema.md`, following the protocol below.
 
 ### Protocol for designing subject-specific Units
 
@@ -74,7 +74,7 @@ Every cartridge's schema file must contain:
 
 1. **Subject identity** — name, shape (which Q1 categories), domain summary
 2. **Answers to Q1–Q8** — the analytical answers that justify the Unit choices
-3. **Prototype definitions** — for each subject-specific Prototype:
+3. **Type definitions** — for each subject-specific Type:
    - Name and plural
    - One-sentence description
    - Required YAML frontmatter fields

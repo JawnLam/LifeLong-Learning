@@ -16,7 +16,7 @@ This is LifeLong Learning **v1.2.0** — Convention 6 (portability) adoption rel
 |-------------------------|---------------|------------------------------------------------------------------------|
 | **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
 | **Software**            | v1.1.0        | atom → Unit vocabulary clean-up (`LLL_Atom` → `LLL_Unit`)              |
-| **Schema**              | v1.1          | STABLE — universal `LLL_*` prototypes locked; `LLL_Atom` renamed to `LLL_Unit` |
+| **Schema**              | v1.1          | STABLE — universal `LLL_*` types locked; `LLL_Atom` renamed to `LLL_Unit` |
 | **Teaching engine**     | v1.1          | Subject-agnostic operating manual                                      |
 | **Note templates**      | v1.1          | Shipped in `_teaching-engine/_templates/`                              |
 | **Example cartridge**   | v1.1          | `Example-Subject-Roman-Empire/`                                        |
@@ -24,14 +24,14 @@ This is LifeLong Learning **v1.2.0** — Convention 6 (portability) adoption rel
 
 ## Schema policy
 
-The universal note prototypes (`LLL_State`, `LLL_Subject_Manifest`, `LLL_Session`, `LLL_Quiz`, `LLL_SR_Log`, `LLL_Synthesis`, `LLL_Source`, `LLL_Unit`) are stable at v1.0. Any change that:
+The universal note types (`LLL_State`, `LLL_Subject_Manifest`, `LLL_Session`, `LLL_Quiz`, `LLL_SR_Log`, `LLL_Synthesis`, `LLL_Source`, `LLL_Unit`) are stable at v1.0. Any change that:
 
 - Adds a required field
 - Renames a field
 - Removes a field
 - Changes a field's type
 
-requires a major version bump (v2.0). Additive changes (new optional fields, new template variants within an existing prototype) are minor version bumps (v1.x). See `CONTRIBUTING.md` for the contribution workflow.
+requires a major version bump (v2.0). Additive changes (new optional fields, new template variants within an existing type) are minor version bumps (v1.x). See `CONTRIBUTING.md` for the contribution workflow.
 
 ## What is in this version
 

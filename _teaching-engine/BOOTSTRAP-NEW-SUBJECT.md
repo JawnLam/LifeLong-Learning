@@ -14,7 +14,7 @@ updated: 2026-05-31
 A complete subject folder inside the `LifeLong Learning/` directory that is ready for the user to begin studying. A successful cartridge includes:
 
 1. `_subject.md` — manifest answering who/why/shape
-2. `_schema.md` — Prototype definitions specific to this subject
+2. `_schema.md` — Type definitions specific to this subject
 3. `_curriculum.md` — phase roadmap
 4. `_state.md` — initial state
 5. Populated Unit folders — enough seed Units for the first 2–4 sessions

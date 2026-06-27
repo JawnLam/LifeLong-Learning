@@ -1,6 +1,6 @@
 ---
 # This is a cartridge reference document, not a learning note.
-# It defines Prototypes for the Roman-Empire cartridge.
+# It defines Types for the Roman-Empire cartridge.
 # See _teaching-engine/03-SCHEMA-DESIGN.md for the protocol.
 lll_Subject: Roman-Empire
 updated: 2026-06-01
@@ -20,9 +20,9 @@ updated: 2026-06-01
 
 **Q1 — Kinds of knowledge.** Primarily conceptual (institutions, mechanisms: cursus honorum, imperium, Principate vs Dominate, variety of governance forms) and declarative (names, dates, sequences). Some interpretive (competing theses of decline). Minimally procedural — there is no skill to practice; this is comprehension and synthesis.
 
-**Q2 — Canonical authority.** Yes, on two levels. Primary sources (Polybius, Livy, Tacitus, Suetonius, Cassius Dio, Ammianus Marcellinus, Procopius, Augustine, etc.) and major modern historians (Gibbon as the canonical decline-thesis voice; Peter Brown for late antiquity; Mary Beard, Adrian Goldsworthy, Bryan Ward-Perkins, Peter Heather as contemporary interpreters). Both categories matter; the **thinker** Prototype accommodates both.
+**Q2 — Canonical authority.** Yes, on two levels. Primary sources (Polybius, Livy, Tacitus, Suetonius, Cassius Dio, Ammianus Marcellinus, Procopius, Augustine, etc.) and major modern historians (Gibbon as the canonical decline-thesis voice; Peter Brown for late antiquity; Mary Beard, Adrian Goldsworthy, Bryan Ward-Perkins, Peter Heather as contemporary interpreters). Both categories matter; the **thinker** Type accommodates both.
 
-**Q3 — Smallest quizzable unit.** A concept (e.g., *cursus honorum*), a thinker (e.g., *Tacitus*), a period (e.g., *Severan dynasty*), or an event (e.g., *Battle of Adrianople, 378 AD*). These are the four Prototypes.
+**Q3 — Smallest quizzable unit.** A concept (e.g., *cursus honorum*), a thinker (e.g., *Tacitus*), a period (e.g., *Severan dynasty*), or an event (e.g., *Battle of Adrianople, 378 AD*). These are the four Types.
 
 **Q4 — Relationships between Units.**
 - `precedes` / `follows` — period→period or event→event chronological
@@ -48,7 +48,7 @@ updated: 2026-06-01
 
 **Q8 — Mastery scale.** Default 0–5.
 
-## Prototype definitions
+## Type definitions
 
 ### concept
 
