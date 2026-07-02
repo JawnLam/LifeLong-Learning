@@ -2,6 +2,66 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] — 2026-07-01
+
+Minor — **first-class Anki integration.** Makes Anki a real SR backend instead of a vaguely-supported option. Additive engine capability; **no schema change** (schema stays v1.4 — the integration needs no new type or field).
+
+### Added — the Anki export contract (`_meta/SR-CONVENTIONS.md`)
+
+A stable mapping from a Unit's cards to Anki, used identically by both transport paths:
+
+- **Identity:** a deterministic per-card key `lll-id::<subject-slug>::<unit-id>::<card-index>` — derived from stable inputs, so re-export *updates* rather than duplicates, with no stored state. Carried as the Anki note GUID (TSV path) or as a tag (AnkiConnect path).
+- **Deck:** `LLL::<Subject>` (one deck per subject; phases are tags, so cards never migrate decks).
+- **Tags:** `lll::subject::<slug>`, `lll::phase::<n>`, `lll::unit::<unit-slug>`, `lll::kind::<recall|application|boundary|connection>`.
+- **Notetypes:** built-in **Basic** and **Basic (and reversed)** only — nothing to install.
+
+### Added — two transport paths
+
+- **Path A — TSV import (portable default).** The assistant writes `<Subject>/SR-Cards/anki-export.tsv` with Anki's header directives (`#separator:tab`, `#notetype/deck/tags/guid column:`); the operator does File → Import once and re-imports update in place. Zero dependency; works from any AI substrate. Gitignored as operator-private.
+- **Path B — AnkiConnect (live, two-way).** With Anki desktop + the AnkiConnect add-on (code `2055492159`), an assistant with local HTTP access pushes cards (`findNotes` → `addNote`/`updateNoteFields`, idempotent via the identity tag) and **pulls review performance back** (`findCards`/`cardsInfo`/`getReviewsOfCards`) into `<Subject>/Quizzes/SR-Performance-Log/Phase-<N>-SR-Log.md`, reconciling `lll_Status: weak` flags in `_state.md`. Anki becomes the scheduling system of record; LLL stays authoritative on what's learned and which Units are weak.
+
+### Changed
+
+- `README.md` — SR-tool line promotes Anki to first-class with a pointer to the contract.
+- `_meta/SR-CONVENTIONS.md` — intro updated; QUIZ-SR behavior documented for the Anki case (push → review in Anki/AnkiWeb → pull).
+- `VERSION.md` — v1.6.0 (schema unchanged v1.4).
+
+### Companion (outside this repo)
+
+A Claude Code **Anki skill** (operator-private, parent-child structure) packages the Path-B automation — one-command push and stat-pull against AnkiConnect. It *reads* this export contract; it is not part of the portable OV, preserving LLL's no-dependency posture. AnkiWeb has no public write API, so all paths reach AnkiWeb only via Anki's own client sync.
+
+## [1.5.0] — 2026-07-01
+
+Minor — **the capture layer.** Adds the fleeting-note tier that was missing between raw thought and permanent Unit: a place to put an idea, question, quote, link, or cross-cutting connection *before* you know where it belongs. Additive schema growth — one new type, zero renames, zero removals, no breaking change. Schema v1.3 → v1.4.
+
+### Added — `LLL_Note` type + `TEMPLATE-Note.md`
+
+The fleeting-note type. Frontmatter: `lll_Subject` (**may be empty** — that is the point), `lll_Note_Kind` (idea | question | connection | quote | link | observation | source-lead), `lll_Note_Status` (`captured → triaged → promoted | merged | discarded`), `lll_Promoted_To` (backlink to the Unit/Source it became), `lll_Captured_During` (session provenance), and `Needs_Processing: true` on birth — which finally makes the long-dormant `Needs_Processing` flag load-bearing. Body sections: Capture / Origin / Possible homes / Triage disposition.
+
+### Added — two capture pens
+
+- **`_Inbox/`** (OV root, sibling to subjects) — the un-homed pen: captures whose subject is unknown or cross-cutting. Ships with a `README.md` explaining the layer. `lll_Subject` empty.
+- **`<Subject>/Captures/`** — the subject-homed pen: captures you know belong to one subject but haven't processed into a Unit yet.
+
+The one *move* in the system is homing: TRIAGE assigns a subject to a root-`_Inbox/` note and moves it into that subject's `Captures/`. After that, disposition is status-only, preserving provenance.
+
+### Added — TRIAGE (7th universal session activity)
+
+`01-SESSION-PROTOCOL.md`: the activity table grows from six to seven; TRIAGE processes the inbox (promote / merge / discard). Decision-algorithm hook (Step 1 hard override): proposed when `_Inbox/` holds ≥ 5 untriaged captures or any capture with `Needs_Processing: true` is older than 14 days; the pending count is surfaced at every session start. The CAPTURE lifecycle step (step 6) is extended: a stray mid-session thought is dropped into `_Inbox/` rather than lost.
+
+### Changed
+
+- `_teaching-engine/_meta/SCHEMA-OF-SCHEMAS.md` — `LLL_Note` registered in the Layer-1 universal type list; "universal six" → "universal seven".
+- `BOOTSTRAP-NEW-SUBJECT.md` — new cartridges create `Captures/` (+ `.gitkeep`); quality gate updated; `_Inbox/` documented as the shared, do-not-recreate-per-cartridge root pen.
+- `README.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `AI-BOOTSTRAP.md` — folder-structure tables, the four-zone boundary (capture pens are Operator-Private), and the session walkthrough updated.
+- `.gitignore` — `_Inbox/*.md` and `**/Captures/*.md` excluded as operator-private (keeping `_Inbox/README.md` + `.gitkeep`); `!Example-Subject-*/Captures/*.md` keeps the worked examples tracked.
+- `VERSION.md` — rewritten to v1.5.0 and made internally consistent (the previous file's frontmatter, body, and table disagreed).
+- `Example-Subject-Roman-Empire/` — gained `Captures/` with two worked examples: one live `captured` note (anacyclosis ↔ mixed constitution) and one `merged` note (tribune sacrosanctity → folded into the Patrician-Plebeian Unit).
+
+### Coordinated vault-schema change
+
+Vault `Master_Schema.yaml` v1.38.0 → v1.39.0: registered the `LLL_Note` type, four `lll_` properties (`lll_Note_Kind`, `lll_Note_Status`, `lll_Promoted_To`, `lll_Captured_During`), two enums (`lll_note_kinds`, `lll_note_statuses`), and `TRIAGE` in `lll_activities`; mirrored `_types/LLL_Note.md` into the vault type registry. Without this, the vault `schema-validator.py` would flag every `LLL_Note` as an invalid type.
+
 ## [1.4.1] — 2026-06-27
 
 Patch — **terminology retirement: "Prototype" → "Type".** The OVE engine concept formerly called a *Prototype* (the type-definition unit) is now uniformly called a **Type**, completing the OKF `type` vocabulary adopted in 1.4.0. Infrastructure surfaces only — `_teaching-engine/` docs, `SCHEMA-OF-SCHEMAS.md`, `03-SCHEMA-DESIGN.md`, `_types/LLL_Source.md`, and front-door docs. Domain/manuscript prose, historical CHANGELOG entries below, and Hugo are unchanged. No behavioral or content change.

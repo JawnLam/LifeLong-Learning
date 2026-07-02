@@ -19,7 +19,7 @@ A complete subject folder inside the `LifeLong Learning/` directory that is read
 4. `_state.md` — initial state
 5. Populated Unit folders — enough seed Units for the first 2–4 sessions
 6. Populated `Sources/` folder — the books/media/references the user will engage
-7. Empty-but-ready subfolders for `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`
+7. Empty-but-ready subfolders for `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`
 8. A bootstrap session log (Session 000) documenting what you created
 
 ## Before you start
@@ -119,7 +119,9 @@ Output: files in `<Subject>/Sources/`.
 
 ### Step 8 — Create empty-but-ready subfolders
 
-Create `<Subject>/Sessions/`, `<Subject>/Quizzes/Socratic-Conceptual/`, `<Subject>/Quizzes/SR-Performance-Log/`, `<Subject>/Synthesis/Weekly-Journals/`, `<Subject>/Synthesis/Monthly-Essays/`, `<Subject>/Synthesis/Phase-End-Translations/`, `<Subject>/Synthesis/Quarterly-Drafts/`, `<Subject>/SR-Cards/`. Add `.gitkeep` files so they survive transport.
+Create `<Subject>/Sessions/`, `<Subject>/Quizzes/Socratic-Conceptual/`, `<Subject>/Quizzes/SR-Performance-Log/`, `<Subject>/Synthesis/Weekly-Journals/`, `<Subject>/Synthesis/Monthly-Essays/`, `<Subject>/Synthesis/Phase-End-Translations/`, `<Subject>/Synthesis/Quarterly-Drafts/`, `<Subject>/SR-Cards/`, `<Subject>/Captures/`. Add `.gitkeep` files so they survive transport.
+
+`Captures/` is this subject's fleeting-note pen — the holding area for `LLL_Note` captures that already belong to this subject but haven't been processed into Units yet. Un-homed captures (subject unknown or cross-cutting) instead go in the OV-root `_Inbox/`, which already exists at `{ROOT}/_Inbox/` and is shared across subjects — you do not create it per cartridge. The TRIAGE activity drains both. See `01-SESSION-PROTOCOL.md` and `_types/LLL_Note.md`.
 
 Also create `<Subject>/Quizzes/SR-Performance-Log/Phase-1-SR-Log.md` using `TEMPLATE-SR-Log.md`.
 
@@ -151,7 +153,7 @@ Before you consider bootstrapping finished, confirm:
 - [ ] `_state.md` exists and is internally consistent
 - [ ] At least 5 seed Units created (more for skill-based subjects)
 - [ ] At least 1 active source seeded
-- [ ] Empty subfolders created with `.gitkeep`
+- [ ] Empty subfolders created with `.gitkeep` (including `Captures/`)
 - [ ] Phase 1 SR log initialized
 - [ ] Bootstrap session log written
 - [ ] Summary shown to user

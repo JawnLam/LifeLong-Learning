@@ -116,6 +116,8 @@ Every file in this repo belongs to one of four zones. Knowing which zone a file 
 | `<Subject>/Sessions/*.md` | Per-subject session logs; verbatim AI/operator conversation |
 | `<Subject>/Quizzes/SR-Performance-Log/*.md` | Per-subject SR logs (your retention performance) |
 | `<Subject>/Synthesis/**/*.md` | Per-subject synthesis drafts (weekly/monthly/phase-end/quarterly) |
+| `_Inbox/*.md` | OV-root un-homed capture pen (`README.md` + `.gitkeep` kept) |
+| `<Subject>/Captures/*.md` | Per-subject fleeting-note pen; `LLL_Note` captures awaiting triage |
 | `.DS_Store`, `.obsidian/`, IDE caches | Filesystem-noise |
 
 These patterns are in `.gitignore`. The `!Example-Subject-*/**` override re-includes the worked-example subject so it remains tracked (Shipped Examples Zone).

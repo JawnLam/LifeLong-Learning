@@ -17,7 +17,7 @@ updated: 2026-05-31
 3. PROPOSE a session activity with rationale
 4. WAIT for user confirmation or override
 5. EXECUTE the activity
-6. CAPTURE results (Unit updates, quiz logs, SR cards, synthesis artifacts)
+6. CAPTURE results (Unit updates, quiz logs, SR cards, synthesis artifacts) — and drop any stray, off-topic thought raised mid-session into the root `_Inbox/` as an `LLL_Note` rather than losing it
 7. WRITE the session log
 8. UPDATE _state.md
 9. END with one explicit "next-session seed" in Open Threads
@@ -25,7 +25,7 @@ updated: 2026-05-31
 
 Steps 1, 6, 7, 8, 9 are non-negotiable. Step 5 varies by activity.
 
-## The six universal session activity types
+## The seven universal session activity types
 
 These apply to all subjects. Individual cartridges may define their own subject-specific activities in addition (documented in `<Subject>/_schema.md`).
 
@@ -37,6 +37,9 @@ These apply to all subjects. Individual cartridges may define their own subject-
 | **REVIEW-WEAK** | Revisit Units flagged `weak` in state with targeted re-teaching | Any Unit is flagged weak OR SR performance on an Unit is failing |
 | **SYNTHESIZE** | Produce a synthesis artifact (weekly journal, monthly essay, phase-end piece, quarterly draft) | Synthesis cadence due OR user explicitly wants to write |
 | **INTEGRATE** | Cross-Unit connection-mapping session; end-of-phase checks also live here | ≥ 5 Units introduced since last INTEGRATE, OR at phase boundary |
+| **TRIAGE** | Process the capture inbox: for each pending `LLL_Note`, decide its disposition — **promote** to a new Unit/Source, **merge** into an existing Unit, or **discard** (kept, not deleted) — assigning a subject and moving un-homed root-`_Inbox/` notes into `<Subject>/Captures/` along the way. Drains the pen toward zero. | The root `_Inbox/` holds ≥ 5 untriaged captures, OR any capture with `Needs_Processing: true` is older than 14 days |
+
+**The capture layer, in one paragraph.** Fleeting notes live in two places: the root `_Inbox/` (un-homed — subject unknown or cross-cutting; `lll_Subject` empty) and `<Subject>/Captures/` (subject known, not yet processed into a Unit). A capture is *only* for the un-homed / pre-processed — a thought about a known Unit belongs in that Unit's Open Questions, a reading note on a known Source in that Source's Highlights, a session recap in the session log. TRIAGE is what keeps the inbox from becoming a dumping ground. The single move in the system is homing (root `_Inbox/` → `<Subject>/Captures/` when a subject is assigned); after that, disposition is status-only (`lll_Note_Status`), preserving provenance. See `_types/LLL_Note.md`.
 
 ## Decision algorithm
 
@@ -47,6 +50,9 @@ Evaluate in order. First condition that fires determines the default proposal.
 - **If** user has entered a new phase within the last 2 sessions and has not completed an orientation to the phase → propose **TEACH** with an orientation framing
 - **If** a phase exit checklist has ≥ 80% items checked but not 100% → propose **INTEGRATE** as a phase-exit check
 - **If** ≥ 3 sessions have passed since any SYNTHESIZE → propose **SYNTHESIZE** (weekly journal at minimum)
+- **If** the root `_Inbox/` holds ≥ 5 untriaged captures OR any capture with `Needs_Processing: true` is older than 14 days → propose **TRIAGE** (drain the capture inbox before it silts up)
+
+Regardless of what fires: at session start, if the capture inbox (`_Inbox/` + the active subject's `Captures/`) is non-empty, name the pending count in your proposal even when TRIAGE is not the default — so the user always knows the pen has something waiting.
 
 ### Step 2 — Weak-Unit priority
 

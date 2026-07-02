@@ -15,7 +15,7 @@ The LifeLong Learning system uses three nested layers of schema:
 
 ### Layer 1 — Teaching engine universals (this layer)
 
-The teaching engine (`_teaching-engine/`) defines all universal types (`LLL_State`, `LLL_Subject_Manifest`, `LLL_Session`, `LLL_Quiz`, `LLL_SR_Log`, `LLL_Synthesis`, `LLL_Source`) and the protocols that govern their use: decision algorithms, pedagogy, synthesis cadence, SR conventions. Applies to every cartridge. Cannot be overridden per subject.
+The teaching engine (`_teaching-engine/`) defines all universal types (`LLL_State`, `LLL_Subject_Manifest`, `LLL_Session`, `LLL_Quiz`, `LLL_SR_Log`, `LLL_Synthesis`, `LLL_Source`, `LLL_Note`) and the protocols that govern their use: decision algorithms, pedagogy, synthesis cadence, SR conventions. Applies to every cartridge. Cannot be overridden per subject.
 
 ### Layer 2 — Cartridge schema (per subject)
 
@@ -24,7 +24,7 @@ Defined by `<Subject>/_schema.md`. Applies only to that cartridge. Designed duri
 - Subject-specific Types (concept, technique, theorem, kanji, period, event, etc.)
 - Relationship vocabulary
 - Mastery scale (default 0–5 or subject-custom)
-- Custom session activities (beyond universal six)
+- Custom session activities (beyond the universal seven)
 - Folder structure within the cartridge
 
 ### Layer 3 — Instance (per note)
@@ -45,6 +45,7 @@ LLL_Source           → any external material (book, paper, video, class, etc.)
 LLL_State            → single source of truth for subject
 LLL_Subject_Manifest → subject's identity document (_subject.md)
 LLL_Unit             → generic Unit type; specialized per cartridge
+LLL_Note             → fleeting-capture note; lives in root _Inbox/ (un-homed) or <Subject>/Captures/, drained by TRIAGE
 ```
 
 These are fully templated in `_teaching-engine/_templates/` and inherited by every cartridge.

@@ -66,11 +66,23 @@ _USER.md
 # SR card files (if user stores cards in dedicated files vs embedded in atoms)
 **/SR-Cards/*.md
 !**/SR-Cards/.gitkeep
+# Anki export artifacts (regenerated on demand; never tracked)
+**/SR-Cards/*.tsv
+
+# Capture layer (personal fleeting notes / triage inbox)
+# The OV-root inbox: ignore captures, keep the folder + its README.
+_Inbox/*.md
+!_Inbox/README.md
+!_Inbox/.gitkeep
+# Per-subject capture pens
+**/Captures/*.md
+!**/Captures/.gitkeep
 
 # ----------------------------------------------------------------------
 # Always tracked (overrides the above for the example cartridge):
 # The shipped example cartridge demonstrates the system; its bootstrap
-# session log and seed atoms are part of the release.
+# session log, seed atoms, and example captures are part of the release.
 # ----------------------------------------------------------------------
 !Example-Subject-*/Sessions/*BOOTSTRAP*.md
 !Example-Subject-*/_state.md
+!Example-Subject-*/Captures/*.md

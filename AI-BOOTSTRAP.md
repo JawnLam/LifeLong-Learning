@@ -89,9 +89,10 @@ If you cannot complete pre-flight (missing files, unreadable folder, ambiguous u
 │   ├── BOOTSTRAP-NEW-SUBJECT.md
 │   ├── _templates/                                              ← note templates
 │   └── _meta/                                                   ← schema-of-schemas + SR conventions
+├── _Inbox/                                                      ← un-homed capture pen (LLL_Note, subject unknown)
 └── <Subject>/                                                   ← zero or more cartridges
     ├── _subject.md, _schema.md, _curriculum.md, _state.md
-    ├── Units/, Sources/, Sessions/, Quizzes/, Synthesis/, SR-Cards/
+    ├── Units/, Sources/, Sessions/, Quizzes/, Synthesis/, SR-Cards/, Captures/
 ```
 
 ## Core principles (apply to every session, regardless of subject)

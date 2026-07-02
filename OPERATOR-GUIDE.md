@@ -12,13 +12,15 @@ A session has nine phases. The AI runs through all of them; you only experience 
 
 1. **READ** — AI reads the teaching engine, your `_USER.md` (if present), and the active subject's `_subject.md`, `_schema.md`, `_state.md`, recent session logs, and weak Units.
 2. **DIAGNOSE** — AI inspects state for hard overrides, weak Units, cadence rhythms.
-3. **PROPOSE** — AI proposes an activity (TEACH / QUIZ-SR / QUIZ-SOCRATIC / REVIEW-WEAK / SYNTHESIZE / INTEGRATE) with rationale.
+3. **PROPOSE** — AI proposes an activity (TEACH / QUIZ-SR / QUIZ-SOCRATIC / REVIEW-WEAK / SYNTHESIZE / INTEGRATE / TRIAGE) with rationale.
 4. **WAIT** — AI waits for your confirmation or override.
 5. **EXECUTE** — the actual conversation happens here.
-6. **CAPTURE** — AI records Unit mastery changes, quiz results, synthesis artifacts.
+6. **CAPTURE** — AI records Unit mastery changes, quiz results, synthesis artifacts — and drops any stray, off-topic thought you raise into the capture inbox rather than losing it.
 7. **WRITE session log** — new file in `<Subject>/Sessions/`.
 8. **UPDATE `_state.md`** — overwritten with new state.
 9. **END with Open Threads** — explicit seed for the next session.
+
+**Capture and triage.** Half-formed thoughts that don't belong to whatever you're doing right now have a home: an `LLL_Note` in the OV-root `_Inbox/` (when you don't yet know the subject, or it spans several) or in a cartridge's `<Subject>/Captures/` (when the subject is clear). These are fleeting notes — the pre-Unit scrapbook layer. The **TRIAGE** activity periodically empties the pen: each note is promoted into a new Unit, merged into an existing one, or discarded. The AI proposes TRIAGE on its own once the inbox has ≥ 5 pending captures or one has sat for more than two weeks, and always tells you the pending count at the start of a session so nothing rots unseen.
 
 If a session ends without phases 6–9, the session is incomplete. Tell the AI to finish.
 
@@ -152,6 +154,7 @@ The `.gitignore` excludes:
 - SR performance logs (`<Subject>/Quizzes/SR-Performance-Log/*.md`)
 - Synthesis drafts (weekly journals, monthly essays, phase-end translations, quarterly drafts)
 - SR-card files
+- Capture pens — the OV-root `_Inbox/*.md` (its `README.md` and `.gitkeep` are kept) and per-subject `<Subject>/Captures/*.md`
 
 These never get pushed and never get touched by `git pull`. The `!Example-Subject-*/...` overrides re-include the worked example's bootstrap session log and `_state.md` (Shipped Examples Zone).
 

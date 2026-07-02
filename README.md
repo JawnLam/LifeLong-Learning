@@ -69,7 +69,7 @@ For environment setup details, see [`INSTALL.md`](INSTALL.md).
 - **AI assistant** — any model capable of reading markdown and parsing YAML frontmatter (Claude Sonnet/Opus class, GPT-4 class and above)
 - **OS** — Mac, Windows, or Linux
 - **Editor / environment** — anything that gives an AI read/write access to a local folder. Obsidian recommended but not required.
-- **Spaced repetition tool** — optional. Obsidian SR plugin, Anki, Mochi, RemNote, or none at all (the system falls back to Socratic-only quizzing).
+- **Spaced repetition tool** — optional. **Anki** has a first-class, dependency-free integration (plain-text import that works from any AI, plus optional live two-way sync via the AnkiConnect add-on; review anywhere it syncs to via AnkiWeb) — see `_teaching-engine/_meta/SR-CONVENTIONS.md § "Anki integration"`. Also supported: Obsidian SR plugin, Mochi, RemNote, or none at all (the system falls back to Socratic-only quizzing).
 - **Python** — not used. There are no scripts to run.
 - **Network** — none required. The system is self-contained markdown; nothing is fetched at runtime.
 
@@ -101,10 +101,11 @@ Optional: copy `_USER.md.template` to `_USER.md` and fill it in if you want glob
 | `_teaching-engine/`                 | Subject-agnostic AI operating manual                                      |
 | `_teaching-engine/_templates/`      | Note templates inherited by every cartridge                               |
 | `_teaching-engine/_meta/`           | Schema-of-schemas + SR conventions                                        |
+| `_Inbox/`                           | Un-homed capture pen — fleeting notes not yet tied to a subject (see its README) |
 | `<Subject>/`                        | A cartridge — one folder per topic you're studying                        |
 | `Example-Subject-Roman-Empire/`     | A worked example cartridge for "The Rise and Fall of the Roman Empire"    |
 
-Each cartridge contains: `_subject.md`, `_schema.md`, `_curriculum.md`, `_state.md`, `Units/`, `Sources/`, `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`.
+Each cartridge contains: `_subject.md`, `_schema.md`, `_curriculum.md`, `_state.md`, `Units/`, `Sources/`, `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`. Fleeting notes are captured as `LLL_Note` items — subject-homed ones in the cartridge's `Captures/`, un-homed or cross-cutting ones in the OV-root `_Inbox/` — and drained into Units by the TRIAGE session activity.
 
 ## Where to go for what
 
