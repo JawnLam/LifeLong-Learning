@@ -15,7 +15,7 @@ The LifeLong Learning system uses three nested layers of schema:
 
 ### Layer 1 — Teaching engine universals (this layer)
 
-The teaching engine (`_teaching-engine/`) defines all universal types (`LLL_State`, `LLL_Subject_Manifest`, `LLL_Session`, `LLL_Quiz`, `LLL_SR_Log`, `LLL_Synthesis`, `LLL_Source`, `LLL_Note`, `LLL_Insight`, `LLL_Community`) and the protocols that govern their use: decision algorithms, pedagogy, synthesis cadence, SR conventions. Applies to every cartridge. Cannot be overridden per subject.
+The teaching engine (`_teaching-engine/`) defines all universal types (`LLL_State`, `LLL_Subject_Manifest`, `LLL_Session`, `LLL_Quiz`, `LLL_SR_Log`, `LLL_Synthesis`, `LLL_Source`, `LLL_Note`, `LLL_Insight`, `LLL_Community`, `LLL_Lesson`) and the protocols that govern their use: decision algorithms, pedagogy, synthesis cadence, SR conventions. Applies to every cartridge. Cannot be overridden per subject.
 
 ### Layer 2 — Cartridge schema (per subject)
 
@@ -48,6 +48,7 @@ LLL_Unit             → generic Unit type; specialized per cartridge
 LLL_Note             → fleeting-capture note; lives in root _Inbox/ (un-homed) or <Subject>/Captures/, drained by TRIAGE
 LLL_Insight          → decision-grade learning record (ADR-style); lives in <Subject>/Insights/; steers ZPD / what-to-teach-next
 LLL_Community        → a vetted place to test skills in the real world (the wisdom axis); lives in <Subject>/Communities/; used by the FIELD-TEST activity
+LLL_Lesson           → an optional short, self-contained teaching artifact (markdown source of truth + optional rendered HTML); lives in <Subject>/Lessons/
 ```
 
 These are fully templated in `_teaching-engine/_templates/` and inherited by every cartridge.

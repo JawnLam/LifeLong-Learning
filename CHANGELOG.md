@@ -2,6 +2,39 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.0] — 2026-07-02
+
+Minor — **lesson artifacts + component library.** Phase D, the **final phase** of folding the `productivity/teach` ideas into LLL. A new *output modality*, designed to stay optional and degrade-safe so core LLL remains markdown-first. Additive schema growth (1.7 → 1.8).
+
+### Added — `LLL_Lesson` (+ `TEMPLATE-Lesson.md`)
+
+An optional short, self-contained teaching artifact tied to the mission and the learner's ZPD. The **markdown note is the source of truth** (`<Subject>/Lessons/0001-slug.md`); an **optional** rendered `0001-slug.html` may accompany it (`lll_Rendered`). Fields: `lll_Lesson_Number`, `lll_Lesson_Units`, `lll_Mission_Tie`, `lll_Primary_Source`, `lll_ZPD_Rung`, `lll_Rendered`. A lesson is *not* a Unit — it's a short teaching event (one tangible win, cited, ends in retrieval), rarely revisited; the Unit stays the durable knowledge.
+
+### Added — bundled `_teaching-engine/_assets/` component library
+
+Ships a shared, Tufte-ish, print-friendly, self-contained **`lesson.css`** (+ README) that every rendered lesson links, so a cartridge's lessons look like one course. Reuse-by-default: new reusable pieces go here, never re-inlined per lesson. Ships with the OV like `_scripts/`.
+
+### Added — engine chapter `05-LESSONS.md`
+
+The authoring discipline (one win, working-memory-sized, mission+ZPD-tied, cited, retrieval-closing, invites follow-up) and the optional-HTML render workflow. **No new activity** — authoring a lesson is an optional output of a TEACH session, so the activity set stays at eight.
+
+### Design — optional + degrade-safe
+
+No stdlib markdown renderer exists, so the AI authors the HTML directly (linking `lesson.css`) — no pip dependency. Where there's no renderer/browser, the markdown lesson is the whole deliverable. Core LLL stays markdown-first and substrate-agnostic; the beautiful artifact is a bonus. Full rationale: `Plans/phase-d-lessons-design-note.md`.
+
+### Changed
+
+- `SCHEMA-OF-SCHEMAS.md` — `LLL_Lesson` registered. `AI-BOOTSTRAP.md` — `05-LESSONS.md` in the reading list; folder tree gains `Lessons/` + `_assets/`. `BOOTSTRAP-NEW-SUBJECT.md` — creates `Lessons/`; gates updated. `README.md` — folder structure. `.gitignore` — `Lessons/*.md`/`*.html` operator-private (example kept).
+- `Example-Subject-Roman-Empire/` — gains a `Lessons/` artifact (markdown + a rendered HTML demonstrating the shared stylesheet).
+
+### Coordinated vault-schema change
+
+Vault `Master_Schema.yaml` v1.42.0 → v1.43.0: registered `LLL_Lesson` (+ 6 properties, `specific_keys`; no new enum); mirrored `_types/LLL_Lesson.md`. Purely additive.
+
+### Milestone
+
+**This completes all four phases (A–D) of the "teach"-skill adoption** — pedagogy foundation, insight ledger, wisdom axis, lesson artifacts. LLL now covers all seven ideas the comparison surfaced.
+
 ## [1.11.0] — 2026-07-02
 
 Minor — **the community / wisdom axis.** Phase C of folding the `productivity/teach` ideas into LLL. Fills the one conceptual hole the comparison flagged: LLL was entirely inward. Additive schema growth (1.6 → 1.7).

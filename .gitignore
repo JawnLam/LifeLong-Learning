@@ -86,6 +86,11 @@ _Inbox/*.md
 **/Insights/*.md
 !**/Insights/.gitkeep
 
+# Lesson artifacts (personal produced output — markdown source + optional rendered HTML)
+**/Lessons/*.md
+**/Lessons/*.html
+!**/Lessons/.gitkeep
+
 # ----------------------------------------------------------------------
 # Always tracked (overrides the above for the example cartridge):
 # The shipped example cartridge demonstrates the system; its bootstrap
@@ -95,3 +100,5 @@ _Inbox/*.md
 !Example-Subject-*/_state.md
 !Example-Subject-*/Captures/*.md
 !Example-Subject-*/Insights/*.md
+!Example-Subject-*/Lessons/*.md
+!Example-Subject-*/Lessons/*.html

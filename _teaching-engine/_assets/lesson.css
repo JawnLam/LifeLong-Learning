@@ -1,0 +1,68 @@
+/* LifeLong-Learning — shared lesson stylesheet.
+   Tufte-ish: readable measure, generous margins, print-friendly, self-contained.
+   Every rendered lesson links this so a cartridge's lessons look like one course,
+   not a pile of one-offs. Reuse-by-default: extend here, don't re-inline per lesson. */
+
+:root {
+  --ink: #111;
+  --muted: #555;
+  --accent: #7a1f1f;      /* restrained, not decorative */
+  --rule: #ddd;
+  --bg: #fffef9;          /* warm paper */
+  --measure: 38rem;       /* ~66 chars: the readable line length */
+}
+
+html { font-size: 18px; }
+body {
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  max-width: var(--measure);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; line-height: 1.2; font-weight: 600; }
+h1 { font-size: 1.9rem; margin: 0 0 .3rem; }
+h2 { font-size: 1.25rem; margin: 2.4rem 0 .6rem; }
+h3 { font-size: 1rem; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); }
+
+p, li { max-width: var(--measure); }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(122,31,31,.3); }
+a:hover { border-bottom-color: var(--accent); }
+code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .85em; background: #f3f1ea; padding: .1em .35em; border-radius: 3px; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+/* The one win — the lesson's promise, set apart. */
+.lesson-win {
+  border-left: 3px solid var(--accent);
+  padding: .3rem 0 .3rem 1rem;
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+/* Try it — the retrieval block; effortful, boxed. */
+.lesson-try {
+  background: #f6f4ec;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.lesson-try h3 { margin-top: 0; }
+
+/* Citations — quiet superscript / margin feel. */
+.cite { color: var(--muted); font-size: .85em; }
+
+/* The teacher footer. */
+.lesson-foot { margin-top: 3rem; color: var(--muted); font-size: .9rem; font-style: italic; }
+
+/* Print: black on white, no backgrounds, keep the measure. */
+@media print {
+  body { background: #fff; color: #000; padding: 1.5cm; max-width: none; }
+  .lesson-try { background: #fff; }
+  a { color: #000; border-bottom: none; }
+}

@@ -19,7 +19,7 @@ A complete subject folder inside the `LifeLong Learning/` directory that is read
 4. `_state.md` — initial state
 5. Populated Unit folders — enough seed Units for the first 2–4 sessions
 6. Populated `Sources/` folder — the books/media/references the user will engage
-7. Empty-but-ready subfolders for `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`, `Insights/`, `Communities/`; plus empty `_glossary.md` and `_gaps.md` reference docs
+7. Empty-but-ready subfolders for `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`, `Insights/`, `Communities/`, `Lessons/`; plus empty `_glossary.md` and `_gaps.md` reference docs
 8. A bootstrap session log (Session 000) documenting what you created
 
 ## Before you start
@@ -129,7 +129,7 @@ Output: files in `<Subject>/Sources/`.
 
 Create `<Subject>/Sessions/`, `<Subject>/Quizzes/Socratic-Conceptual/`, `<Subject>/Quizzes/SR-Performance-Log/`, `<Subject>/Synthesis/Weekly-Journals/`, `<Subject>/Synthesis/Monthly-Essays/`, `<Subject>/Synthesis/Phase-End-Translations/`, `<Subject>/Synthesis/Quarterly-Drafts/`, `<Subject>/SR-Cards/`, `<Subject>/Captures/`, `<Subject>/Insights/`, `<Subject>/Communities/`. Add `.gitkeep` files so they survive transport.
 
-`Communities/` holds `LLL_Community` items — vetted, high-reputation places to test skills in the real world (the wisdom axis; used by the FIELD-TEST activity). It starts empty; propose communities when a skill matures, respecting any recorded opt-out.
+`Communities/` holds `LLL_Community` items — vetted, high-reputation places to test skills in the real world (the wisdom axis; used by the FIELD-TEST activity). It starts empty; propose communities when a skill matures, respecting any recorded opt-out. `Lessons/` holds optional `LLL_Lesson` artifacts (short, self-contained teaching pieces; markdown source of truth + optional rendered HTML) — see `05-LESSONS.md`. It starts empty; lessons are produced only when a revisitable artifact helps.
 
 Also create two empty typeless reference docs at the cartridge root — `<Subject>/_glossary.md` (canonical terminology; starts empty and grows only as the learner demonstrates understanding of a term) and `<Subject>/_gaps.md` (knowledge & resource gaps register). Both follow the `_schema.md` header convention (`lll_Subject`, `updated:`, no `type:`). See `03-SCHEMA-DESIGN.md`.
 
@@ -167,7 +167,7 @@ Before you consider bootstrapping finished, confirm:
 - [ ] `_state.md` exists and is internally consistent
 - [ ] At least 5 seed Units created (more for skill-based subjects)
 - [ ] At least 1 active source seeded
-- [ ] Empty subfolders created with `.gitkeep` (including `Captures/`, `Insights/`, `Communities/`)
+- [ ] Empty subfolders created with `.gitkeep` (including `Captures/`, `Insights/`, `Communities/`, `Lessons/`)
 - [ ] Empty `_glossary.md` and `_gaps.md` reference docs created at the cartridge root
 - [ ] SR decision made (Q10): global backend recorded in `_USER.md` if newly chosen and set up; `lll_SR_Enabled` set in `_subject.md`
 - [ ] Phase 1 SR log initialized **only if `lll_SR_Enabled: true`** (skip it entirely when SR is off)

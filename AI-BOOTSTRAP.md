@@ -33,6 +33,7 @@ Read these in full from `{ROOT}/_teaching-engine/`:
 3. `02-PEDAGOGY.md` — andragogical principles and interaction tone
 4. `03-SCHEMA-DESIGN.md` — how cartridge schemas are structured
 5. `04-SYNTHESIS-CADENCE.md` — when and how the user produces synthesis artifacts
+5b. `05-LESSONS.md` — the optional beautiful-lesson-artifact modality (read when producing a lesson)
 6. All files in `_teaching-engine/_templates/` — the templates you'll use for new notes
 7. `_teaching-engine/_meta/SCHEMA-OF-SCHEMAS.md` — the meta-ontology (only required for cartridging or audit work)
 8. `_teaching-engine/_meta/SR-CONVENTIONS.md` — the spaced-repetition card conventions
@@ -89,11 +90,12 @@ If you cannot complete pre-flight (missing files, unreadable folder, ambiguous u
 │   ├── BOOTSTRAP-NEW-SUBJECT.md
 │   ├── _templates/                                              ← note templates
 │   ├── _meta/                                                   ← schema-of-schemas + SR conventions
-│   └── _scripts/                                                ← optional bundled tooling (e.g. anki_sync.py — built-in Anki live sync)
+│   ├── _scripts/                                                ← optional bundled tooling (e.g. anki_sync.py — built-in Anki live sync)
+│   └── _assets/                                                 ← optional shared lesson components (lesson.css) for LLL_Lesson artifacts
 ├── _Inbox/                                                      ← un-homed capture pen (LLL_Note, subject unknown)
 └── <Subject>/                                                   ← zero or more cartridges
     ├── _subject.md, _schema.md, _curriculum.md, _state.md, _glossary.md, _gaps.md
-    ├── Units/, Sources/, Sessions/, Quizzes/, Synthesis/, SR-Cards/, Captures/, Insights/, Communities/
+    ├── Units/, Sources/, Sessions/, Quizzes/, Synthesis/, SR-Cards/, Captures/, Insights/, Communities/, Lessons/
 ```
 
 ## Core principles (apply to every session, regardless of subject)
