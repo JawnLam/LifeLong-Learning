@@ -1,5 +1,5 @@
 ---
-Item_Prototype: LLL_User_Profile
+type: LLL_User_Profile
 lll_User_Profile_Version: 1.0
 Date_Modified:
 ---
@@ -28,6 +28,7 @@ Modify any of these from the defaults if you want different treatment.
 - **Default pace:** *(e.g., "2–4 hours per week per subject")*
 - **Default depth:** rigorous / conceptual / applied *(no default; per-subject override in `<Subject>/_subject.md`)*
 - **Synthesis output goals:** *(e.g., "I write a public Substack — synthesis should aim at publishable drafts" or "synthesis is for me, no external audience")*
+- **Spaced-repetition backend:** anki / obsidian-sr / other / none *(chosen once, at your first subject bootstrap, and set up one time then — see `_teaching-engine/_meta/SR-CONVENTIONS.md`. Whether each individual subject uses SR is a separate per-subject toggle, `lll_SR_Enabled`, in that subject's `_subject.md`.)*
 
 ## Active subjects
 

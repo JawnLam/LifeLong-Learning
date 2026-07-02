@@ -58,6 +58,13 @@ Before creating any files, ask the user the following. **One question at a time,
 
 **Q9: Communication preferences.** Default is peer register, direct, substantive critique, minimal hedging. Confirm or modify.
 
+**Q10: Spaced repetition.** Two parts, and the first is asked *only once ever*:
+
+- **(Global — ask only if `{ROOT}/_USER.md` has no SR backend recorded yet.)** "Do you want spaced-repetition flashcard review as part of your study, and if so with which tool?" Offer: **Anki** (recommended — review on desktop/phone/web; supports one-command push and two-way stat sync via this OV's Anki integration), the **Obsidian Spaced Repetition plugin** (in-vault, no extra app), **another tool** you already use, or **none** (the system falls back to Socratic-only quizzing). If they pick a tool and haven't set it up, **guide them through setup now** per `_teaching-engine/_meta/SR-CONVENTIONS.md § "Choosing and setting up an SR backend"` — one time, before continuing. Record the chosen backend in `_USER.md` (Learning preferences). Do **not** re-ask this for later subjects.
+- **(Per-subject — always ask.)** "Use spaced repetition for *this* subject?" Some subjects (skills, languages, fact-heavy history) benefit greatly; others (a pure reading/discussion subject) may not. Record the answer as `lll_SR_Enabled` in `_subject.md`. If the global backend is `none`, this is `false` by default.
+
+Never assume SR. If the user is unsure, explain the trade-off briefly and let them decide; SR can be turned on later by editing `lll_SR_Enabled`.
+
 Once you have answers, proceed.
 
 ## Step-by-step execution
@@ -81,6 +88,7 @@ Output: `<Subject>/_subject.md` using the frontmatter spec in `03-SCHEMA-DESIGN.
 - Everything the user told you in Q1–Q9
 - A clear summary of the user's goals, prior knowledge, constraints, and communication preferences
 - Anything a fresh AI session would need to calibrate teaching correctly on first read
+- `lll_SR_Enabled` (`true`/`false`) set from Q10's per-subject answer. If the user chose a global SR backend for the first time in Q10, also record that backend in `{ROOT}/_USER.md` (Learning preferences) so later subjects inherit it without re-asking, and confirm its one-time setup is done per `_meta/SR-CONVENTIONS.md`.
 
 ### Step 4 — Design the curriculum
 
@@ -123,7 +131,7 @@ Create `<Subject>/Sessions/`, `<Subject>/Quizzes/Socratic-Conceptual/`, `<Subjec
 
 `Captures/` is this subject's fleeting-note pen — the holding area for `LLL_Note` captures that already belong to this subject but haven't been processed into Units yet. Un-homed captures (subject unknown or cross-cutting) instead go in the OV-root `_Inbox/`, which already exists at `{ROOT}/_Inbox/` and is shared across subjects — you do not create it per cartridge. The TRIAGE activity drains both. See `01-SESSION-PROTOCOL.md` and `_types/LLL_Note.md`.
 
-Also create `<Subject>/Quizzes/SR-Performance-Log/Phase-1-SR-Log.md` using `TEMPLATE-SR-Log.md`.
+**Only if `lll_SR_Enabled: true`**, also create `<Subject>/Quizzes/SR-Performance-Log/Phase-1-SR-Log.md` using `TEMPLATE-SR-Log.md`. If SR is off for this subject, leave the `SR-Performance-Log/` and `SR-Cards/` folders empty (their `.gitkeep` is enough) — don't seed an SR log the user didn't opt into.
 
 ### Step 9 — Write the bootstrap session log
 
@@ -154,7 +162,8 @@ Before you consider bootstrapping finished, confirm:
 - [ ] At least 5 seed Units created (more for skill-based subjects)
 - [ ] At least 1 active source seeded
 - [ ] Empty subfolders created with `.gitkeep` (including `Captures/`)
-- [ ] Phase 1 SR log initialized
+- [ ] SR decision made (Q10): global backend recorded in `_USER.md` if newly chosen and set up; `lll_SR_Enabled` set in `_subject.md`
+- [ ] Phase 1 SR log initialized **only if `lll_SR_Enabled: true`** (skip it entirely when SR is off)
 - [ ] Bootstrap session log written
 - [ ] Summary shown to user
 
@@ -169,6 +178,7 @@ Before you consider bootstrapping finished, confirm:
 7. **Ignoring user preferences already established.** Honor the defaults in `02-PEDAGOGY.md` and any overrides the user gave in Q9. Your communication during cartridging should match the system's overall tone.
 8. **Not checking the example cartridge.** When in doubt about file structure or frontmatter style, consult `Example-Subject-Roman-Empire/`.
 9. **Bulk-dumping the clarifying questions.** Ask one at a time, conversationally. A multi-bullet "please send me Q1–Q9" message is a failure mode, not the protocol.
+10. **Assuming spaced repetition.** SR is opt-in (Q10). Never silently create SR cards or an SR log for a subject the user didn't opt into, and never skip the one-time setup guidance when they pick a tool they haven't installed.
 
 ## A note on the user
 

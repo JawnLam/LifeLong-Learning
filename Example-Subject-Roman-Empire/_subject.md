@@ -22,6 +22,7 @@ lll_Primary_Unit_Types:
   - event
 lll_Custom_Session_Activities: []
 lll_Mastery_Scale: default
+lll_SR_Enabled: true
 lll_Bootstrapped: 2026-06-01
 ---
 

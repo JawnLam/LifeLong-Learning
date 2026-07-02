@@ -2,6 +2,27 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] — 2026-07-01
+
+Minor — **spaced repetition is now opt-in, asked and set up at bootstrap.** Previously SR was silently assumed (the bootstrap never asked, yet the engine expected an SR tool and unconditionally initialized a Phase-1 SR log). Now the AI asks and guides setup. Additive schema growth (1.4 → 1.5).
+
+### Added — the SR question + guided setup
+
+- `BOOTSTRAP-NEW-SUBJECT.md` gains **Q10**, in two parts: (1) a **global, ask-once** question — do you want SR, and with which backend (**Anki** recommended / **Obsidian Spaced Repetition plugin** / **other** / **none**) — recorded in `_USER.md`, with **one-time setup guided** when the chosen tool isn't installed; (2) a **per-subject** on/off toggle. Plus an execution step, a quality-gate change (SR log initialized *only* if enabled), and a new failure mode ("assuming spaced repetition").
+- `_meta/SR-CONVENTIONS.md` gains a **"Choosing and setting up an SR backend"** section with step-by-step onboarding for Anki (desktop → AnkiConnect `2055492159` → AnkiWeb) and the Obsidian SR community plugin, plus "other" and "none" paths. The Socratic-fallback section is tied to the flag.
+
+### Added — `lll_SR_Enabled` (schema 1.4 → 1.5)
+
+New boolean on `LLL_Subject_Manifest` — whether a subject uses spaced repetition. `01-SESSION-PROTOCOL.md` guards the **QUIZ-SR** activity on it (never fires when `false`). Added to the manifest frontmatter spec in `03-SCHEMA-DESIGN.md` and the `_types/LLL_Subject_Manifest.md` definition. The SR *backend* itself lives once, globally, in `_USER.md` (not per-subject).
+
+### Fixed
+
+- `_USER.md.template` — stale `Item_Prototype:` frontmatter key corrected to `type:` (a leftover from the OKF `type`-discriminator rename). Added the global **Spaced-repetition backend** preference line.
+
+### Coordinated vault-schema change
+
+Vault `Master_Schema.yaml` v1.39.0 → v1.40.0: registered the `lll_SR_Enabled` property and added it to `LLL_Subject_Manifest.specific_keys`; mirrored the updated `_types/LLL_Subject_Manifest.md`. Purely additive.
+
 ## [1.6.0] — 2026-07-01
 
 Minor — **first-class Anki integration.** Makes Anki a real SR backend instead of a vaguely-supported option. Additive engine capability; **no schema change** (schema stays v1.4 — the integration needs no new type or field).

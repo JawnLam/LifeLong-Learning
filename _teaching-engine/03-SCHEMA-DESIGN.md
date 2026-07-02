@@ -117,6 +117,7 @@ lll_Math_Stance: <minimize | conceptual | full>
 lll_Primary_Unit_Types: <list>
 lll_Custom_Session_Activities: <list>
 lll_Mastery_Scale: <default | custom-scale-name>
+lll_SR_Enabled: <true | false>   # does this subject use spaced repetition? (BOOTSTRAP Q10; backend chosen globally in _USER.md)
 lll_Bootstrapped: <YYYY-MM-DD>
 ```
 

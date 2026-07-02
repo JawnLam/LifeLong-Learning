@@ -11,6 +11,7 @@ lll_Math_Stance: ""
 lll_Primary_Unit_Types: []
 lll_Custom_Session_Activities: []
 lll_Mastery_Scale: default
+lll_SR_Enabled: false
 lll_Bootstrapped: 
 Date_Added: 
 Date_Modified: 

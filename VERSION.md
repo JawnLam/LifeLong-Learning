@@ -1,27 +1,27 @@
 ---
-lll_version: "1.6.0"
-schema_version: "1.4"
+lll_version: "1.7.0"
+schema_version: "1.5"
 schema_status: "STABLE"
 release_date: 2026-07-01
-release_phase: "Minor release — first-class Anki integration: a stable export contract (deck/tag/deterministic-key/notetype mapping) with a dependency-free TSV import path and an optional two-way AnkiConnect path. No schema change (v1.4 retained)"
+release_phase: "Minor release — spaced repetition made opt-in at bootstrap: the AI now asks whether the user wants SR and which backend, then guides one-time setup. Adds lll_SR_Enabled to the subject manifest (schema 1.4→1.5)"
 ---
 
 # LifeLong Learning — Version
 
-This is LifeLong Learning **v1.6.0** — the **Anki integration** release. It makes Anki a first-class SR backend via a stable export contract (deck `LLL::<Subject>`, hierarchical tags, a deterministic per-card identity key, built-in Basic / Basic-and-reversed notetypes) with two ways across it: a dependency-free **TSV import** (works from any AI substrate) and an optional live **AnkiConnect** path for one-command push + two-way review-stat sync. AnkiWeb review comes free via Anki's own sync. No schema change — additive engine capability only; schema stays v1.4.
+This is LifeLong Learning **v1.7.0** — the **spaced-repetition opt-in** release. SR is no longer silently assumed: the first subject bootstrap asks whether the user wants spaced repetition and which backend (Anki / Obsidian SR plugin / other / none), then **guides one-time setup**. The backend is chosen once (recorded in `_USER.md`); each subject carries a per-subject on/off toggle, `lll_SR_Enabled`, on its manifest. Additive schema growth (1.4→1.5): one boolean field, no renames or removals. Also fixes a stale `Item_Prototype` frontmatter key in `_USER.md.template`.
 
-The prior release was **v1.5.0** — the capture layer: the `LLL_Note` fleeting-note type, the OV-root `_Inbox/` and per-subject `<Subject>/Captures/` pens, and the **TRIAGE** session activity.
+Prior releases: **v1.6.0** — first-class Anki integration (export contract + TSV import + two-way AnkiConnect). **v1.5.0** — the capture layer (`LLL_Note`, `_Inbox/`/`Captures/`, TRIAGE).
 
 ## Version identifiers
 
 | Identifier              | Value         | Notes                                                                  |
 |-------------------------|---------------|------------------------------------------------------------------------|
 | **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
-| **Software**            | v1.6.0        | Anki integration — export contract + TSV path + AnkiConnect two-way path (v1.5.0: capture layer)   |
-| **Schema**              | v1.4          | STABLE — unchanged from v1.5.0; the Anki integration needs no new type or field |
-| **Teaching engine**     | v1.6.0        | Five core operating files (`00`–`04`) + `BOOTSTRAP-NEW-SUBJECT.md`; seven universal activities; SR-CONVENTIONS gains the Anki integration contract |
-| **Note templates**      | v1.6.0        | Eleven templates (unchanged from v1.5.0)                              |
-| **Example cartridge**   | v1.6.0        | `Example-Subject-Roman-Empire/` — `Captures/` (v1.5.0); Anki export is regenerated on demand, not shipped |
+| **Software**            | v1.7.0        | SR made opt-in at bootstrap + guided setup (v1.6.0: Anki integration; v1.5.0: capture layer)   |
+| **Schema**              | v1.5          | STABLE — added `lll_SR_Enabled` (boolean) to `LLL_Subject_Manifest`; additive |
+| **Teaching engine**     | v1.7.0        | Five core operating files (`00`–`04`) + `BOOTSTRAP-NEW-SUBJECT.md` (now with SR Q10); seven universal activities; SR-CONVENTIONS carries backend-onboarding + the Anki contract |
+| **Note templates**      | v1.7.0        | Eleven templates (unchanged since v1.5.0)                              |
+| **Example cartridge**   | v1.7.0        | `Example-Subject-Roman-Empire/` — `Captures/` (v1.5.0); Anki export regenerated on demand, not shipped |
 | **Release date**        | 2026-07-01    |                                                                        |
 
 ## Schema policy
@@ -41,6 +41,7 @@ requires a major version bump (v2.0). Additive changes (a new optional type such
   - Five core operating files (`00`–`04`) plus `BOOTSTRAP-NEW-SUBJECT.md`; the session protocol now defines **seven** universal activities (TEACH, QUIZ-SR, QUIZ-SOCRATIC, REVIEW-WEAK, SYNTHESIZE, INTEGRATE, **TRIAGE**)
   - Eleven note templates in `_templates/` (Unit, session, state, source, quiz, SR-log, four synthesis kinds, **Note**)
   - Schema-of-schemas + SR conventions in `_meta/` — `SR-CONVENTIONS.md` now carries the **Anki integration contract** (deck/tag/deterministic-key/notetype mapping; TSV import path; AnkiConnect two-way procedure)
+- **Spaced-repetition opt-in (v1.7.0):** bootstrap Q10 asks whether the user wants SR and which backend, then guides one-time setup (SR-CONVENTIONS "Choosing and setting up an SR backend"). Backend recorded once in `_USER.md`; per-subject `lll_SR_Enabled` toggle on the manifest; QUIZ-SR is guarded on it. Fixes a stale `Item_Prototype` key in `_USER.md.template`.
 - **Anki integration (v1.6.0):** first-class Anki SR backend. Dependency-free TSV import for any AI substrate; optional live AnkiConnect push + two-way review-stat sync (desktop + add-on); AnkiWeb review via Anki's own sync. No schema change. A companion Claude Code skill (operator-private, outside this repo) packages the AnkiConnect automation.
 - **Capture layer (v1.5.0):**
   - `_types/LLL_Note.md` — the fleeting-note type (`lll_Note_Kind`, `lll_Note_Status`, `lll_Promoted_To`, `lll_Captured_During`; `Needs_Processing: true` on birth)

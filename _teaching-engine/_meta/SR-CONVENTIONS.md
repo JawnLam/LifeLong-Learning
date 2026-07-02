@@ -11,6 +11,38 @@ Every cartridge can use spaced repetition. The assistant generates cards embedde
 
 Supported SR tools include the Obsidian **Spaced Repetition** plugin, **Anki** (first-class — see "Anki integration" below), Mochi, RemNote, or any other SR tool the user prefers. The card syntax immediately below targets the Obsidian SR plugin; for other tools, adapt the syntax to match. **Anki has a dedicated, dependency-free integration contract documented in its own section further down** — a plain-text import path that works from any AI substrate, plus an optional live AnkiConnect path for two-way sync.
 
+## Choosing and setting up an SR backend
+
+**SR is opt-in and is chosen once, then toggled per subject.** The very first subject bootstrap asks the user whether they want spaced repetition and which backend (BOOTSTRAP-NEW-SUBJECT Q10); the answer is recorded globally in `{ROOT}/_USER.md` (Learning preferences) so later subjects inherit it. Each subject then carries `lll_SR_Enabled: true|false` in its `_subject.md`. If no backend is recorded and none is chosen, skip SR entirely and fall back to Socratic quizzing (see the last section).
+
+When the user picks a backend they haven't installed, **guide them through the one-time setup before continuing the bootstrap.** Walk it step by step; stop and confirm at each step; don't assume anything is already in place.
+
+### Option 1 — Anki (recommended)
+
+Best if the user wants review on phone/web as well as desktop, and the tightest automation (one-command push + two-way stat sync). Full contract in "Anki integration" below. One-time setup:
+
+1. **Install Anki desktop** (macOS: `brew install --cask anki`, or download from `https://apps.ankiweb.net/`). Launch it once to create the profile.
+2. **Install the AnkiConnect add-on** (only needed for the live/two-way path): in Anki → Tools → Add-ons → Get Add-ons → paste `2055492159` → OK → **restart Anki**. Verify with the skill's `ankiconnect.py verify`.
+3. **AnkiWeb sync** (for phone/browser review): click Sync, create/log into a free AnkiWeb account. Cards pushed to desktop reach every device after a sync.
+
+If the environment can't run a local API (no shell, or Anki not on this machine), the user can still use the **dependency-free TSV path**: the assistant writes `anki-export.tsv` and the user does File → Import. No add-on required.
+
+### Option 2 — Obsidian Spaced Repetition plugin
+
+Best if the user lives in Obsidian and wants cards in-vault with no extra app. One-time setup:
+
+1. In Obsidian → Settings → **Community plugins** → **Browse** → search "**Spaced Repetition**" → **Install** → **Enable**.
+2. (Optional) In the plugin settings, set the review tag/folder scope; the defaults pick up all cards in the vault.
+3. Cards use the `::` / `:::` / multi-line syntax documented immediately below, embedded in Unit notes.
+
+### Option 3 — Another tool (Mochi, RemNote, etc.)
+
+Record the tool in `_USER.md`. Generate cards in the tool's import format (most accept the Anki-style TSV or a simple Q/A text). The assistant adapts the card syntax; scheduling and review happen in that tool.
+
+### Option 4 — None
+
+Fully valid. Set `lll_SR_Enabled: false`; the QUIZ-SR activity is skipped and QUIZ-SOCRATIC carries the review load. The user can turn SR on later by choosing a backend and flipping `lll_SR_Enabled`.
+
 ## Card syntax (Obsidian SR plugin)
 
 ### One-line (basic)
@@ -144,4 +176,4 @@ The QUIZ-SR activity (see `01-SESSION-PROTOCOL.md`) becomes: (1) **push** any ne
 
 ## If the user is not using an SR tool
 
-SR is optional. If the user doesn't have an SR tool configured, fall back to Socratic quizzing only. The QUIZ-SR activity is skipped in the session protocol; the QUIZ-SOCRATIC activity continues to apply.
+SR is optional and opt-in. If the subject has `lll_SR_Enabled: false` (or no SR backend is recorded in `_USER.md`), fall back to Socratic quizzing only: the QUIZ-SR activity is skipped in the session protocol; the QUIZ-SOCRATIC activity continues to apply. Never generate SR cards or an SR log for a subject that hasn't opted in.

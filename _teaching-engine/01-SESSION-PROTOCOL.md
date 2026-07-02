@@ -32,7 +32,7 @@ These apply to all subjects. Individual cartridges may define their own subject-
 | Code | Activity | When it's the right default |
 |------|----------|------------------------------|
 | **TEACH** | Introduce new material via Socratic dialogue; user engages with source material before or during | Active source material in progress and no major weak Units pending; user has momentum |
-| **QUIZ-SR** | Drive SR card recall and log performance | Cards are due AND ≥ 72 hours since last session of this type |
+| **QUIZ-SR** | Drive SR card recall and log performance | Subject has `lll_SR_Enabled: true` AND cards are due AND ≥ 72 hours since last session of this type. If `lll_SR_Enabled: false`, this activity never fires — SR is opt-in (see SR-CONVENTIONS). |
 | **QUIZ-SOCRATIC** | Conceptual/application questions — probe explanation and transfer, not pure recall | ≥ 2 Units at mastery level 2 and user hasn't been Socratically quizzed in ≥ 7 days |
 | **REVIEW-WEAK** | Revisit Units flagged `weak` in state with targeted re-teaching | Any Unit is flagged weak OR SR performance on an Unit is failing |
 | **SYNTHESIZE** | Produce a synthesis artifact (weekly journal, monthly essay, phase-end piece, quarterly draft) | Synthesis cadence due OR user explicitly wants to write |
@@ -62,7 +62,7 @@ Regardless of what fires: at session start, if the capture inbox (`_Inbox/` + th
 ### Step 3 — Cadence rhythms
 
 - **If** ≥ 7 days since last QUIZ-SOCRATIC AND ≥ 2 Units at mastery level 2 → propose **QUIZ-SOCRATIC**
-- **If** SR cards are due AND last QUIZ-SR was ≥ 72 hours ago → propose **QUIZ-SR**
+- **If** the subject has `lll_SR_Enabled: true` AND SR cards are due AND last QUIZ-SR was ≥ 72 hours ago → propose **QUIZ-SR** (skip entirely when SR is off)
 
 ### Step 4 — Default forward motion
 
