@@ -133,6 +133,23 @@ Inherited. Universal.
 
 Inherited. Universal — weekly, monthly, phase-end, quarterly variants.
 
+## Cartridge reference documents (`_glossary.md`, `_gaps.md`)
+
+Two typeless reference documents live at each cartridge root alongside `_schema.md` (same convention: a comment header, `lll_Subject`, `updated:` — not a `type:` note).
+
+### `_glossary.md` — canonical terminology
+
+The subject's controlled vocabulary. Each entry: the **term**, a one-or-two-sentence definition that reuses already-defined glossary terms (build conceptual scaffolding), and — where the field has synonyms — the **preferred** term with the alternatives marked **discouraged**. Rules:
+
+- **Add a term only after the learner has demonstrated understanding of it.** The glossary is a record of compressed, earned knowledge — not a dictionary written up front. Adding a term is itself evidence of learning.
+- **One canonical term per concept.** When the field offers several, pick one and label the rest discouraged; then use only the canonical term in every later lesson, quiz, and Unit.
+- **Definitions say what a thing *is*, not how to use it** (that's the Unit's job). Keep them to a sentence or two.
+- Revise as understanding deepens; replace stale entries rather than accumulating them.
+
+### `_gaps.md` — knowledge & resource gaps
+
+A running register of what the mission needs but the cartridge doesn't yet have — a missing high-trust Source, an un-acquired skill area, an unanswered question. It exists so the assistant surfaces gaps **explicitly** (driving what to search for or acquire next) instead of papering over them with a confident guess (see `02-PEDAGOGY.md` § "Ground every claim"). Prune entries once filled.
+
 ## Conventions across all cartridges
 
 - **Links:** Always `[[wiki-style]]` for internal links

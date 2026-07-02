@@ -1,27 +1,27 @@
 ---
-lll_version: "1.9.0"
-schema_version: "1.5"
+lll_version: "1.10.0"
+schema_version: "1.6"
 schema_status: "STABLE"
 release_date: 2026-07-02
-release_phase: "Minor release — pedagogy foundation (Phase A of adopting the seven 'teach'-skill ideas). Adds the Knowledge/Skills/Wisdom triad, the fluency-vs-storage-strength distinction, ZPD by name, source-citation discipline, and a quiz anti-cueing rule. Doc-only — no schema change (v1.5 retained)"
+release_phase: "Minor release — the insight ledger (Phase B of adopting the 'teach'-skill ideas). Adds the LLL_Insight type (ADR-style, decision-grade learning records that steer ZPD), plus per-cartridge _glossary.md (canonical terminology) and _gaps.md (missing-resource register). Additive schema growth (1.5→1.6)"
 ---
 
 # LifeLong Learning — Version
 
-This is LifeLong Learning **v1.9.0** — the **pedagogy foundation** release (Phase A of folding Matt Pocock's "teach"-skill ideas into LLL). `02-PEDAGOGY.md` gains the **Knowledge / Skills / Wisdom** triad, an explicit **fluency vs storage strength** distinction (name the fluency illusion; design for durable retention), the **zone of proximal development** by name (we already implement it via the mastery ladder + decision algorithm), and a **"ground every claim in a trusted source"** citation discipline. `SR-CONVENTIONS.md` gains a quiz **anti-cueing** rule (equal-length candidate answers) and a storage-strength framing. Interleaving/retrieval/desirable-difficulty were already present and were sharpened, not duplicated. Doc-only; no schema change.
+This is LifeLong Learning **v1.10.0** — the **insight ledger** release (Phase B of folding Matt Pocock's "teach"-skill ideas into LLL). New **`LLL_Insight`** type: ADR-style, decision-grade learning records (a **corrected misconception**, disclosed **prior knowledge**, a demonstrated **mastery floor**, a **mission shift**) that live in `<Subject>/Insights/` and become the primary input to the zone-of-proximal-development judgment — distinct from the session journal. Plus two per-cartridge typeless reference docs: **`_glossary.md`** (canonical terminology — one term per concept, added only after the learner demonstrates understanding) and **`_gaps.md`** (a register of missing high-trust resources/knowledge, so gaps are surfaced rather than guessed past). Additive schema growth (1.5→1.6): one new type, no renames or removals.
 
-Prior releases: **v1.8.0** — bundled Anki live-sync tool. **v1.7.0** — SR opt-in at bootstrap. **v1.6.0** — Anki integration. **v1.5.0** — capture layer.
+Prior releases: **v1.9.0** — pedagogy foundation (triad, fluency-vs-storage, ZPD, citation). **v1.8.0** — bundled Anki sync. **v1.7.0** — SR opt-in. **v1.6.0** — Anki integration. **v1.5.0** — capture layer.
 
 ## Version identifiers
 
 | Identifier              | Value         | Notes                                                                  |
 |-------------------------|---------------|------------------------------------------------------------------------|
 | **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
-| **Software**            | v1.9.0        | Pedagogy foundation — K/S/W triad, fluency-vs-storage, ZPD, citation discipline, anti-cueing (v1.8.0: bundled Anki sync; v1.7.0: SR opt-in; v1.6.0: Anki integration; v1.5.0: capture layer)   |
-| **Schema**              | v1.5          | STABLE — unchanged since v1.7.0; Phase A is doc-only |
-| **Teaching engine**     | v1.9.0        | Five core operating files (`00`–`04`) + `BOOTSTRAP-NEW-SUBJECT.md`; seven universal activities; `02-PEDAGOGY` gains triad / fluency-vs-storage / ZPD / citation; `SR-CONVENTIONS` gains anti-cueing; optional `_scripts/anki_sync.py` |
-| **Note templates**      | v1.7.0        | Eleven templates (unchanged since v1.5.0)                              |
-| **Example cartridge**   | v1.7.0        | `Example-Subject-Roman-Empire/` — `Captures/` (v1.5.0); Anki export regenerated on demand, not shipped |
+| **Software**            | v1.10.0       | Insight ledger — `LLL_Insight` + `_glossary.md` + `_gaps.md` (v1.9.0: pedagogy foundation; v1.8.0: bundled Anki sync; v1.7.0: SR opt-in; v1.6.0: Anki integration; v1.5.0: capture layer)   |
+| **Schema**              | v1.6          | STABLE — added the `LLL_Insight` type + its fields/enums; additive |
+| **Teaching engine**     | v1.10.0       | Five core operating files (`00`–`04`) + `BOOTSTRAP-NEW-SUBJECT.md`; seven universal activities; `01-SESSION-PROTOCOL` gains the Insight-ledger triggers + ZPD read; `03-SCHEMA-DESIGN` defines `_glossary.md`/`_gaps.md`; optional `_scripts/anki_sync.py` |
+| **Note templates**      | v1.10.0       | Twelve templates (added `TEMPLATE-Insight.md`)                         |
+| **Example cartridge**   | v1.10.0       | `Example-Subject-Roman-Empire/` — gains `_glossary.md`, `_gaps.md`, and one worked `LLL_Insight` |
 | **Release date**        | 2026-07-01    |                                                                        |
 
 ## Schema policy

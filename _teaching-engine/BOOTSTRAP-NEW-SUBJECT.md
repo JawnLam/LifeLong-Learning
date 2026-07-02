@@ -19,7 +19,7 @@ A complete subject folder inside the `LifeLong Learning/` directory that is read
 4. `_state.md` — initial state
 5. Populated Unit folders — enough seed Units for the first 2–4 sessions
 6. Populated `Sources/` folder — the books/media/references the user will engage
-7. Empty-but-ready subfolders for `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`
+7. Empty-but-ready subfolders for `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`, `Insights/`; plus empty `_glossary.md` and `_gaps.md` reference docs
 8. A bootstrap session log (Session 000) documenting what you created
 
 ## Before you start
@@ -127,7 +127,11 @@ Output: files in `<Subject>/Sources/`.
 
 ### Step 8 — Create empty-but-ready subfolders
 
-Create `<Subject>/Sessions/`, `<Subject>/Quizzes/Socratic-Conceptual/`, `<Subject>/Quizzes/SR-Performance-Log/`, `<Subject>/Synthesis/Weekly-Journals/`, `<Subject>/Synthesis/Monthly-Essays/`, `<Subject>/Synthesis/Phase-End-Translations/`, `<Subject>/Synthesis/Quarterly-Drafts/`, `<Subject>/SR-Cards/`, `<Subject>/Captures/`. Add `.gitkeep` files so they survive transport.
+Create `<Subject>/Sessions/`, `<Subject>/Quizzes/Socratic-Conceptual/`, `<Subject>/Quizzes/SR-Performance-Log/`, `<Subject>/Synthesis/Weekly-Journals/`, `<Subject>/Synthesis/Monthly-Essays/`, `<Subject>/Synthesis/Phase-End-Translations/`, `<Subject>/Synthesis/Quarterly-Drafts/`, `<Subject>/SR-Cards/`, `<Subject>/Captures/`, `<Subject>/Insights/`. Add `.gitkeep` files so they survive transport.
+
+Also create two empty typeless reference docs at the cartridge root — `<Subject>/_glossary.md` (canonical terminology; starts empty and grows only as the learner demonstrates understanding of a term) and `<Subject>/_gaps.md` (knowledge & resource gaps register). Both follow the `_schema.md` header convention (`lll_Subject`, `updated:`, no `type:`). See `03-SCHEMA-DESIGN.md`.
+
+`Insights/` is the subject's decision-grade learning ledger (`LLL_Insight`, numbered `0001-slug.md`) — the misconceptions-corrected / prior-knowledge / mastery-floor / mission-shift records that steer the zone of proximal development. It starts empty; the assistant writes to it during sessions per `01-SESSION-PROTOCOL.md`. `Captures/` is this subject's fleeting-note pen for `LLL_Note` captures that already belong to it (un-homed captures go in the OV-root `_Inbox/`, which you do not create per cartridge). The TRIAGE activity drains the capture pens.
 
 `Captures/` is this subject's fleeting-note pen — the holding area for `LLL_Note` captures that already belong to this subject but haven't been processed into Units yet. Un-homed captures (subject unknown or cross-cutting) instead go in the OV-root `_Inbox/`, which already exists at `{ROOT}/_Inbox/` and is shared across subjects — you do not create it per cartridge. The TRIAGE activity drains both. See `01-SESSION-PROTOCOL.md` and `_types/LLL_Note.md`.
 
@@ -161,7 +165,8 @@ Before you consider bootstrapping finished, confirm:
 - [ ] `_state.md` exists and is internally consistent
 - [ ] At least 5 seed Units created (more for skill-based subjects)
 - [ ] At least 1 active source seeded
-- [ ] Empty subfolders created with `.gitkeep` (including `Captures/`)
+- [ ] Empty subfolders created with `.gitkeep` (including `Captures/` and `Insights/`)
+- [ ] Empty `_glossary.md` and `_gaps.md` reference docs created at the cartridge root
 - [ ] SR decision made (Q10): global backend recorded in `_USER.md` if newly chosen and set up; `lll_SR_Enabled` set in `_subject.md`
 - [ ] Phase 1 SR log initialized **only if `lll_SR_Enabled: true`** (skip it entirely when SR is off)
 - [ ] Bootstrap session log written

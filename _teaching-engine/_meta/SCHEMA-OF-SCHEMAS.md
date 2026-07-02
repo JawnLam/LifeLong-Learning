@@ -15,7 +15,7 @@ The LifeLong Learning system uses three nested layers of schema:
 
 ### Layer 1 — Teaching engine universals (this layer)
 
-The teaching engine (`_teaching-engine/`) defines all universal types (`LLL_State`, `LLL_Subject_Manifest`, `LLL_Session`, `LLL_Quiz`, `LLL_SR_Log`, `LLL_Synthesis`, `LLL_Source`, `LLL_Note`) and the protocols that govern their use: decision algorithms, pedagogy, synthesis cadence, SR conventions. Applies to every cartridge. Cannot be overridden per subject.
+The teaching engine (`_teaching-engine/`) defines all universal types (`LLL_State`, `LLL_Subject_Manifest`, `LLL_Session`, `LLL_Quiz`, `LLL_SR_Log`, `LLL_Synthesis`, `LLL_Source`, `LLL_Note`, `LLL_Insight`) and the protocols that govern their use: decision algorithms, pedagogy, synthesis cadence, SR conventions. Applies to every cartridge. Cannot be overridden per subject.
 
 ### Layer 2 — Cartridge schema (per subject)
 
@@ -46,6 +46,7 @@ LLL_State            → single source of truth for subject
 LLL_Subject_Manifest → subject's identity document (_subject.md)
 LLL_Unit             → generic Unit type; specialized per cartridge
 LLL_Note             → fleeting-capture note; lives in root _Inbox/ (un-homed) or <Subject>/Captures/, drained by TRIAGE
+LLL_Insight          → decision-grade learning record (ADR-style); lives in <Subject>/Insights/; steers ZPD / what-to-teach-next
 ```
 
 These are fully templated in `_teaching-engine/_templates/` and inherited by every cartridge.

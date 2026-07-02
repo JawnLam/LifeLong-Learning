@@ -82,11 +82,16 @@ _Inbox/*.md
 **/Captures/*.md
 !**/Captures/.gitkeep
 
+# Insight ledger (personal, decision-grade learning records)
+**/Insights/*.md
+!**/Insights/.gitkeep
+
 # ----------------------------------------------------------------------
 # Always tracked (overrides the above for the example cartridge):
 # The shipped example cartridge demonstrates the system; its bootstrap
-# session log, seed atoms, and example captures are part of the release.
+# session log, seed atoms, example captures, and example insight are part of the release.
 # ----------------------------------------------------------------------
 !Example-Subject-*/Sessions/*BOOTSTRAP*.md
 !Example-Subject-*/_state.md
 !Example-Subject-*/Captures/*.md
+!Example-Subject-*/Insights/*.md

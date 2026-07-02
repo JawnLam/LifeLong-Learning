@@ -17,7 +17,7 @@ updated: 2026-05-31
 3. PROPOSE a session activity with rationale
 4. WAIT for user confirmation or override
 5. EXECUTE the activity
-6. CAPTURE results (Unit updates, quiz logs, SR cards, synthesis artifacts) — and drop any stray, off-topic thought raised mid-session into the root `_Inbox/` as an `LLL_Note` rather than losing it
+6. CAPTURE results (Unit updates, quiz logs, SR cards, synthesis artifacts); drop any stray, off-topic thought raised mid-session into the root `_Inbox/` as an `LLL_Note`; and when a trigger fires (below), write an `LLL_Insight` to `<Subject>/Insights/`
 7. WRITE the session log
 8. UPDATE _state.md
 9. END with one explicit "next-session seed" in Open Threads
@@ -43,7 +43,7 @@ These apply to all subjects. Individual cartridges may define their own subject-
 
 ## Decision algorithm
 
-Evaluate in order. First condition that fires determines the default proposal.
+Evaluate in order. First condition that fires determines the default proposal. Before evaluating, read the subject's recent `Insights/` (below) — they set the **zone of proximal development**: the mastery floors, corrected misconceptions to preempt, and disclosed prior knowledge that determine where "just past what they can already do" actually is.
 
 ### Step 1 — Hard overrides (highest priority)
 
@@ -84,6 +84,21 @@ Your call.
 ```
 
 Wait. Do not begin until confirmation or override.
+
+## Learning records — the Insight ledger
+
+`<Subject>/Insights/` holds `LLL_Insight` items: decision-grade records of what's now *known about the learner*, ADR-style, numbered `0001-slug.md`. They are **not** a session journal (that's the session log) — they are the small set of facts that change what to teach next, and they are the primary input to the zone-of-proximal-development judgment above.
+
+**Write an Insight when — and only when — one of these fires:**
+
+1. **A misconception was corrected.** The learner held a wrong belief and now sees why. Highest value: a corrected misconception predicts related future stumbles, so the engine can preempt them. (`lll_Insight_Kind: misconception-corrected`)
+2. **Prior knowledge was disclosed.** "I already know X" — record it, and the claimed depth, so future sessions don't re-teach it. (`prior-knowledge`)
+3. **A mastery floor was set.** The learner demonstrated genuine, evidenced understanding of something non-trivial — raising where to start next time. Not mere exposure; evidence required. (`mastery-floor`)
+4. **The mission shifted.** The learner discovered they care about something different. Cross-link and update `_subject.md`; confirm with the learner before re-pointing the cartridge. (`mission-shift`)
+
+**Do not** write one for material merely covered (coverage is not learning — wait for evidence), for anything already captured tersely in `_glossary.md`, or as a per-session activity log.
+
+**Supersession:** when a later insight corrects an earlier one, mark the old `lll_Insight_Status: superseded` and link it from the new one via `lll_Supersedes`. Keep the superseded record — how understanding evolved is itself signal.
 
 ## Writing the session log
 

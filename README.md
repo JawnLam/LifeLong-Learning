@@ -105,7 +105,7 @@ Optional: copy `_USER.md.template` to `_USER.md` and fill it in if you want glob
 | `<Subject>/`                        | A cartridge — one folder per topic you're studying                        |
 | `Example-Subject-Roman-Empire/`     | A worked example cartridge for "The Rise and Fall of the Roman Empire"    |
 
-Each cartridge contains: `_subject.md`, `_schema.md`, `_curriculum.md`, `_state.md`, `Units/`, `Sources/`, `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`. Fleeting notes are captured as `LLL_Note` items — subject-homed ones in the cartridge's `Captures/`, un-homed or cross-cutting ones in the OV-root `_Inbox/` — and drained into Units by the TRIAGE session activity.
+Each cartridge contains: `_subject.md`, `_schema.md`, `_curriculum.md`, `_state.md`, `_glossary.md`, `_gaps.md`, `Units/`, `Sources/`, `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`, `Insights/`. Fleeting notes are captured as `LLL_Note` items (drained into Units by TRIAGE); durable, decision-grade learning records — corrected misconceptions, disclosed prior knowledge, mastery floors — accumulate as `LLL_Insight` items in `Insights/` and steer what's taught next; `_glossary.md` holds canonical terminology and `_gaps.md` the missing-resource register.
 
 ## Where to go for what
 

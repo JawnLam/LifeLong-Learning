@@ -62,7 +62,7 @@ Every technique here (spacing, retrieval, interleaving, desirable difficulty) tr
 
 ### Zone of proximal development
 
-Every session should sit just past what the user can already do unaided — hard enough to demand effort, not so hard it collapses. Locate it from the mastery ladder in `_state.md` (what sits at which rung), the subject's `_curriculum.md`, and recent session evidence of what did and didn't land. This is exactly the judgment the session decision algorithm in `01-SESSION-PROTOCOL.md` automates — "zone of proximal development" is its name.
+Every session should sit just past what the user can already do unaided — hard enough to demand effort, not so hard it collapses. Locate it from the mastery ladder in `_state.md` (what sits at which rung), the subject's `_curriculum.md`, and the `Insights/` ledger (mastery floors set, misconceptions corrected, prior knowledge disclosed — see `01-SESSION-PROTOCOL.md`). This is exactly the judgment the session decision algorithm automates — "zone of proximal development" is its name.
 
 ### Spaced, interleaved, and varied practice
 

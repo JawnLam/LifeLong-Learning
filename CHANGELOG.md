@@ -2,6 +2,33 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.0] — 2026-07-02
+
+Minor — **the insight ledger.** Phase B of folding the `productivity/teach` ideas into LLL. Additive schema growth (1.5 → 1.6): one new type, no renames or removals.
+
+### Added — `LLL_Insight` (+ `TEMPLATE-Insight.md`)
+
+ADR-style, decision-grade learning records that steer what to teach next — the misconception/insight ledger. Fields: `lll_Insight_Kind` [prior-knowledge | misconception-corrected | mastery-floor | mission-shift], `lll_Insight_Status` [active | superseded], `lll_Supersedes`, `lll_Units_Involved`; body = the insight / why-it-changes-future-teaching / evidence. Lives in `<Subject>/Insights/` (`0001-slug.md`, incrementing). **Distinct from the session log** (that's the journal; insights are the small set of facts that change the plan). `01-SESSION-PROTOCOL.md` defines the four write-triggers, the supersession rule, and makes the recent `Insights/` the **primary input to the zone-of-proximal-development** judgment in the decision algorithm; the CAPTURE lifecycle step now writes an Insight when a trigger fires.
+
+### Added — canonical glossary + resource gaps (typeless reference docs)
+
+- **`_glossary.md`** — the subject's controlled vocabulary: one canonical term per concept (alternatives marked discouraged), definitions that reuse defined terms, **added only after the learner demonstrates understanding** (glossary-building is itself evidence of learning).
+- **`_gaps.md`** — a register of missing high-trust resources/knowledge the mission needs, so the assistant surfaces gaps explicitly (driving future search) rather than papering over them — pairs with v1.9.0's citation discipline.
+
+Both defined in `03-SCHEMA-DESIGN.md`; both follow the `_schema.md` typeless-reference convention.
+
+### Changed
+
+- `BOOTSTRAP-NEW-SUBJECT.md` — creates `Insights/` + empty `_glossary.md`/`_gaps.md`; quality gates + producing-list updated.
+- `02-PEDAGOGY.md` — the ZPD section now names `Insights/` as its input.
+- `SCHEMA-OF-SCHEMAS.md` — `LLL_Insight` registered in the Layer-1 type list.
+- `README.md` / `AI-BOOTSTRAP.md` — folder structure updated. `.gitignore` — `Insights/` excluded as operator-private (example insight kept).
+- `Example-Subject-Roman-Empire/` — gains `_glossary.md`, `_gaps.md`, and one worked insight.
+
+### Coordinated vault-schema change
+
+Vault `Master_Schema.yaml` v1.40.0 → v1.41.0: registered `LLL_Insight` (+ 2 enums, 4 properties, `specific_keys`); mirrored `_types/LLL_Insight.md`. Purely additive.
+
 ## [1.9.0] — 2026-07-02
 
 Minor — **pedagogy foundation.** Phase A of folding the seven ideas from Matt Pocock's `productivity/teach` skill into LLL. Doc-only, no schema change. This phase installs the concepts the later phases will reference.
