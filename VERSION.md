@@ -1,25 +1,25 @@
 ---
-lll_version: "1.7.0"
+lll_version: "1.8.0"
 schema_version: "1.5"
 schema_status: "STABLE"
-release_date: 2026-07-01
-release_phase: "Minor release — spaced repetition made opt-in at bootstrap: the AI now asks whether the user wants SR and which backend, then guides one-time setup. Adds lll_SR_Enabled to the subject manifest (schema 1.4→1.5)"
+release_date: 2026-07-02
+release_phase: "Minor release — the Anki live-sync tool is now BUILT INTO the OV (_teaching-engine/_scripts/anki_sync.py, stdlib-only). Any AI running LLL with shell access can push/pull cards with no external skill. No schema change (v1.5 retained)"
 ---
 
 # LifeLong Learning — Version
 
-This is LifeLong Learning **v1.7.0** — the **spaced-repetition opt-in** release. SR is no longer silently assumed: the first subject bootstrap asks whether the user wants spaced repetition and which backend (Anki / Obsidian SR plugin / other / none), then **guides one-time setup**. The backend is chosen once (recorded in `_USER.md`); each subject carries a per-subject on/off toggle, `lll_SR_Enabled`, on its manifest. Additive schema growth (1.4→1.5): one boolean field, no renames or removals. Also fixes a stale `Item_Prototype` frontmatter key in `_USER.md.template`.
+This is LifeLong Learning **v1.8.0** — Anki live-sync is now a **built-in OV feature**. The AnkiConnect push/pull tool ships with the engine at `_teaching-engine/_scripts/anki_sync.py` (Python 3 standard library only — nothing to install), so **any** operator who chooses Anki gets one-command live sync without building or knowing about "skills." The dependency-free TSV-import path remains for AIs with no shell. This reverses v1.6.0's choice to keep the automation in an external skill — most operators won't have one, so the capability belongs in the OV. No schema change (v1.5 retained).
 
-Prior releases: **v1.6.0** — first-class Anki integration (export contract + TSV import + two-way AnkiConnect). **v1.5.0** — the capture layer (`LLL_Note`, `_Inbox/`/`Captures/`, TRIAGE).
+Prior releases: **v1.7.0** — spaced repetition made opt-in at bootstrap (`lll_SR_Enabled`). **v1.6.0** — first-class Anki integration (export contract + TSV + AnkiConnect). **v1.5.0** — the capture layer (`LLL_Note`, `_Inbox/`/`Captures/`, TRIAGE).
 
 ## Version identifiers
 
 | Identifier              | Value         | Notes                                                                  |
 |-------------------------|---------------|------------------------------------------------------------------------|
 | **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
-| **Software**            | v1.7.0        | SR made opt-in at bootstrap + guided setup (v1.6.0: Anki integration; v1.5.0: capture layer)   |
+| **Software**            | v1.8.0        | Built-in Anki live-sync tool (`_scripts/anki_sync.py`); no external skill needed (v1.7.0: SR opt-in; v1.6.0: Anki integration; v1.5.0: capture layer)   |
 | **Schema**              | v1.5          | STABLE — added `lll_SR_Enabled` (boolean) to `LLL_Subject_Manifest`; additive |
-| **Teaching engine**     | v1.7.0        | Five core operating files (`00`–`04`) + `BOOTSTRAP-NEW-SUBJECT.md` (now with SR Q10); seven universal activities; SR-CONVENTIONS carries backend-onboarding + the Anki contract |
+| **Teaching engine**     | v1.8.0        | Five core operating files (`00`–`04`) + `BOOTSTRAP-NEW-SUBJECT.md` (SR Q10); seven universal activities; SR-CONVENTIONS backend-onboarding + Anki contract; new optional `_scripts/` (bundled `anki_sync.py`) |
 | **Note templates**      | v1.7.0        | Eleven templates (unchanged since v1.5.0)                              |
 | **Example cartridge**   | v1.7.0        | `Example-Subject-Roman-Empire/` — `Captures/` (v1.5.0); Anki export regenerated on demand, not shipped |
 | **Release date**        | 2026-07-01    |                                                                        |
@@ -58,7 +58,7 @@ requires a major version bump (v2.0). Additive changes (a new optional type such
 - **OS:** Mac, Windows, Linux
 - **Editor:** Obsidian recommended (Spaced Repetition + Bases plugins enable the full experience; Bases can filter the capture pens by `lll_Note_Status`); also works in VS Code, Cursor, Windsurf, Zed, JetBrains, or any text editor that gives an AI read/write access to the folder
 - **SR tool:** optional; Obsidian SR plugin, Anki, Mochi, RemNote, or none
-- **Python / network / runtime dependencies:** none
+- **Python / network / runtime dependencies:** none for core study. *Optional:* the bundled Anki live-sync helper (`_teaching-engine/_scripts/anki_sync.py`) needs Python 3 (standard library only — no pip) and talks solely to Anki on `localhost`; skip it and use TSV import if you prefer zero scripts.
 
 ## License
 

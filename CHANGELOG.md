@@ -2,6 +2,31 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] — 2026-07-02
+
+Minor — **the Anki live-sync tool is now built into the OV.** Reverses v1.6.0's decision to keep the AnkiConnect automation in an external Claude Code skill. Rationale: most operators won't have that skill (or know skills exist), yet a large majority who pick Anki will want live sync — so the capability belongs in the OV, where the default assumption is "no skill." No schema change (v1.5 retained).
+
+### Added — `_teaching-engine/_scripts/anki_sync.py` (+ `_scripts/README.md`)
+
+The bundled AnkiConnect client: `verify` / `push --tsv <file>` / `pull --deck <deck>`. **Python 3 standard-library only — nothing to `pip install`**, talks only to Anki on `localhost:8765`. Any AI running LLL with shell access (or the operator by hand) runs it directly:
+
+```bash
+python3 _teaching-engine/_scripts/anki_sync.py push --tsv "<Subject>/SR-Cards/anki-export.tsv"
+```
+
+`push` is idempotent via the `lll-id::` identity tag (re-running updates, never duplicates); `pull` prints per-Unit stats as JSON and never writes to the vault (the assistant applies them to the SR-Log + `_state.md`). This is the same, corrected implementation validated live in v1.6.0 (including the card-vs-note tag fix).
+
+### Changed
+
+- `_meta/SR-CONVENTIONS.md` — the Anki setup, "Path B" procedure, and QUIZ-SR sections now point at the bundled script with exact commands; the earlier "see the operator's Anki skill" references are gone. Explicit: **no external skill is required.** TSV import (Path A) remains the fallback for AIs without shell access.
+- `README.md` — the "Python: not used / no scripts" line is corrected: core study is still script-free, but the optional Anki live-sync helper is a bundled stdlib-only script (localhost-only). `AI-BOOTSTRAP.md` folder tree adds `_scripts/`.
+- `VERSION.md` → v1.8.0.
+- The operator-side `/anki` Claude Code skill is demoted to a thin convenience that delegates to the bundled OV script (single source of truth; no code duplication).
+
+### Note
+
+Core LLL remains dependency-free and substrate-agnostic. The bundled script is **optional** and only relevant to operators who chose Anki *and* run AnkiConnect; everyone else is unaffected, and the no-script TSV path still works everywhere.
+
 ## [1.7.0] — 2026-07-01
 
 Minor — **spaced repetition is now opt-in, asked and set up at bootstrap.** Previously SR was silently assumed (the bootstrap never asked, yet the engine expected an SR tool and unconditionally initialized a Phase-1 SR log). Now the AI asks and guides setup. Additive schema growth (1.4 → 1.5).

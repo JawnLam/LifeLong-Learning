@@ -9,6 +9,10 @@
 *.swo
 *~
 
+# Python bytecode cache (from the optional bundled _scripts/ tooling)
+__pycache__/
+*.pyc
+
 # Obsidian workspace state (personal UI state, not study content)
 .obsidian/workspace*
 .obsidian/cache

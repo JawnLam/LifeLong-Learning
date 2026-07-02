@@ -22,7 +22,7 @@ When the user picks a backend they haven't installed, **guide them through the o
 Best if the user wants review on phone/web as well as desktop, and the tightest automation (one-command push + two-way stat sync). Full contract in "Anki integration" below. One-time setup:
 
 1. **Install Anki desktop** (macOS: `brew install --cask anki`, or download from `https://apps.ankiweb.net/`). Launch it once to create the profile.
-2. **Install the AnkiConnect add-on** (only needed for the live/two-way path): in Anki → Tools → Add-ons → Get Add-ons → paste `2055492159` → OK → **restart Anki**. Verify with the skill's `ankiconnect.py verify`.
+2. **Install the AnkiConnect add-on** (only needed for the live/two-way path): in Anki → Tools → Add-ons → Get Add-ons → paste `2055492159` → OK → **restart Anki**. Verify with the OV's built-in tool: `python3 _teaching-engine/_scripts/anki_sync.py verify`.
 3. **AnkiWeb sync** (for phone/browser review): click Sync, create/log into a free AnkiWeb account. Cards pushed to desktop reach every device after a sync.
 
 If the environment can't run a local API (no shell, or Anki not on this machine), the user can still use the **dependency-free TSV path**: the assistant writes `anki-export.tsv` and the user does File → Import. No add-on required.
@@ -114,7 +114,7 @@ Anki is a first-class SR backend. There is **no public write API for AnkiWeb** �
 ### The two paths
 
 - **Path A — plain-text (TSV) import.** Zero-dependency and substrate-agnostic: the assistant writes a tab-separated file with Anki's header directives; the user does **File → Import** once, and every later import updates in place. Works from any AI (Claude, ChatGPT, Gemini) because it is just a text file. This is the portable default and the fallback whenever a live connection isn't available.
-- **Path B — AnkiConnect (live, two-way).** With Anki desktop running and the [AnkiConnect](https://ankiweb.net/shared/info/2055492159) add-on installed (code `2055492159`), an assistant with local shell/HTTP access (e.g. Claude Code) pushes cards directly and pulls review performance back. This is the low-friction path and the only one that supports two-way sync. See the operator's Anki skill for the packaged automation.
+- **Path B — AnkiConnect (live, two-way).** With Anki desktop running and the [AnkiConnect](https://ankiweb.net/shared/info/2055492159) add-on installed (code `2055492159`), cards are pushed directly and review performance pulled back — the low-friction path, and the only one that supports two-way sync. **This is built into the OV**: the bundled `_teaching-engine/_scripts/anki_sync.py` (Python 3 stdlib, nothing to install) does it. Any assistant running LLL with shell access can invoke it; **no separate "skill" or special setup is required.** If the AI has no shell, or AnkiConnect isn't installed, fall back to Path A.
 
 Both paths use the **same identity, deck, tag, and notetype contract** below, so a subject can move between them freely.
 
@@ -161,7 +161,15 @@ Import: **File → Import → select the file → "Notes" match by guid → Impo
 
 ### Path B — AnkiConnect procedure (two-way)
 
-AnkiConnect listens on `http://127.0.0.1:8765`; every call is `POST {"action": ..., "version": 6, "params": {...}}`.
+**The OV ships a tool that does all of this — you normally just run it**, from the OV root:
+
+```bash
+python3 _teaching-engine/_scripts/anki_sync.py verify                                  # check the connection
+python3 _teaching-engine/_scripts/anki_sync.py push --tsv "<Subject>/SR-Cards/anki-export.tsv"
+python3 _teaching-engine/_scripts/anki_sync.py pull --deck "LLL::<Subject>"            # prints per-Unit stats as JSON
+```
+
+`push` is idempotent (re-running updates, never duplicates); `pull` prints JSON and does **not** write to the vault — the assistant takes that JSON and writes the SR-Log + reconciles `_state.md`. The mechanics the tool implements, for reference (or for a substrate re-implementing it): AnkiConnect listens on `http://127.0.0.1:8765`; every call is `POST {"action": ..., "version": 6, "params": {...}}`.
 
 - **Push (add-or-update, idempotent):** for each card, `findNotes` with query `tag:lll-id::<key>`. If a note is returned → `updateNoteFields` (and reconcile tags). If not → `createDeck` (if needed) then `addNote` with the deck, notetype, Front/Back, and all tags including the identity tag. Never rely on `allowDuplicate`; the identity tag is the dedup mechanism.
 - **Pull (review performance → SR-Log):** `findCards` with query `deck:"LLL::<Subject>"` (or `tag:lll::subject::<slug>`); `cardsInfo` for `interval`/`reps`/`lapses`/`factor`/`queue`/`due`; `getReviewsOfCards` for the recent per-review `ease` values (1 = again). Parse each note's `lll-id` tag to map back to its Unit, then:
@@ -172,7 +180,7 @@ This makes Anki the scheduling system of record while LLL stays the source of tr
 
 ### How QUIZ-SR behaves when the tool is Anki
 
-The QUIZ-SR activity (see `01-SESSION-PROTOCOL.md`) becomes: (1) **push** any new/changed cards for the active subject; (2) the user **reviews in Anki / AnkiWeb / mobile** (not inside the LLL session); (3) **pull** the results back into the SR-Log and reconcile weak-Unit flags. On Path A, steps 1 and 3 are the operator running an import/export; on Path B they are one assistant command each.
+The QUIZ-SR activity (see `01-SESSION-PROTOCOL.md`) becomes: (1) **push** any new/changed cards for the active subject; (2) the user **reviews in Anki / AnkiWeb / mobile** (not inside the LLL session); (3) **pull** the results back into the SR-Log and reconcile weak-Unit flags. On Path A, steps 1 and 3 are the operator running an import/export; on Path B they are one `anki_sync.py` command each (`push`, then later `pull`).
 
 ## If the user is not using an SR tool
 

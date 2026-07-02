@@ -70,8 +70,8 @@ For environment setup details, see [`INSTALL.md`](INSTALL.md).
 - **OS** — Mac, Windows, or Linux
 - **Editor / environment** — anything that gives an AI read/write access to a local folder. Obsidian recommended but not required.
 - **Spaced repetition tool** — optional. **Anki** has a first-class, dependency-free integration (plain-text import that works from any AI, plus optional live two-way sync via the AnkiConnect add-on; review anywhere it syncs to via AnkiWeb) — see `_teaching-engine/_meta/SR-CONVENTIONS.md § "Anki integration"`. Also supported: Obsidian SR plugin, Mochi, RemNote, or none at all (the system falls back to Socratic-only quizzing).
-- **Python** — not used. There are no scripts to run.
-- **Network** — none required. The system is self-contained markdown; nothing is fetched at runtime.
+- **Python** — not needed for core study (sessions, Units, synthesis, Socratic quizzing are pure markdown). *Optional:* if you choose **Anki** for spaced repetition and want one-command live sync, the OV bundles a Python 3 **standard-library-only** helper (`_teaching-engine/_scripts/anki_sync.py`) — nothing to `pip install`, and there's a no-script TSV-import fallback if you'd rather not run it.
+- **Network** — none for core study; nothing is fetched at runtime. The optional Anki live-sync helper talks only to Anki running on your own machine (`localhost`).
 
 ## Which file do I read?
 

@@ -88,7 +88,8 @@ If you cannot complete pre-flight (missing files, unreadable folder, ambiguous u
 │   ├── 04-SYNTHESIS-CADENCE.md
 │   ├── BOOTSTRAP-NEW-SUBJECT.md
 │   ├── _templates/                                              ← note templates
-│   └── _meta/                                                   ← schema-of-schemas + SR conventions
+│   ├── _meta/                                                   ← schema-of-schemas + SR conventions
+│   └── _scripts/                                                ← optional bundled tooling (e.g. anki_sync.py — built-in Anki live sync)
 ├── _Inbox/                                                      ← un-homed capture pen (LLL_Note, subject unknown)
 └── <Subject>/                                                   ← zero or more cartridges
     ├── _subject.md, _schema.md, _curriculum.md, _state.md
