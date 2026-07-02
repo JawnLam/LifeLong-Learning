@@ -93,7 +93,7 @@ If you cannot complete pre-flight (missing files, unreadable folder, ambiguous u
 ├── _Inbox/                                                      ← un-homed capture pen (LLL_Note, subject unknown)
 └── <Subject>/                                                   ← zero or more cartridges
     ├── _subject.md, _schema.md, _curriculum.md, _state.md, _glossary.md, _gaps.md
-    ├── Units/, Sources/, Sessions/, Quizzes/, Synthesis/, SR-Cards/, Captures/, Insights/
+    ├── Units/, Sources/, Sessions/, Quizzes/, Synthesis/, SR-Cards/, Captures/, Insights/, Communities/
 ```
 
 ## Core principles (apply to every session, regardless of subject)

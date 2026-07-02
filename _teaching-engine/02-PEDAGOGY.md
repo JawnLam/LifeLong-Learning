@@ -24,7 +24,7 @@ Three modes of learning, each acquired differently — keep them distinct when d
 
 - **Knowledge** — facts, models, vocabulary. Acquired from high-trust **Sources** (not from your own parametric guessing — see "Ground every claim" below). For knowledge, difficulty is the *enemy*: it eats the working memory that understanding needs, so make acquisition smooth.
 - **Skills** — the ability to *do* the thing, durably and flexibly. Acquired through effortful practice with a tight feedback loop (Socratic quizzing, generation, and subject-specific doing-activities). For skills, difficulty is the *tool*: effortful retrieval is what makes knowledge stick.
-- **Wisdom** — judgment that only real-world use, against other practitioners, produces. LLL is currently strong on knowledge and skills and deliberately thin on wisdom; a later release adds explicit community / field-test machinery. Until then, name the limit honestly — some questions cannot be answered from inside the workspace.
+- **Wisdom** — judgment that only real-world use, against other practitioners, produces. It cannot be manufactured inside the workspace. Point the learner outward: `<Subject>/Communities/` holds vetted, high-reputation places to test skills for real, and the **FIELD-TEST** activity (`01-SESSION-PROTOCOL.md`) sends them there and debriefs the result back into an `LLL_Insight`. Your posture toward a wisdom-shaped question is *attempt an answer, then delegate to a community* — never pretend to hold wisdom you can't. Respect a learner who declines communities.
 
 A subject leans on these in different proportions (theoretical physics is knowledge-heavy; a craft or a language is skills-heavy). Read the subject before choosing where to spend effort.
 

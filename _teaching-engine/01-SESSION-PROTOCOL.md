@@ -25,7 +25,7 @@ updated: 2026-05-31
 
 Steps 1, 6, 7, 8, 9 are non-negotiable. Step 5 varies by activity.
 
-## The seven universal session activity types
+## The eight universal session activity types
 
 These apply to all subjects. Individual cartridges may define their own subject-specific activities in addition (documented in `<Subject>/_schema.md`).
 
@@ -38,8 +38,11 @@ These apply to all subjects. Individual cartridges may define their own subject-
 | **SYNTHESIZE** | Produce a synthesis artifact (weekly journal, monthly essay, phase-end piece, quarterly draft) | Synthesis cadence due OR user explicitly wants to write |
 | **INTEGRATE** | Cross-Unit connection-mapping session; end-of-phase checks also live here | ≥ 5 Units introduced since last INTEGRATE, OR at phase boundary |
 | **TRIAGE** | Process the capture inbox: for each pending `LLL_Note`, decide its disposition — **promote** to a new Unit/Source, **merge** into an existing Unit, or **discard** (kept, not deleted) — assigning a subject and moving un-homed root-`_Inbox/` notes into `<Subject>/Captures/` along the way. Drains the pen toward zero. | The root `_Inbox/` holds ≥ 5 untriaged captures, OR any capture with `Needs_Processing: true` is older than 14 days |
+| **FIELD-TEST** | Send the learner to test a skill in the real world — against a vetted `LLL_Community` (or any real practice outside the workspace) — then debrief the result into an `LLL_Insight`. The **wisdom** leg of the Knowledge/Skills/Wisdom triad (`02-PEDAGOGY.md`): judgment only real use produces. | A skill Unit sits at rung 3+ and needs real-world validation, OR a question arises that needs *wisdom* (not knowledge/skill) and can't be answered from inside the workspace. Never fires if the learner has declined communities (recorded in `_USER.md`). |
 
 **The capture layer, in one paragraph.** Fleeting notes live in two places: the root `_Inbox/` (un-homed — subject unknown or cross-cutting; `lll_Subject` empty) and `<Subject>/Captures/` (subject known, not yet processed into a Unit). A capture is *only* for the un-homed / pre-processed — a thought about a known Unit belongs in that Unit's Open Questions, a reading note on a known Source in that Source's Highlights, a session recap in the session log. TRIAGE is what keeps the inbox from becoming a dumping ground. The single move in the system is homing (root `_Inbox/` → `<Subject>/Captures/` when a subject is assigned); after that, disposition is status-only (`lll_Note_Status`), preserving provenance. See `_types/LLL_Note.md`.
+
+**Wisdom and FIELD-TEST, in one paragraph.** Knowledge and skills are acquired inside the workspace; **wisdom** is not — it only comes from testing skills in the real world, against other practitioners (`02-PEDAGOGY.md` § "Knowledge, skills, wisdom"). `<Subject>/Communities/` holds `LLL_Community` items: vetted, high-reputation places to do that (a moderated forum, a subreddit, a class, a meetup). When a skill has matured or a question needs judgment you can't supply, propose **FIELD-TEST**: name what to test and where, let the learner go do it, then debrief what came back into an `LLL_Insight`. Your posture toward a wisdom question is *attempt an answer, then delegate* — never pretend to hold wisdom you can't. If the learner has declined communities, respect it and stop proposing them. See `_types/LLL_Community.md`.
 
 ## Decision algorithm
 
@@ -63,6 +66,7 @@ Regardless of what fires: at session start, if the capture inbox (`_Inbox/` + th
 
 - **If** ≥ 7 days since last QUIZ-SOCRATIC AND ≥ 2 Units at mastery level 2 → propose **QUIZ-SOCRATIC**
 - **If** the subject has `lll_SR_Enabled: true` AND SR cards are due AND last QUIZ-SR was ≥ 72 hours ago → propose **QUIZ-SR** (skip entirely when SR is off)
+- **If** a skill Unit has reached rung 3+ and hasn't been validated in the real world — OR a genuinely *wisdom*-shaped question has surfaced that you can't answer from knowledge/skill — → propose **FIELD-TEST** against a relevant `LLL_Community`. Skip if the learner has declined communities.
 
 ### Step 4 — Default forward motion
 

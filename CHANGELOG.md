@@ -2,6 +2,27 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.0] — 2026-07-02
+
+Minor — **the community / wisdom axis.** Phase C of folding the `productivity/teach` ideas into LLL. Fills the one conceptual hole the comparison flagged: LLL was entirely inward. Additive schema growth (1.6 → 1.7).
+
+### Added — `LLL_Community` (+ `TEMPLATE-Community.md`)
+
+Vetted, high-reputation places to test skills in the real world — the **Wisdom** leg of the Knowledge/Skills/Wisdom triad. Fields: `lll_Community_Kind` [forum | subreddit | discord | slack | class | meetup | conference | other], `lll_Community_Reputation`, `lll_Use_For`, `lll_Join_Status` [prospect | joined | declined]. Lives in `<Subject>/Communities/`.
+
+### Added — `FIELD-TEST` (the 8th universal activity)
+
+Sends the learner to test a matured skill (rung 3+) or a wisdom-shaped question against a community or real practice, then **debriefs the result into an `LLL_Insight`** — closing the loop with Phase B (a real-world result is exactly the mastery-floor / misconception evidence the ledger wants). The AI's posture toward a wisdom question becomes *attempt an answer, then delegate to a community* — never pretend to hold wisdom it can't. Respects a recorded opt-out.
+
+### Changed
+
+- `01-SESSION-PROTOCOL.md` — activity table **seven → eight**; FIELD-TEST row + decision-algorithm hook + a "wisdom in one paragraph" note. `02-PEDAGOGY.md` — the triad's Wisdom bullet is realized (was "a later release adds…"). `03-SCHEMA-DESIGN.md` / `SCHEMA-OF-SCHEMAS.md` — "universal seven → eight"; `LLL_Community` registered.
+- `BOOTSTRAP-NEW-SUBJECT.md` — creates `Communities/`; gates updated. `README.md` / `AI-BOOTSTRAP.md` — folder structure. `Example-Subject-Roman-Empire/` — gains a `Communities/` entry.
+
+### Coordinated vault-schema change
+
+Vault `Master_Schema.yaml` v1.41.0 → v1.42.0: registered `LLL_Community` (+ 2 enums, 4 properties, `specific_keys`) and `FIELD-TEST` in the `lll_activities` enum; mirrored `_types/LLL_Community.md`. Purely additive.
+
 ## [1.10.0] — 2026-07-02
 
 Minor — **the insight ledger.** Phase B of folding the `productivity/teach` ideas into LLL. Additive schema growth (1.5 → 1.6): one new type, no renames or removals.

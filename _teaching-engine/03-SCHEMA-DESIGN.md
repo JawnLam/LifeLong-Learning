@@ -64,7 +64,7 @@ When cartridging a new subject, answer the following questions in `<Subject>/_sc
 
 **Q6: What does mastery look like?** Mastery in music theory means hearing intervals, not reciting definitions. Mastery in cuisine means cooking a dish from scratch with sensory judgment, not listing ingredients. Mastery in cybernetics means applying concepts to novel organizational problems. Define the mastery endpoint concretely.
 
-**Q7: What subject-specific session activities, if any, does this subject need?** Beyond the seven universal activities, does the subject need custom activity types (COOK-ALONG, SPEAK, PROVE, COMPOSE, PERFORM)? Each custom activity needs its trigger conditions specified.
+**Q7: What subject-specific session activities, if any, does this subject need?** Beyond the eight universal activities, does the subject need custom activity types (COOK-ALONG, SPEAK, PROVE, COMPOSE, PERFORM)? Each custom activity needs its trigger conditions specified.
 
 **Q8: What's the right mastery scale?** The default is the 0–5 scale in the universal schema. Some subjects may need modified scales (language proficiency might use CEFR A1–C2; a skill-based subject might use novice-apprentice-journeyman-master). If you change the scale, document it.
 
@@ -83,7 +83,7 @@ Every cartridge's schema file must contain:
    - Example (at least one)
 4. **Relationship vocabulary** — the named relations that link Units (e.g., `prerequisite-of`, `variation-of`, `student-of`, `contains`)
 5. **Mastery scale** — inherited 0–5 default or the subject's custom scale
-6. **Custom session activities** — any activities beyond the universal seven, with trigger conditions
+6. **Custom session activities** — any activities beyond the universal eight, with trigger conditions
 7. **Folder structure** — how Units are organized in subfolders within the cartridge
 
 ## Universal schema elements (inherited by all cartridges)
