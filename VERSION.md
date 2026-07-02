@@ -1,25 +1,25 @@
 ---
-lll_version: "1.8.0"
+lll_version: "1.9.0"
 schema_version: "1.5"
 schema_status: "STABLE"
 release_date: 2026-07-02
-release_phase: "Minor release — the Anki live-sync tool is now BUILT INTO the OV (_teaching-engine/_scripts/anki_sync.py, stdlib-only). Any AI running LLL with shell access can push/pull cards with no external skill. No schema change (v1.5 retained)"
+release_phase: "Minor release — pedagogy foundation (Phase A of adopting the seven 'teach'-skill ideas). Adds the Knowledge/Skills/Wisdom triad, the fluency-vs-storage-strength distinction, ZPD by name, source-citation discipline, and a quiz anti-cueing rule. Doc-only — no schema change (v1.5 retained)"
 ---
 
 # LifeLong Learning — Version
 
-This is LifeLong Learning **v1.8.0** — Anki live-sync is now a **built-in OV feature**. The AnkiConnect push/pull tool ships with the engine at `_teaching-engine/_scripts/anki_sync.py` (Python 3 standard library only — nothing to install), so **any** operator who chooses Anki gets one-command live sync without building or knowing about "skills." The dependency-free TSV-import path remains for AIs with no shell. This reverses v1.6.0's choice to keep the automation in an external skill — most operators won't have one, so the capability belongs in the OV. No schema change (v1.5 retained).
+This is LifeLong Learning **v1.9.0** — the **pedagogy foundation** release (Phase A of folding Matt Pocock's "teach"-skill ideas into LLL). `02-PEDAGOGY.md` gains the **Knowledge / Skills / Wisdom** triad, an explicit **fluency vs storage strength** distinction (name the fluency illusion; design for durable retention), the **zone of proximal development** by name (we already implement it via the mastery ladder + decision algorithm), and a **"ground every claim in a trusted source"** citation discipline. `SR-CONVENTIONS.md` gains a quiz **anti-cueing** rule (equal-length candidate answers) and a storage-strength framing. Interleaving/retrieval/desirable-difficulty were already present and were sharpened, not duplicated. Doc-only; no schema change.
 
-Prior releases: **v1.7.0** — spaced repetition made opt-in at bootstrap (`lll_SR_Enabled`). **v1.6.0** — first-class Anki integration (export contract + TSV + AnkiConnect). **v1.5.0** — the capture layer (`LLL_Note`, `_Inbox/`/`Captures/`, TRIAGE).
+Prior releases: **v1.8.0** — bundled Anki live-sync tool. **v1.7.0** — SR opt-in at bootstrap. **v1.6.0** — Anki integration. **v1.5.0** — capture layer.
 
 ## Version identifiers
 
 | Identifier              | Value         | Notes                                                                  |
 |-------------------------|---------------|------------------------------------------------------------------------|
 | **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
-| **Software**            | v1.8.0        | Built-in Anki live-sync tool (`_scripts/anki_sync.py`); no external skill needed (v1.7.0: SR opt-in; v1.6.0: Anki integration; v1.5.0: capture layer)   |
-| **Schema**              | v1.5          | STABLE — added `lll_SR_Enabled` (boolean) to `LLL_Subject_Manifest`; additive |
-| **Teaching engine**     | v1.8.0        | Five core operating files (`00`–`04`) + `BOOTSTRAP-NEW-SUBJECT.md` (SR Q10); seven universal activities; SR-CONVENTIONS backend-onboarding + Anki contract; new optional `_scripts/` (bundled `anki_sync.py`) |
+| **Software**            | v1.9.0        | Pedagogy foundation — K/S/W triad, fluency-vs-storage, ZPD, citation discipline, anti-cueing (v1.8.0: bundled Anki sync; v1.7.0: SR opt-in; v1.6.0: Anki integration; v1.5.0: capture layer)   |
+| **Schema**              | v1.5          | STABLE — unchanged since v1.7.0; Phase A is doc-only |
+| **Teaching engine**     | v1.9.0        | Five core operating files (`00`–`04`) + `BOOTSTRAP-NEW-SUBJECT.md`; seven universal activities; `02-PEDAGOGY` gains triad / fluency-vs-storage / ZPD / citation; `SR-CONVENTIONS` gains anti-cueing; optional `_scripts/anki_sync.py` |
 | **Note templates**      | v1.7.0        | Eleven templates (unchanged since v1.5.0)                              |
 | **Example cartridge**   | v1.7.0        | `Example-Subject-Roman-Empire/` — `Captures/` (v1.5.0); Anki export regenerated on demand, not shipped |
 | **Release date**        | 2026-07-01    |                                                                        |

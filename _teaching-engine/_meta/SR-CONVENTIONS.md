@@ -89,6 +89,8 @@ Optionally, all SR cards can live in a dedicated file per Unit in `<Subject>/SR-
 - Answerable in one to three sentences
 - Answers unambiguous
 - Test understanding, not trivia (dates, page numbers, biographical minutiae)
+- **No cueing.** When a question offers candidate answers (multiple choice, or a discrimination between options), make the options **equal in length** — same number of words, and characters where you can. Differences in length, specificity, or formatting leak the answer and train pattern-matching instead of recall. Applies to any such question, SR *or* Socratic (see `02-PEDAGOGY.md`).
+- SR is a **storage-strength** instrument (`02-PEDAGOGY.md`): its whole value is durable retention, not the in-session fluency a fresh card produces. Design cards for the long game.
 - If a card has failed (`again`) twice in its last three reviews, the Unit gets flagged `lll_Status: weak` in `_state.md`
 
 ## Performance logging

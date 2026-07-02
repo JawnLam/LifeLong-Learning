@@ -2,6 +2,28 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.0] — 2026-07-02
+
+Minor — **pedagogy foundation.** Phase A of folding the seven ideas from Matt Pocock's `productivity/teach` skill into LLL. Doc-only, no schema change. This phase installs the concepts the later phases will reference.
+
+### Added — `02-PEDAGOGY.md`
+
+- **Knowledge / Skills / Wisdom triad** — three modes of learning acquired differently (knowledge from trusted Sources, where difficulty is the enemy; skills from effortful feedback loops, where difficulty is the tool; wisdom from real-world practice). Names LLL's current strength (knowledge + skills) and its deliberate gap (wisdom — a later phase adds community/field-test machinery).
+- **Fluency vs storage strength** — the Bjork distinction, named: fluency (smooth in-the-moment retrieval; the illusion of mastery) vs storage strength (durable retention; the real goal). Rule of thumb: when a session feels too smooth, suspect fluency without storage and raise difficulty.
+- **Zone of proximal development** — named explicitly (we already implement it via the mastery ladder + the session decision algorithm).
+- **"Ground every claim in a trusted source"** — a citation-discipline section: teach from Sources, cite as you go, record gaps rather than guessing, never treat parametric knowledge as the authority.
+
+### Added — `_meta/SR-CONVENTIONS.md`
+
+- **Anti-cueing** rule: candidate answers must be equal in length (words, and characters where possible) so length/specificity/formatting don't leak the answer — applies to SR *and* Socratic questions.
+- SR reframed explicitly as a **storage-strength** instrument.
+
+### Changed
+
+- `01-SESSION-PROTOCOL.md` — QUIZ-SOCRATIC now points at the anti-cueing + interleaving conventions.
+- Interleaving, retrieval practice, and desirable difficulty were **already present** in `02-PEDAGOGY.md` — they were sharpened and cross-linked to storage strength, not duplicated.
+- `VERSION.md` → v1.9.0.
+
 ## [1.8.0] — 2026-07-02
 
 Minor — **the Anki live-sync tool is now built into the OV.** Reverses v1.6.0's decision to keep the AnkiConnect automation in an external Claude Code skill. Rationale: most operators won't have that skill (or know skills exist), yet a large majority who pick Anki will want live sync — so the capability belongs in the OV, where the default assumption is "no skill." No schema change (v1.5 retained).

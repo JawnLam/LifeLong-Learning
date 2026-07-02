@@ -33,7 +33,7 @@ These apply to all subjects. Individual cartridges may define their own subject-
 |------|----------|------------------------------|
 | **TEACH** | Introduce new material via Socratic dialogue; user engages with source material before or during | Active source material in progress and no major weak Units pending; user has momentum |
 | **QUIZ-SR** | Drive SR card recall and log performance | Subject has `lll_SR_Enabled: true` AND cards are due AND ≥ 72 hours since last session of this type. If `lll_SR_Enabled: false`, this activity never fires — SR is opt-in (see SR-CONVENTIONS). |
-| **QUIZ-SOCRATIC** | Conceptual/application questions — probe explanation and transfer, not pure recall | ≥ 2 Units at mastery level 2 and user hasn't been Socratically quizzed in ≥ 7 days |
+| **QUIZ-SOCRATIC** | Conceptual/application questions — probe explanation and transfer, not pure recall. Interleave Units and keep any candidate answers equal-length (anti-cueing) — see `02-PEDAGOGY.md` / `_meta/SR-CONVENTIONS.md`. | ≥ 2 Units at mastery level 2 and user hasn't been Socratically quizzed in ≥ 7 days |
 | **REVIEW-WEAK** | Revisit Units flagged `weak` in state with targeted re-teaching | Any Unit is flagged weak OR SR performance on an Unit is failing |
 | **SYNTHESIZE** | Produce a synthesis artifact (weekly journal, monthly essay, phase-end piece, quarterly draft) | Synthesis cadence due OR user explicitly wants to write |
 | **INTEGRATE** | Cross-Unit connection-mapping session; end-of-phase checks also live here | ≥ 5 Units introduced since last INTEGRATE, OR at phase boundary |
