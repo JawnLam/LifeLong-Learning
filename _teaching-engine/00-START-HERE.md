@@ -44,8 +44,9 @@ Execute these reads in order. Do not skip. Do not reorder.
 5. **`<Subject>/_subject.md`** — what this subject is, shape, goals
 6. **`<Subject>/_schema.md`** — what this subject's Units are
 7. **`<Subject>/_state.md`** — current progress, mastery, flags
-8. **Most recent 1–2 files in `<Subject>/Sessions/`** — what happened last, what was promised
-9. **Any Units flagged `lll_Status: weak` in `<Subject>/_state.md`** — so you can probe them
+8. **`<Subject>/_related.md`** (if present) — material already in the vault that bears on this subject (ARIIA distillations to build on, MultiVac sources, ORAC index nodes, adjacent cartridges); skim **`_glossary.md`** and **`_gaps.md`** here too
+9. **Most recent 1–2 files in `<Subject>/Sessions/`** — what happened last, what was promised
+10. **Any Units flagged `lll_Status: weak` in `<Subject>/_state.md`** — so you can probe them
 
 After reading, greet briefly, summarize position in one or two sentences, and propose a session activity per `01-SESSION-PROTOCOL.md`.
 

@@ -1,14 +1,16 @@
 ---
-lll_version: "1.12.0"
+lll_version: "1.13.0"
 schema_version: "1.8"
 schema_status: "STABLE"
-release_date: 2026-07-02
-release_phase: "Minor release — lesson artifacts (Phase D, the final phase of adopting the 'teach'-skill ideas). Adds the LLL_Lesson type + a bundled _assets/ component library + the 05-LESSONS chapter: optional short, self-contained teaching artifacts (markdown source of truth + optional rendered HTML). Additive schema growth (1.7→1.8)"
+release_date: 2026-07-23
+release_phase: "Minor release — the `_related.md` cartridge reference doc: a curated map of vault material already related to a subject (ARIIA distillations, MultiVac sources, ORAC nodes, adjacent cartridges), seeded from a real vault scan at bootstrap and consulted at session start. Convention-only — a new typeless reference doc; no schema change (stays 1.8)."
 ---
 
 # LifeLong Learning — Version
 
-This is LifeLong Learning **v1.12.0** — the **lesson-artifact** release, and the **final phase** of folding Matt Pocock's "teach"-skill ideas into LLL. New **`LLL_Lesson`** type: an optional, short, self-contained teaching artifact tied to the mission and the learner's ZPD — a **markdown note is the source of truth**, with an **optional** rendered `0001-slug.html` built from the bundled **`_teaching-engine/_assets/`** component library (a shared, Tufte-ish, print-friendly `lesson.css`; reuse-by-default). New engine chapter **`05-LESSONS.md`**. The HTML render is strictly optional and **degrades to the markdown lesson** where there's no renderer — core LLL stays markdown-first and substrate-agnostic (same posture as the bundled Anki tool). Additive schema growth (1.7→1.8): one new type, no renames or removals. **This completes all four phases (A–D) of the teach-skill adoption.**
+This is LifeLong Learning **v1.13.0** — the **`_related.md`** release. Every cartridge now ships a curated map of vault material already related to its subject — **ARIIA** distillations to build on (not re-derive), **MultiVac** sources and citations, **ORAC** index nodes, and adjacent cartridges — seeded from a **real vault scan at bootstrap** (Step 8) and read at session start alongside `_glossary.md`/`_gaps.md`. It is the mirror image of `_gaps.md` (what *exists* elsewhere vs what's *missing*) and keeps a new cartridge from starting blind to knowledge the vault already holds. Convention-only: a new typeless reference doc, no schema change.
+
+**v1.12.0** was the **lesson-artifact** release, and the **final phase** of folding Matt Pocock's "teach"-skill ideas into LLL. New **`LLL_Lesson`** type: an optional, short, self-contained teaching artifact tied to the mission and the learner's ZPD — a **markdown note is the source of truth**, with an **optional** rendered `0001-slug.html` built from the bundled **`_teaching-engine/_assets/`** component library (a shared, Tufte-ish, print-friendly `lesson.css`; reuse-by-default). New engine chapter **`05-LESSONS.md`**. The HTML render is strictly optional and **degrades to the markdown lesson** where there's no renderer — core LLL stays markdown-first and substrate-agnostic (same posture as the bundled Anki tool). Additive schema growth (1.7→1.8): one new type, no renames or removals. **This completes all four phases (A–D) of the teach-skill adoption.**
 
 Prior releases: **v1.11.0** — wisdom axis. **v1.10.0** — insight ledger. **v1.9.0** — pedagogy foundation. **v1.8.0** — bundled Anki sync. Earlier: SR opt-in, Anki integration, capture layer.
 
@@ -17,9 +19,9 @@ Prior releases: **v1.11.0** — wisdom axis. **v1.10.0** — insight ledger. **v
 | Identifier              | Value         | Notes                                                                  |
 |-------------------------|---------------|------------------------------------------------------------------------|
 | **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
-| **Software**            | v1.12.0       | Lesson artifacts — `LLL_Lesson` + bundled `_assets/` + `05-LESSONS` (v1.11.0: wisdom axis; v1.10.0: insight ledger; v1.9.0: pedagogy foundation; v1.8.0: bundled Anki sync; earlier: SR opt-in, Anki, capture)   |
-| **Schema**              | v1.8          | STABLE — added the `LLL_Lesson` type + its fields; additive |
-| **Teaching engine**     | v1.12.0       | **Six** core operating files (`00`–`05`, added `05-LESSONS.md`) + `BOOTSTRAP-NEW-SUBJECT.md`; eight universal activities; new optional bundled `_assets/` (lesson.css) + `_scripts/anki_sync.py` |
+| **Software**            | v1.13.0       | `_related.md` cartridge reference doc (v1.12.0: lesson artifacts; v1.11.0: wisdom axis; v1.10.0: insight ledger; v1.9.0: pedagogy foundation; v1.8.0: bundled Anki sync; earlier: SR opt-in, Anki, capture)   |
+| **Schema**              | v1.8          | STABLE — unchanged; `_related.md` is a typeless reference doc, not a new type (like `_glossary.md`/`_gaps.md`) |
+| **Teaching engine**     | v1.13.0       | Six core operating files (`00`–`05`) + `BOOTSTRAP-NEW-SUBJECT.md`; eight universal activities; `_related.md` reference-doc convention added to bootstrap Step 8, `03-SCHEMA-DESIGN`, and the `00-START-HERE` read order; bundled `_assets/` (lesson.css) + `_scripts/anki_sync.py` |
 | **Note templates**      | v1.12.0       | Fourteen templates (added `TEMPLATE-Lesson.md`)                        |
 | **Example cartridge**   | v1.12.0       | `Example-Subject-Roman-Empire/` — gains a `Lessons/` artifact (markdown + rendered HTML), plus C's community and B's glossary/gaps/insight |
 | **Release date**        | 2026-07-01    |                                                                        |

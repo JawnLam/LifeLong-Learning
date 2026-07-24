@@ -19,7 +19,7 @@ A complete subject folder inside the `LifeLong Learning/` directory that is read
 4. `_state.md` — initial state
 5. Populated Unit folders — enough seed Units for the first 2–4 sessions
 6. Populated `Sources/` folder — the books/media/references the user will engage
-7. Empty-but-ready subfolders for `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`, `Insights/`, `Communities/`, `Lessons/`; plus empty `_glossary.md` and `_gaps.md` reference docs
+7. Empty-but-ready subfolders for `Sessions/`, `Quizzes/`, `Synthesis/`, `SR-Cards/`, `Captures/`, `Insights/`, `Communities/`, `Lessons/`; plus empty `_glossary.md` and `_gaps.md` reference docs, and a **`_related.md`** map of vault material already related to the subject (see Step 8)
 8. A bootstrap session log (Session 000) documenting what you created
 
 ## Before you start
@@ -131,7 +131,14 @@ Create `<Subject>/Sessions/`, `<Subject>/Quizzes/Socratic-Conceptual/`, `<Subjec
 
 `Communities/` holds `LLL_Community` items — vetted, high-reputation places to test skills in the real world (the wisdom axis; used by the FIELD-TEST activity). It starts empty; propose communities when a skill matures, respecting any recorded opt-out. `Lessons/` holds optional `LLL_Lesson` artifacts (short, self-contained teaching pieces; markdown source of truth + optional rendered HTML) — see `05-LESSONS.md`. It starts empty; lessons are produced only when a revisitable artifact helps.
 
-Also create two empty typeless reference docs at the cartridge root — `<Subject>/_glossary.md` (canonical terminology; starts empty and grows only as the learner demonstrates understanding of a term) and `<Subject>/_gaps.md` (knowledge & resource gaps register). Both follow the `_schema.md` header convention (`lll_Subject`, `updated:`, no `type:`). See `03-SCHEMA-DESIGN.md`.
+Also create three typeless reference docs at the cartridge root — `<Subject>/_glossary.md` (canonical terminology; starts empty and grows only as the learner demonstrates understanding of a term), `<Subject>/_gaps.md` (knowledge & resource gaps register), and `<Subject>/_related.md` (the map of vault material already related to the subject — see below). All follow the `_schema.md` header convention (`lll_Subject`, `updated:`, no `type:`). See `03-SCHEMA-DESIGN.md`.
+
+**`_related.md` — scan the vault before you write it.** A new cartridge rarely starts from zero: the vault usually already holds material on the subject. Before writing this file, **search the vault** and seed it with what you find, grouped by kind, each as an Obsidian `[[wikilink]]` with a one-line "what it is / how to use it":
+- **ARIIA** (`ARIIA/concepts/`) — any already-distilled concept area on this subject. This is the highest-value find: pre-distilled prior work to read at ORIENTATION and build on, not re-derive. (Mind the naming rule: the ARIIA hub, the LLL subject, and any ORAC node are deliberately distinct names.)
+- **MultiVac** (`Reference Shelf/`, `Citations/`) — books, papers, videos to study. Ones the learner will actually engage become real `source` notes in `Sources/`; cited-but-unacquired works are acquisition candidates (cross-ref `_gaps.md`).
+- **ORAC** — vault-wide index nodes for the subject's key concepts/thinkers; the canonical `[[link]]` targets (may be phantom until they recur).
+- **Other cartridges / OVs** — adjacent subjects that bear on this one.
+`_related.md` is the mirror image of `_gaps.md` (what *exists* elsewhere vs what's *missing*) and is distinct from `Sources/` (study material you consume) and `Captures/` (fleeting notes). If a genuine vault scan turns up nothing, write the empty scaffold with the section headers so it's ready to grow. **Point `_subject.md` at it** ("Related vault resources: see `_related.md`") so the assistant consults it at session start.
 
 `Insights/` is the subject's decision-grade learning ledger (`LLL_Insight`, numbered `0001-slug.md`) — the misconceptions-corrected / prior-knowledge / mastery-floor / mission-shift records that steer the zone of proximal development. It starts empty; the assistant writes to it during sessions per `01-SESSION-PROTOCOL.md`. `Captures/` is this subject's fleeting-note pen for `LLL_Note` captures that already belong to it (un-homed captures go in the OV-root `_Inbox/`, which you do not create per cartridge). The TRIAGE activity drains the capture pens.
 
@@ -168,7 +175,7 @@ Before you consider bootstrapping finished, confirm:
 - [ ] At least 5 seed Units created (more for skill-based subjects)
 - [ ] At least 1 active source seeded
 - [ ] Empty subfolders created with `.gitkeep` (including `Captures/`, `Insights/`, `Communities/`, `Lessons/`)
-- [ ] Empty `_glossary.md` and `_gaps.md` reference docs created at the cartridge root
+- [ ] `_glossary.md` (empty), `_gaps.md`, and `_related.md` reference docs created at the cartridge root; `_related.md` seeded from an actual vault scan (or an empty scaffold if the scan found nothing) and pointed at from `_subject.md`
 - [ ] SR decision made (Q10): global backend recorded in `_USER.md` if newly chosen and set up; `lll_SR_Enabled` set in `_subject.md`
 - [ ] Phase 1 SR log initialized **only if `lll_SR_Enabled: true`** (skip it entirely when SR is off)
 - [ ] Bootstrap session log written

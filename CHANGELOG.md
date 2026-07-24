@@ -2,7 +2,23 @@
 
 All notable changes to LifeLong Learning are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.12.0] — 2026-07-02
+## [1.13.0] — 2026-07-23
+
+Minor — **`_related.md`: a cartridge's map of related vault material.** A new cartridge rarely starts from zero — the vault often already holds distilled knowledge and sources on the subject. This release gives every cartridge a curated place to record that, so the assistant can build on it instead of starting blind. Convention-only; **no schema change** (stays 1.8) — `_related.md` is a typeless reference doc like `_glossary.md`/`_gaps.md`.
+
+### Added
+
+- **`<Subject>/_related.md`** — a curated map of vault material already related to the subject, grouped by kind, each an Obsidian `[[wikilink]]` with a one-line relevance note: **ARIIA** distillations (already-distilled prior work to build on — the highest-value cross-reference), **MultiVac** sources/citations, **ORAC** index nodes, and adjacent cartridges. It is the mirror image of `_gaps.md` (what *exists* elsewhere vs what's *missing*) and is distinct from `Sources/` (study material consumed) and `Captures/` (fleeting notes).
+
+### Changed
+
+- **`BOOTSTRAP-NEW-SUBJECT.md`** — Step 8 now creates `_related.md` and requires seeding it from a **real vault scan** (search ARIIA/MultiVac/ORAC/other cartridges) rather than guesswork, with an empty scaffold as the fallback; `_subject.md` must point at it. Added to the "what you're producing" list and the quality gates.
+- **`03-SCHEMA-DESIGN.md`** — documents `_related.md` alongside `_glossary.md`/`_gaps.md` in the cartridge-reference-documents section.
+- **`00-START-HERE.md`** — `_related.md` added to the mandatory session-start read order (after `_state.md`), so the assistant consults it every session.
+
+### Notes
+
+- Retrofit is optional: existing cartridges keep working without a `_related.md`; add one when convenient. (The `Jurisprudence` cartridge was the first to get one, hand-built, which motivated this release.)
 
 Minor — **lesson artifacts + component library.** Phase D, the **final phase** of folding the `productivity/teach` ideas into LLL. A new *output modality*, designed to stay optional and degrade-safe so core LLL remains markdown-first. Additive schema growth (1.7 → 1.8).
 
@@ -297,7 +313,7 @@ Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_types
 
 A new top-level folder, `_types/`, contains one Markdown file per LLL Prototype. Each file is structured per OVE's `TEMPLATE-Prototype.md` (Purpose, Required frontmatter, Body structure, Naming, Example Item, Relationships, Notes). The 10 files:
 
-- **Mirrored from operator vault** (8, verbatim mirrors of `~/Obsidian/.../_Infrastructure For All Vaults/_types/LLL_*.md`): `LLL_Curriculum`, `LLL_Quiz`, `LLL_Session`, `LLL_SR_Log`, `LLL_State`, `LLL_Subject_Manifest`, `LLL_Synthesis`, `LLL_Thinker`. Plus `LLL_Unit` (the polymorphic study-unit placeholder renamed from `LLL_Atom` in v1.1.0).
+- **Mirrored from operator vault** (8, verbatim mirrors of `~/Obsidian/.../_INFRA/_types/LLL_*.md`): `LLL_Curriculum`, `LLL_Quiz`, `LLL_Session`, `LLL_SR_Log`, `LLL_State`, `LLL_Subject_Manifest`, `LLL_Synthesis`, `LLL_Thinker`. Plus `LLL_Unit` (the polymorphic study-unit placeholder renamed from `LLL_Atom` in v1.1.0).
 - **Authored new** (1): `LLL_Source` — used by Source Items in subject cartridges but never previously written as a standalone Prototype definition. Drawn from the existing `_teaching-engine/_templates/TEMPLATE-Source.md` for frontmatter and body structure; from chapter 04 (Synthesis Cadence) for purpose; from the `Example-Subject-Roman-Empire/Sources/` files for concrete Example Items.
 
 ### Vault-Infrastructure dependency

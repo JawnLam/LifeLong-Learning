@@ -133,9 +133,9 @@ Inherited. Universal.
 
 Inherited. Universal — weekly, monthly, phase-end, quarterly variants.
 
-## Cartridge reference documents (`_glossary.md`, `_gaps.md`)
+## Cartridge reference documents (`_glossary.md`, `_gaps.md`, `_related.md`)
 
-Two typeless reference documents live at each cartridge root alongside `_schema.md` (same convention: a comment header, `lll_Subject`, `updated:` — not a `type:` note).
+Three typeless reference documents live at each cartridge root alongside `_schema.md` (same convention: a comment header, `lll_Subject`, `updated:` — not a `type:` note).
 
 ### `_glossary.md` — canonical terminology
 
@@ -149,6 +149,17 @@ The subject's controlled vocabulary. Each entry: the **term**, a one-or-two-sent
 ### `_gaps.md` — knowledge & resource gaps
 
 A running register of what the mission needs but the cartridge doesn't yet have — a missing high-trust Source, an un-acquired skill area, an unanswered question. It exists so the assistant surfaces gaps **explicitly** (driving what to search for or acquire next) instead of papering over them with a confident guess (see `02-PEDAGOGY.md` § "Ground every claim"). Prune entries once filled.
+
+### `_related.md` — the map of related vault material
+
+A curated map of material that **already exists elsewhere in the vault** and bears on this subject. It is the mirror image of `_gaps.md` (what *exists* vs what's *missing*), and distinct from `Sources/` (study material the learner consumes) and `Captures/` (fleeting notes). Its job is to let the assistant answer "what else in the vault touches this?" from one place. Group entries by kind, each an Obsidian `[[wikilink]]` with a one-line relevance note:
+
+- **ARIIA distillations** (`ARIIA/concepts/<area>/`) — already-distilled prior work on the subject; read at ORIENTATION and build on rather than re-derive. Highest-value cross-reference. (Respect the naming-distinctness rule: the ARIIA hub, this LLL subject, and any ORAC node carry deliberately different names.)
+- **MultiVac** (`Reference Shelf/`, `Citations/`) — books/papers/videos. Ones the learner will actually engage graduate into real `Sources/` notes; cited-but-unacquired works are acquisition candidates (cross-linked from `_gaps.md`).
+- **ORAC** — vault-wide index nodes for the subject's concepts/thinkers; the canonical `[[link]]` targets (may be phantom until they recur ≥2×).
+- **Other cartridges / OVs** — adjacent subjects that bear on this one.
+
+Rules: seed it from a **real vault scan at bootstrap** (see `BOOTSTRAP-NEW-SUBJECT.md` Step 8), not from guesswork; keep it curated (a link earns its place with a stated relevance); prune as material graduates into `Sources/` or is superseded. **`_subject.md` must point at it** so it is consulted at session start alongside `_glossary.md` and `_gaps.md`.
 
 ## Conventions across all cartridges
 
